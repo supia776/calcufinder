@@ -577,7 +577,7 @@
     async function loadPosts() {
       try {
         // ⭐ books 카테고리 전용
-        const res = await fetch('/.netlify/functions/notion-blog?mode=list&category=books');
+        const res = await fetch('/.netlify/functions/notion-blog?mode=list&category=financial-freedom-books');
         if (!res.ok) {
           const text = await res.text();
           console.error('Failed to load posts:', res.status, text);
