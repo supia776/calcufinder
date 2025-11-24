@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- insurance/index.html -->
+<title>Insurance Calculators | Coverage & risk tools | CalcuFinder</title>
+<meta name="description" content="Explore insurance coverage needs and risk with calculators for car, health, life, pet, and travel insurance.">
+
+<link rel="canonical" href="https://calcufinder.com/insurance/">
+
+<meta property="og:title" content="Insurance Calculators | Coverage & risk tools | CalcuFinder">
+<meta property="og:description" content="Use insurance calculators to estimate how much cover you may need and compare different risk scenarios.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://calcufinder.com/insurance/">
+<meta property="og:image" content="https://calcufinder.com/assets/og-image.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Insurance Calculators | Coverage & risk tools | CalcuFinder">
+<meta name="twitter:description" content="Simple tools to explore your car, health, life, pet, and travel insurance needs.">
+<meta name="twitter:image" content="https://calcufinder.com/assets/og-image.png">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9077859826573424"
+     crossorigin="anonymous"></script>
+     <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y7NKFF4N71"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Y7NKFF4N71');
+</script>
+
+  <style>
+    :root {
+      --bg-main: #f5f5f5;
+      --bg-card: #ffffff;
+      --bg-sidebar: #ffffff;
+      --bg-ads: #fafafa;
+      --border-soft: #e0e0e0;
+      --text-main: #111111;
+      --text-muted: #666666;
+      --accent: #111111;
+      --link: #1a0dab;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.5;
+      color: var(--text-main);
+      background: var(--bg-main);
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* ===== 상단 헤더 ===== */
+    .site-header {
+      background: #ffffff;
+      border-bottom: 1px solid #e5e5e5;
+      padding: 12px 24px;
+      width: 100%;
+    }
+
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo-img {
+      height: 65px;
+      width: auto;
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .logo-img {
+        height: 40px;
+      }
+    }
+
+    .header-nav {
+      display: flex;
+      gap: 28px;
+    }
+
+    .header-nav a {
+      font-size: 15px;
+      text-decoration: none;
+      color: #222;
+      font-weight: 500;
+    }
+
+    .header-nav a:hover {
+      color: #0077cc;
+    }
+
+    /* ===== 전체 레이아웃: 사이드바 / 메인 / 광고 ===== */
+    .layout {
+      display: grid;
+      grid-template-columns: 220px minmax(0, 1fr) 280px;
+      min-height: calc(100vh - 70px);
+    }
+
+    /* ---- 왼쪽: 사이드바 네비게이션 ---- */
+    .sidebar {
+      background: var(--bg-sidebar);
+      border-right: 1px solid var(--border-soft);
+      padding: 24px 20px;
+      position: sticky;
+      top: 0;
+      align-self: start;
+      height: 100vh;
+      overflow-y: auto;
+    }
+
+    .sidebar-logo {
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      font-size: 18px;
+      margin-bottom: 24px;
+    }
+
+    .sidebar-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .sidebar-nav a {
+      padding: 8px 10px;
+      border-radius: 6px;
+      color: var(--text-main);
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .sidebar-nav a.active {
+      background: #111111;
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .sidebar-nav a:hover {
+      background: #eeeeee;
+      text-decoration: none;
+    }
+
+    /* ---- 가운데: 메인 콘텐츠 ---- */
+    .content {
+      padding: 32px 32px 40px;
+    }
+
+    .content-inner {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    h1, h2, h3 {
+      margin-top: 0;
+      letter-spacing: -0.01em;
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      font-size: 20px;
+      margin-top: 28px;
+      margin-bottom: 8px;
+    }
+
+    p {
+      font-size: 15px;
+      color: var(--text-main);
+      margin: 0 0 12px;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin: 4px 0 16px;
+      font-size: 15px;
+    }
+
+    /* 메타 태그 (pill) */
+    .meta-row {
+      margin: 10px 0 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 12px;
+    }
+
+    .pill {
+      padding: 4px 10px;
+      background: #ffffff;
+      border-radius: 999px;
+      border: 1px solid var(--border-soft);
+      color: #444444;
+    }
+
+    /* 카드형 그리드 */
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border-radius: 10px;
+      border: 1px solid var(--border-soft);
+      padding: 18px 18px 16px;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+    }
+
+    .card h3 {
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin: 0 0 10px;
+    }
+
+    .card-meta {
+      font-size: 12px;
+      color: #999999;
+      margin-bottom: 8px;
+    }
+
+    .card-link {
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    /* ---- Affiliate note ---- */
+    .affiliate-note {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin: 32px 0 12px;
+    }
+
+    /* ---- 오른쪽: 광고 영역 (현재는 숨김) ---- */
+    .ads {
+      display: none; /* 방문자에게는 안 보이게 */
+      background: var(--bg-ads);
+      border-left: 1px solid var(--border-soft);
+      padding: 24px 20px;
+      position: sticky;
+      top: 0;
+      align-self: start;
+      height: 100vh;
+      overflow-y: auto;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    /* ---- Footer ---- */
+    footer {
+      border-top: 1px solid #eeeeee;
+      background: #ffffff;
+      font-size: 13px;
+      color: #555555;
+      padding: 12px 32px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    footer nav {
+      margin-left: auto;
+    }
+
+    footer nav a {
+      margin-left: 12px;
+      color: #555555;
+      text-decoration: none;
+    }
+
+    footer nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* ---- 반응형 ---- */
+    @media (max-width: 960px) {
+      .layout {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .sidebar {
+        position: static;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid var(--border-soft);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+
+      .sidebar-logo {
+        margin-bottom: 8px;
+      }
+
+      .sidebar-nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 4px;
+      }
+
+      .sidebar-nav a {
+        font-size: 13px;
+        padding: 6px 8px;
+      }
+
+      .content {
+        padding: 20px 16px 28px;
+      }
+
+      .ads {
+        display: none;
+      }
+
+      .tools-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+/* ===== 공통: 클릭 막힌 비활성 링크 스타일 ===== */
+.disabled-link {
+  pointer-events: none;   /* 클릭 안 됨 */
+  cursor: default;        /* 손가락 커서 안 나오게 */
+  color: #999999;         /* 회색 처리 */
+  text-decoration: none;
+}
+
+/* 사이드바 / 상단 네비에서 hover 해도 그대로 보이게 */
+.sidebar-nav a.disabled-link:hover,
+.header-nav a.disabled-link:hover {
+  background: transparent;
+  color: #999999;
+  text-decoration: none;
+}
+  </style>
+</head>
+
+<body>
+  <!-- 상단 헤더 -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/index.html">
+        <img src="/assets/logo.png" alt="CalcuFinder logo" class="logo-img">
+      </a>
+
+      <nav class="header-nav">
+        <a href="/index.html">Home</a>
+        <a href="/finance/">Finance</a>
+        <a href="/insurance/">Insurance</a>
+        <a href="/business-software/">Business & Software</a>
+<a href="/blog/index.html">Blog</a>
+        <a href="/about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 메인 레이아웃 -->
+  <div class="layout">
+
+    <!-- 사이드바 -->
+    <aside class="sidebar">
+      <div class="sidebar-logo">CalcuFinder</div>
+      <nav class="sidebar-nav">
+        <a href="/index.html">Home</a>
+        <a href="/finance/">Finance</a>
+        <a href="/insurance/" class="active">Insurance</a>
+        <a href="/business-software/">Business & software</a>
+<a href="/blog/index.html">Blog</a>
+        <a href="/about.html">About</a>
+      </nav>
+    </aside>
+
+    <!-- 가운데 메인 콘텐츠 -->
+    <main class="content">
+      <div class="content-inner">
+
+        <h1>Insurance tools</h1>
+        <p>
+          These tools are designed to give you a high-level view of risk and coverage
+          ideas across different types of insurance. They are educational only and
+          do not provide quotes or recommendations for specific insurers.
+        </p>
+
+        <div class="meta-row">
+          <span class="pill">Travel risk</span>
+          <span class="pill">Life coverage</span>
+          <span class="pill">Car & health</span>
+          <span class="pill">Pet insurance</span>
+          <span class="pill">Global audience</span>
+        </div>
+
+        <h2>Explore insurance helpers</h2>
+        <p>
+          Choose a tool below to estimate your risk profile or coverage needs before
+          you compare real products in your country.
+        </p>
+
+        <section class="tools-grid" aria-label="Insurance calculators and helpers">
+
+          <!-- Travel -->
+          <article class="card">
+            <h3>Travel Risk &amp; Coverage Needs Calculator</h3>
+            <p>
+              Get a rough sense of how much travel risk you are taking on, based on
+              trip style, destination, and medical backup. Helps you think about
+              what level of travel insurance might make sense.
+            </p>
+            <p class="card-meta">Category: Insurance · Audience: Global travellers</p>
+            <!-- 파일명이 다르면 href만 본인 파일명으로 수정 -->
+            <a href="/insurance/travel-risk-calculator.html" class="card-link">Open tool →</a>
+          </article>
+
+          <!-- Life -->
+          <article class="card">
+            <h3>Life Coverage Needs Calculator</h3>
+            <p>
+              Estimate a rough life insurance coverage range by looking at income,
+              dependants, debts, and future goals like education or housing.
+            </p>
+            <p class="card-meta">Category: Insurance · Audience: Households &amp; families</p>
+            <a href="/insurance/life-coverage-needs-calculator.html" class="card-link">Open tool →</a>
+          </article>
+
+          <!-- Car -->
+          <article class="card">
+            <h3>Car Risk &amp; Coverage Needs Calculator</h3>
+            <p>
+              Combine basic details about your car, driving pattern, and emergency
+              fund to get a rough sense of how much car insurance protection you may want.
+            </p>
+            <p class="card-meta">Category: Insurance · Audience: Drivers &amp; car owners</p>
+            <a href="/insurance/car-risk-coverage-calculator.html" class="card-link">Open tool →</a>
+          </article>
+
+          <!-- Health -->
+          <article class="card">
+            <h3>Health Coverage Needs Estimator</h3>
+            <p>
+              Think through how comfortable you are with out-of-pocket costs, public
+              health systems, and private cover add-ons like hospital or extras.
+            </p>
+            <p class="card-meta">Category: Insurance · Audience: Individuals &amp; families</p>
+            <a href="/insurance/health-coverage-estimator.html" class="card-link">Open tool →</a>
+          </article>
+
+          <!-- Pet -->
+          <article class="card">
+            <h3>Pet Insurance Coverage Helper</h3>
+            <p>
+              Estimate your pet’s risk level and see what type of pet insurance coverage
+              might make sense, based on breed, age, lifestyle, and your emergency fund.
+            </p>
+            <p class="card-meta">Category: Insurance · Audience: Pet owners worldwide</p>
+            <a href="/insurance/pet-insurance-coverage-helper.html" class="card-link">Open tool →</a>
+          </article>
+
+        </section>
+
+        <!-- 제휴링크 안내 문구 -->
+        <p class="affiliate-note">
+          Some pages on CalcuFinder may include affiliate links. If you click and make a purchase,
+            we may earn a small commission at no extra cost to you. This helps support the project
+            and keeps the tools free to use.
+        </p>
+
+      </div>
+    </main>
+
+    <!-- 오른쪽 광고 (현재는 숨김) -->
+    <aside class="ads"></aside>
+  </div>
+
+  <!-- 하단 푸터 -->
+  <footer>
+    <p>© CalcuFinder. Tools for smarter decisions, worldwide.</p>
+    <nav>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/disclosure.html">Disclosure</a>
+    </nav>
+  </footer>
+</body>
+</html>

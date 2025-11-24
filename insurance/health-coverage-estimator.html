@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- health-coverage-estimator.html -->
+<title>Health Coverage Estimator | Plan health insurance needs</title>
+<meta name="description" content="Estimate how much health insurance cover you may need based on age, risk, and expected medical costs.">
+
+<link rel="canonical" href="https://calcufinder.com/insurance/health-coverage-estimator.html">
+
+<meta property="og:title" content="Health Coverage Estimator | Plan health insurance needs">
+<meta property="og:description" content="Use the Health Coverage Estimator to compare different levels of health insurance and out-of-pocket risk.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://calcufinder.com/insurance/health-coverage-estimator.html">
+<meta property="og:image" content="https://calcufinder.com/assets/og-image.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Health Coverage Estimator | Plan health insurance needs">
+<meta name="twitter:description" content="Explore how different health insurance options protect you against medical expenses.">
+<meta name="twitter:image" content="https://calcufinder.com/assets/og-image.png">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9077859826573424"
+     crossorigin="anonymous"></script>
+     <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y7NKFF4N71"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Y7NKFF4N71');
+</script>
+
+
+  <style>
+    :root {
+      --bg-main: #f5f5f5;
+      --bg-card: #ffffff;
+      --bg-sidebar: #ffffff;
+      --bg-ads: #fafafa;
+      --border-soft: #e0e0e0;
+      --text-main: #111111;
+      --text-muted: #666666;
+      --accent: #111111;
+      --link: #1a0dab;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.5;
+      color: var(--text-main);
+      background: var(--bg-main);
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* ===== 상단 헤더 ===== */
+    .site-header {
+      background: #ffffff;
+      border-bottom: 1px solid #e5e5e5;
+      padding: 12px 24px;
+      width: 100%;
+    }
+
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo-img {
+      height: 65px;
+      width: auto;
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .logo-img {
+        height: 40px;
+      }
+    }
+
+    .header-nav {
+      display: flex;
+      gap: 28px;
+    }
+
+    .header-nav a {
+      font-size: 15px;
+      text-decoration: none;
+      color: #222;
+      font-weight: 500;
+    }
+
+    .header-nav a:hover {
+      color: #0077cc;
+    }
+
+    /* ===== 전체 레이아웃: 사이드바 / 메인 / 광고 ===== */
+    .layout {
+      display: grid;
+      grid-template-columns: 220px minmax(0, 1fr) 280px;
+      min-height: calc(100vh - 70px);
+    }
+
+    /* ---- 왼쪽: 사이드바 네비게이션 ---- */
+    .sidebar {
+      background: var(--bg-sidebar);
+      border-right: 1px solid var(--border-soft);
+      padding: 24px 20px;
+      position: sticky;
+      top: 0;
+      align-self: start;
+      height: 100vh;
+      overflow-y: auto;
+    }
+
+    .sidebar-logo {
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      font-size: 18px;
+      margin-bottom: 24px;
+    }
+
+    .sidebar-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .sidebar-nav a {
+      padding: 8px 10px;
+      border-radius: 6px;
+      color: var(--text-main);
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .sidebar-nav a.active {
+      background: #111111;
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .sidebar-nav a:hover {
+      background: #eeeeee;
+      text-decoration: none;
+    }
+
+    /* ---- 가운데: 메인 콘텐츠 ---- */
+    .content {
+      padding: 32px 32px 40px;
+    }
+
+    .content-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    h1, h2, h3 {
+      margin-top: 0;
+      letter-spacing: -0.01em;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 15px;
+      color: var(--text-main);
+      margin: 0 0 12px;
+      max-width: 720px;
+    }
+
+    .meta-row {
+      margin-top: 6px;
+      font-size: 13px;
+      color: #666666;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .pill {
+      font-size: 12px;
+      padding: 3px 9px;
+      background: #ffffff;
+      border-radius: 999px;
+      border: 1px solid var(--border-soft);
+    }
+
+    /* 레이아웃: 입력 / 결과 카드 */
+    .tool-layout {
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+      gap: 24px;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border-radius: 8px;
+      border: 1px solid #eeeeee;
+      padding: 18px 20px;
+    }
+
+    h2.section-heading {
+      font-size: 19px;
+      margin: 0 0 12px;
+    }
+
+    label {
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    .field-group {
+      margin-bottom: 14px;
+    }
+
+    select,
+    input[type="number"],
+    input[type="text"] {
+      width: 100%;
+      padding: 9px 11px;
+      border-radius: 4px;
+      border: 1px solid #cccccc;
+      font-size: 14px;
+      background: #ffffff;
+      box-sizing: border-box;
+    }
+
+    input::placeholder {
+      color: #aaaaaa;
+    }
+
+    .hint {
+      font-size: 12px;
+      color: #777777;
+      margin-top: 4px;
+    }
+
+    /* 결과 영역 */
+    .results-title {
+      font-size: 19px;
+      margin-bottom: 8px;
+    }
+
+    .score-pill {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .score-low {
+      background: #e6f4ea;
+      color: #137333;
+    }
+
+    .score-medium {
+      background: #fff4ce;
+      color: #8a6d1a;
+    }
+
+    .score-high {
+      background: #fce8e6;
+      color: #c5221f;
+    }
+
+    .result-block {
+      margin-bottom: 12px;
+    }
+
+    .result-block h3 {
+      font-size: 15px;
+      margin: 0 0 4px;
+    }
+
+    .result-block p {
+      font-size: 14px;
+      margin: 0;
+      max-width: none;
+    }
+
+    .result-block ul {
+      padding-left: 18px;
+      margin: 4px 0 0;
+      font-size: 14px;
+    }
+
+    /* ---- Affiliate note ---- */
+    .affiliate-note {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin: 32px 0 12px;
+    }
+
+    /* ---- 오른쪽: 광고 영역 (현재는 숨김) ---- */
+    .ads {
+      display: none;
+      background: var(--bg-ads);
+      border-left: 1px solid var(--border-soft);
+      padding: 24px 20px;
+      position: sticky;
+      top: 0;
+      align-self: start;
+      height: 100vh;
+      overflow-y: auto;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    /* ---- Footer ---- */
+    footer {
+      border-top: 1px solid #eeeeee;
+      background: #ffffff;
+      font-size: 13px;
+      color: #555555;
+      padding: 12px 32px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    footer nav {
+      margin-left: auto;
+    }
+
+    footer nav a {
+      margin-left: 12px;
+      color: #555555;
+      text-decoration: none;
+    }
+
+    footer nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* ---- 반응형 ---- */
+    @media (max-width: 960px) {
+      .layout {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .sidebar {
+        position: static;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid var(--border-soft);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+
+      .sidebar-logo {
+        margin-bottom: 8px;
+      }
+
+      .sidebar-nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 4px;
+      }
+
+      .sidebar-nav a {
+        font-size: 13px;
+        padding: 6px 8px;
+      }
+
+      .content {
+        padding: 20px 16px 28px;
+      }
+
+      .tool-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .ads {
+        display: none;
+      }
+    }
+/* ===== 공통: 클릭 막힌 비활성 링크 스타일 ===== */
+.disabled-link {
+  pointer-events: none;   /* 클릭 안 됨 */
+  cursor: default;        /* 손가락 커서 안 나오게 */
+  color: #999999;         /* 회색 처리 */
+  text-decoration: none;
+}
+
+/* 사이드바 / 상단 네비에서 hover 해도 그대로 보이게 */
+.sidebar-nav a.disabled-link:hover,
+.header-nav a.disabled-link:hover {
+  background: transparent;
+  color: #999999;
+  text-decoration: none;
+}
+  </style>
+</head>
+
+<body>
+  <!-- 상단 헤더 -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/index.html">
+        <img src="/assets/logo.png" alt="CalcuFinder logo" class="logo-img">
+      </a>
+
+      <nav class="header-nav">
+        <a href="/index.html">Home</a>
+        <a href="/finance/">Finance</a>
+        <a href="/insurance/">Insurance</a>
+        <a href="/business-software/">Business & Software</a>
+<a href="/blog/index.html">Blog</a>
+        <a href="/about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 메인 레이아웃 -->
+  <div class="layout">
+
+    <!-- 사이드바 네비게이션 -->
+    <aside class="sidebar">
+      <div class="sidebar-logo">CalcuFinder</div>
+      <nav class="sidebar-nav">
+        <a href="/index.html">Home</a>
+        <a href="/finance/">Finance</a>
+        <a href="/insurance/" class="active">Insurance</a>
+        <a href="/business-software/">Business & software</a>
+<a href="/blog/index.html">Blog</a>
+        <a href="/about.html">About</a>
+      </nav>
+    </aside>
+
+    <!-- 가운데 메인 콘텐츠 -->
+    <main class="content">
+      <div class="content-inner">
+        <h1>Health Coverage Needs Estimator</h1>
+        <p>
+          Get an educational view of how much health coverage you might want, based on your age,
+          access to public healthcare, pre-existing conditions, and your emergency fund.
+          This tool is not medical, legal, or financial advice.
+        </p>
+
+        <div class="meta-row">
+          <span class="pill">Category: Health insurance</span>
+          <span class="pill">Audience: Individuals & families worldwide</span>
+        </div>
+
+        <div class="tool-layout">
+          <!-- 입력 카드 -->
+          <section class="card">
+            <h2 class="section-heading">Inputs</h2>
+
+            <div class="field-group">
+              <label for="country">Country (for context)</label>
+              <input
+                id="country"
+                type="text"
+                placeholder="e.g. Australia, United States, Germany"
+                oninput="updateResults()"
+              />
+              <p class="hint">
+                Used only for context notes – this tool does not look up real health systems or policies.
+              </p>
+            </div>
+
+            <div class="field-group">
+              <label for="ageBand">Age band</label>
+              <select id="ageBand" onchange="updateResults()">
+                <option value="">Select</option>
+                <option value="under30">Under 30</option>
+                <option value="30to45">30–45</option>
+                <option value="46to60">46–60</option>
+                <option value="60plus">60+</option>
+              </select>
+            </div>
+
+            <div class="field-group">
+              <label for="household">Household situation</label>
+              <select id="household" onchange="updateResults()">
+                <option value="">Select</option>
+                <option value="single">Single, no dependants</option>
+                <option value="couple">Couple, no dependants</option>
+                <option value="family">Family with dependants</option>
+                <option value="caregiver">Carer for someone with higher medical needs</option>
+              </select>
+            </div>
+
+            <div class="field-group">
+              <label for="publicAccess">Access to public healthcare</label>
+              <select id="publicAccess" onchange="updateResults()">
+                <option value="">Select</option>
+                <option value="strong">Strong public system, most care is subsidised</option>
+                <option value="mixed">Mixed system, some public and some private</option>
+                <option value="limited">Limited public support, mostly private or out-of-pocket</option>
+              </select>
+            </div>
+
+            <div class="field-group">
+              <label for="conditions">Pre-existing or chronic conditions (household)</label>
+              <select id="conditions" onchange="updateResults()">
+                <option value="">Select</option>
+                <option value="none">None known</option>
+                <option value="some">Some ongoing conditions or regular medications</option>
+                <option value="significant">Significant or complex health conditions</option>
+              </select>
+              <p class="hint">
+                Many insurers treat pre-existing conditions differently. Always check policy wording.
+              </p>
+            </div>
+
+            <div class="field-group">
+              <label for="riskTolerance">Comfort with out-of-pocket medical costs</label>
+              <select id="riskTolerance" onchange="updateResults()">
+                <option value="">Select</option>
+                <option value="low">I prefer predictable costs / less surprise bills</option>
+                <option value="medium">I can handle some variation in costs</option>
+                <option value="high">I’m okay with higher risk to keep premiums lower</option>
+              </select>
+            </div>
+
+            <div class="field-group">
+              <label for="fund">Emergency fund available</label>
+              <select id="fund" onchange="updateResults()">
+                <option value="">Select</option>
+                <option value="low">Less than 1 month of usual income saved</option>
+                <option value="medium">About 1–3 months saved</option>
+                <option value="high">More than 3 months saved</option>
+              </select>
+            </div>
+
+            <div class="field-group">
+              <label for="extrasPriority">Priority for extras (dental, physio, etc.)</label>
+              <select id="extrasPriority" onchange="updateResults()">
+                <option value="">Select</option>
+                <option value="low">Low – I can pay as I go</option>
+                <option value="medium">Medium – I use some extras each year</option>
+                <option value="high">High – multiple family members use extras often</option>
+              </select>
+            </div>
+
+            <p class="hint">
+              This helper provides approximate guidance only. For actual coverage, limits, and waiting
+              periods, read policy documents and compare products from licensed insurers.
+            </p>
+          </section>
+
+          <!-- 결과 카드 -->
+          <section class="card">
+            <h2 class="results-title">Results</h2>
+            <div id="resultsContent">
+              <p>
+                Enter your age, country context, health situation, and emergency fund to see an
+                estimated coverage level and things to compare.
+              </p>
+            </div>
+          </section>
+        </div>
+
+        <!-- 제휴링크 안내 문구 -->
+        <p class="affiliate-note">
+          Some pages on CalcuFinder may include affiliate links. If you click and make a purchase,
+            we may earn a small commission at no extra cost to you. This helps support the project
+            and keeps the tools free to use.
+        </p>
+      </div>
+    </main>
+
+    <!-- 오른쪽 광고 (숨김) -->
+    <aside class="ads"></aside>
+  </div>
+
+  <!-- 하단 푸터 -->
+  <footer>
+    <p>© CalcuFinder. Tools for smarter decisions, worldwide.</p>
+    <nav>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/disclosure.html">Disclosure</a>
+    </nav>
+  </footer>
+
+  <script>
+    function calculateRiskScore() {
+      let score = 30;
+
+      const ageBand = document.getElementById("ageBand").value;
+      const household = document.getElementById("household").value;
+      const publicAccess = document.getElementById("publicAccess").value;
+      const conditions = document.getElementById("conditions").value;
+      const riskTolerance = document.getElementById("riskTolerance").value;
+      const fund = document.getElementById("fund").value;
+      const extrasPriority = document.getElementById("extrasPriority").value;
+
+      // Age band
+      if (ageBand === "under30") score += 4;
+      if (ageBand === "30to45") score += 8;
+      if (ageBand === "46to60") score += 12;
+      if (ageBand === "60plus") score += 16;
+
+      // Household
+      if (household === "single") score += 4;
+      if (household === "couple") score += 6;
+      if (household === "family") score += 10;
+      if (household === "caregiver") score += 14;
+
+      // Public access
+      if (publicAccess === "strong") score += 2;
+      if (publicAccess === "mixed") score += 8;
+      if (publicAccess === "limited") score += 14;
+
+      // Conditions
+      if (conditions === "some") score += 10;
+      if (conditions === "significant") score += 20;
+
+      // Risk tolerance (낮은 리스크 허용 → 점수 더 높게: 커버리지 필요성 ↑)
+      if (riskTolerance === "low") score += 14;
+      if (riskTolerance === "medium") score += 8;
+      if (riskTolerance === "high") score += 2;
+
+      // Emergency fund (작으면 점수 ↑)
+      if (fund === "low") score += 14;
+      if (fund === "medium") score += 7;
+      if (fund === "high") score += 2;
+
+      // Extras priority
+      if (extrasPriority === "medium") score += 6;
+      if (extrasPriority === "high") score += 10;
+
+      if (score < 0) score = 0;
+      if (score > 100) score = 100;
+      return score;
+    }
+
+    function getRiskBand(score) {
+      if (score < 40) return { band: "Lower", className: "score-low" };
+      if (score < 70) return { band: "Moderate", className: "score-medium" };
+      return { band: "Higher", className: "score-high" };
+    }
+
+    function coverageSuggestion(score, publicAccess, fund) {
+      let baseType;
+
+      if (score < 40) {
+        baseType =
+          "A lighter level of private cover or relying mainly on public healthcare (where it is strong) may be enough for many people in this range.";
+      } else if (score < 70) {
+        baseType =
+          "A mid-level hospital plan, possibly with some extras, may be worth exploring, especially if waiting times or gaps in public cover are a concern.";
+      } else {
+        baseType =
+          "More comprehensive hospital cover, sometimes with higher annual limits and broader benefits, is more likely to be worth considering for your situation.";
+      }
+
+      let adjust = "";
+
+      if (publicAccess === "strong") {
+        adjust +=
+          " Because your country appears to have stronger public healthcare, you may want to focus your private cover on gaps such as waiting times, choice of provider, or specific procedures.";
+      } else if (publicAccess === "limited") {
+        adjust +=
+          " With more limited public support, you may depend more heavily on private cover or savings for major treatment.";
+      }
+
+      if (fund === "low") {
+        adjust +=
+          " A smaller emergency fund means surprise medical bills can be more stressful, so pay close attention to out-of-pocket costs, excesses, and annual limits.";
+      } else if (fund === "high") {
+        adjust +=
+          " A stronger emergency fund gives you more flexibility: you might accept higher excesses or co-payments in exchange for lower premiums, if that fits your comfort level.";
+      }
+
+      return baseType + adjust;
+    }
+
+    function buildCountryNote(country) {
+      if (!country) return "";
+      const c = country.trim().toLowerCase();
+      if (!c) return "";
+
+      let text =
+        "Health systems are very different between countries. Always check local rules, waiting periods, and how public and private care interact where you live.";
+
+      if (c.includes("australia")) {
+        text +=
+          " In Australia, public Medicare and optional private hospital/extras cover interact in specific ways, including possible tax and loading implications. Make sure you understand how those apply to you.";
+      } else if (c.includes("united kingdom") || c === "uk") {
+        text +=
+          " In the UK, the NHS provides core public care, while private health insurance is often used to reduce waiting times or access particular specialists or hospitals.";
+      } else if (c.includes("united states") || c === "usa" || c === "us") {
+        text +=
+          " In the US, health coverage is heavily driven by private insurance, employer plans, and government programs like Medicare or Medicaid, with large differences in out-of-pocket costs.";
+      }
+
+      return text;
+    }
+
+    function updateResults() {
+      const ageBand = document.getElementById("ageBand").value;
+      const household = document.getElementById("household").value;
+      const publicAccess = document.getElementById("publicAccess").value;
+      const conditions = document.getElementById("conditions").value;
+      const riskTolerance = document.getElementById("riskTolerance").value;
+      const fund = document.getElementById("fund").value;
+      const extrasPriority = document.getElementById("extrasPriority").value;
+      const country = document.getElementById("country").value;
+
+      const hasAnyInput =
+        ageBand ||
+        household ||
+        publicAccess ||
+        conditions ||
+        riskTolerance ||
+        fund ||
+        extrasPriority ||
+        country;
+
+      const container = document.getElementById("resultsContent");
+
+      if (!hasAnyInput) {
+        container.innerHTML =
+          "<p>Enter your age band, household, public health access, and emergency fund to see an estimated coverage level and comparison tips.</p>";
+        return;
+      }
+
+      const score = calculateRiskScore();
+      const bandInfo = getRiskBand(score);
+      const coverageText = coverageSuggestion(score, publicAccess || "", fund || "");
+      const countryNote = buildCountryNote(country);
+
+      const summaryParts = [];
+
+      if (ageBand === "under30") summaryParts.push("younger adult age band");
+      if (ageBand === "30to45") summaryParts.push("early–mid career age band");
+      if (ageBand === "46to60") summaryParts.push("mid–later career age band");
+      if (ageBand === "60plus") summaryParts.push("older age band");
+
+      if (household === "single") summaryParts.push("single with no dependants");
+      if (household === "couple") summaryParts.push("couple with no dependants");
+      if (household === "family") summaryParts.push("family with dependants");
+      if (household === "caregiver")
+        summaryParts.push("caregiver for someone with higher medical needs");
+
+      if (publicAccess === "strong") summaryParts.push("stronger public healthcare access");
+      if (publicAccess === "mixed") summaryParts.push("a mixed public and private healthcare system");
+      if (publicAccess === "limited")
+        summaryParts.push("more limited public healthcare, with more private or out-of-pocket costs");
+
+      const situationSummary =
+        summaryParts.length > 0
+          ? summaryParts.join(", ")
+          : "your current household and health situation";
+
+      let conditionSummary = "";
+      if (conditions === "none") {
+        conditionSummary = "You indicated no known pre-existing or chronic conditions in the household.";
+      } else if (conditions === "some") {
+        conditionSummary =
+          "You mentioned some ongoing conditions or regular medications in the household.";
+      } else if (conditions === "significant") {
+        conditionSummary =
+          "You indicated significant or complex health needs, which may require more careful coverage planning.";
+      }
+
+      let extrasSummary = "";
+      if (extrasPriority === "low") {
+        extrasSummary =
+          "You placed a low priority on extras (such as dental, physio, and optical), so you may focus more on core hospital-style cover.";
+      } else if (extrasPriority === "medium") {
+        extrasSummary =
+          "You placed a medium priority on extras, so a balanced plan that includes some extras may be useful.";
+      } else if (extrasPriority === "high") {
+        extrasSummary =
+          "You placed a high priority on extras, which may make extras-heavy policies more relevant — but always compare value carefully.";
+      }
+
+      const bandClass = "score-pill " + bandInfo.className;
+
+      container.innerHTML = `
+        <div class="result-block">
+          <span class="${bandClass}">
+            Overall coverage need level: ${bandInfo.band} (approx. score ${score}/100)
+          </span>
+          <p style="margin-top:6px;">
+            This score is a rough indicator of how valuable stronger health coverage could be
+            for you and your household, based on the details you entered.
+          </p>
+        </div>
+
+        <div class="result-block">
+          <h3>1. Snapshot of your situation</h3>
+          <p>
+            We considered ${situationSummary}, along with your emergency fund and how comfortable
+            you are with unpredictable medical costs.
+          </p>
+          ${conditionSummary ? `<p style="margin-top:4px;">${conditionSummary}</p>` : ""}
+          ${extrasSummary ? `<p style="margin-top:4px;">${extrasSummary}</p>` : ""}
+        </div>
+
+        <div class="result-block">
+          <h3>2. Coverage style that may fit</h3>
+          <p>${coverageText}</p>
+          <ul>
+            <li><strong>Public only:</strong> Rely mainly on the public system where it is strong, accepting some waiting times or gaps.</li>
+            <li><strong>Public + basic private:</strong> Add a lighter private plan for key hospital access or specific needs.</li>
+            <li><strong>More comprehensive cover:</strong> Broader hospital and extras cover, with higher premiums but potentially lower surprise costs.</li>
+          </ul>
+        </div>
+
+        <div class="result-block">
+          <h3>3. Things to compare between policies</h3>
+          <ul>
+            <li>Waiting periods for hospital, pregnancy, and pre-existing conditions.</li>
+            <li>Annual limits and sub-limits for major treatments and extras.</li>
+            <li>Co-payments, excess amounts, and how often they apply.</li>
+            <li>Which hospitals, doctors, and services are in-network or out-of-network.</li>
+            <li>How the policy interacts with any public healthcare or government rebates.</li>
+          </ul>
+        </div>
+
+        <div class="result-block">
+          <h3>4. Important disclaimer</h3>
+          <p>
+            This tool is for general information only. It does not take into account your full medical
+            or financial situation and is not personal advice. For decisions about health coverage,
+            speak with licensed professionals in your country and always read full policy documents
+            before buying or changing cover.
+          </p>
+          ${countryNote ? `<p style="margin-top:4px;">${countryNote}</p>` : ""}
+        </div>
+      `;
+    }
+
+    // 초기 상태
+    updateResults();
+  </script>
+</body>
+</html>

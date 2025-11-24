@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- car-risk-coverage-calculator.html -->
+<title>Car Risk & Coverage Calculator | Choose your car insurance level</title>
+<meta name="description" content="Estimate car accident risk and compare different levels of car insurance coverage and excess.">
+
+<link rel="canonical" href="https://calcufinder.com/insurance/car-risk-coverage-calculator.html">
+
+<meta property="og:title" content="Car Risk & Coverage Calculator | Choose your car insurance level">
+<meta property="og:description" content="Use the Car Risk & Coverage Calculator to explore how cover level and excess affect your cost and risk.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://calcufinder.com/insurance/car-risk-coverage-calculator.html">
+<meta property="og:image" content="https://calcufinder.com/assets/og-image.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Car Risk & Coverage Calculator | Choose your car insurance level">
+<meta name="twitter:description" content="Compare different car insurance scenarios and find a balance between premium and risk.">
+<meta name="twitter:image" content="https://calcufinder.com/assets/og-image.png">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9077859826573424"
+     crossorigin="anonymous"></script>
+     <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y7NKFF4N71"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Y7NKFF4N71');
+</script>
+
+  <style>
+    :root {
+      --bg-main: #f5f5f5;
+      --bg-card: #ffffff;
+      --bg-sidebar: #ffffff;
+      --bg-ads: #fafafa;
+      --border-soft: #e0e0e0;
+      --text-main: #111111;
+      --text-muted: #666666;
+      --accent: #111111;
+      --link: #1a0dab;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.5;
+      color: var(--text-main);
+      background: var(--bg-main);
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* ===== 상단 헤더 ===== */
+    .site-header {
+      background: #ffffff;
+      border-bottom: 1px solid #e5e5e5;
+      padding: 12px 24px;
+      width: 100%;
+    }
+
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo-img {
+      height: 65px;
+      width: auto;
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .logo-img {
+        height: 40px;
+      }
+    }
+
+    .header-nav {
+      display: flex;
+      gap: 28px;
+    }
+
+    .header-nav a {
+      font-size: 15px;
+      text-decoration: none;
+      color: #222;
+      font-weight: 500;
+    }
+
+    .header-nav a:hover {
+      color: #0077cc;
+    }
+
+    /* ===== 전체 레이아웃: 사이드바 / 메인 / 광고 ===== */
+    .layout {
+      display: grid;
+      grid-template-columns: 220px minmax(0, 1fr) 280px;
+      min-height: calc(100vh - 70px);
+    }
+
+    /* ---- 왼쪽: 사이드바 네비게이션 ---- */
+    .sidebar {
+      background: var(--bg-sidebar);
+      border-right: 1px solid var(--border-soft);
+      padding: 24px 20px;
+      position: sticky;
+      top: 0;
+      align-self: start;
+      height: 100vh;
+      overflow-y: auto;
+    }
+
+    .sidebar-logo {
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      font-size: 18px;
+      margin-bottom: 24px;
+    }
+
+    .sidebar-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .sidebar-nav a {
+      padding: 8px 10px;
+      border-radius: 6px;
+      color: var(--text-main);
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .sidebar-nav a.active {
+      background: #111111;
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .sidebar-nav a:hover {
+      background: #eeeeee;
+      text-decoration: none;
+    }
+
+    /* ---- 가운데: 메인 콘텐츠 ---- */
+    .content {
+      padding: 32px 32px 40px;
+    }
+
+    .content-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    h1, h2, h3 {
+      margin-top: 0;
+      letter-spacing: -0.01em;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 15px;
+      color: var(--text-main);
+      margin: 0 0 12px;
+      max-width: 720px;
+    }
+
+    .meta-row {
+      margin-top: 6px;
+      font-size: 13px;
+      color: #666666;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .pill {
+      font-size: 12px;
+      padding: 3px 9px;
+      background: #ffffff;
+      border-radius: 999px;
+      border: 1px solid var(--border-soft);
+    }
+
+    /* 레이아웃: 입력 / 결과 카드 */
+    .tool-layout {
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+      gap: 24px;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border-radius: 8px;
+      border: 1px solid #eeeeee;
+      padding: 18px 20px;
+    }
+
+    h2.section-heading {
+      font-size: 19px;
+      margin: 0 0 12px;
+    }
+
+    label {
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    .field-group {
+      margin-bottom: 14px;
+    }
+
+    select,
+    input[type="number"],
+    input[type="text"] {
+      width: 100%;
+      padding: 9px 11px;
+      border-radius: 4px;
+      border: 1px solid #cccccc;
+      font-size: 14px;
+      background: #ffffff;
+      box-sizing: border-box;
+    }
+
+    input::placeholder {
+      color: #aaaaaa;
+    }
+
+    .hint {
+      font-size: 12px;
+      color: #777777;
+      margin-top: 4px;
+    }
+
+    /* 결과 영역 */
+    .results-title {
+      font-size: 19px;
+      margin-bottom: 8px;
+    }
+
+    .score-pill {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .score-low {
+      background: #e6f4ea;
+      color: #137333;
+    }
+
+    .score-medium {
+      background: #fff4ce;
+      color: #8a6d1a;
+    }
+
+    .score-high {
+      background: #fce8e6;
+      color: #c5221f;
+    }
+
+    .result-block {
+      margin-bottom: 12px;
+    }
+
+    .result-block h3 {
+      font-size: 15px;
+      margin: 0 0 4px;
+    }
+
+    .result-block p {
+      font-size: 14px;
+      margin: 0;
+      max-width: none;
+    }
+
+    .result-block ul {
+      padding-left: 18px;
+      margin: 4px 0 0;
+      font-size: 14px;
+    }
+
+    /* ---- Affiliate note ---- */
+    .affiliate-note {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin: 32px 0 12px;
+    }
+
+    /* ---- 오른쪽: 광고 영역 (현재는 숨김) ---- */
+    .ads {
+      display: none;
+      background: var(--bg-ads);
+      border-left: 1px solid var(--border-soft);
+      padding: 24px 20px;
+      position: sticky;
+      top: 0;
+      align-self: start;
+      height: 100vh;
+      overflow-y: auto;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    /* ---- Footer ---- */
+    footer {
+      border-top: 1px solid #eeeeee;
+      background: #ffffff;
+      font-size: 13px;
+      color: #555555;
+      padding: 12px 32px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    footer nav {
+      margin-left: auto;
+    }
+
+    footer nav a {
+      margin-left: 12px;
+      color: #555555;
+      text-decoration: none;
+    }
+
+    footer nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* ---- 반응형 ---- */
+    @media (max-width: 960px) {
+      .layout {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .sidebar {
+        position: static;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid var(--border-soft);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+
+      .sidebar-logo {
+        margin-bottom: 8px;
+      }
+
+      .sidebar-nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 4px;
+      }
+
+      .sidebar-nav a {
+        font-size: 13px;
+        padding: 6px 8px;
+      }
+
+      .content {
+        padding: 20px 16px 28px;
+      }
+
+      .tool-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .ads {
+        display: none;
+      }
+    }
+/* ===== 공통: 클릭 막힌 비활성 링크 스타일 ===== */
+.disabled-link {
+  pointer-events: none;   /* 클릭 안 됨 */
+  cursor: default;        /* 손가락 커서 안 나오게 */
+  color: #999999;         /* 회색 처리 */
+  text-decoration: none;
+}
+
+/* 사이드바 / 상단 네비에서 hover 해도 그대로 보이게 */
+.sidebar-nav a.disabled-link:hover,
+.header-nav a.disabled-link:hover {
+  background: transparent;
+  color: #999999;
+  text-decoration: none;
+}
+  </style>
+</head>
+
+<body>
+  <!-- 상단 헤더 -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/index.html">
+        <img src="/assets/logo.png" alt="CalcuFinder logo" class="logo-img">
+      </a>
+
+      <nav class="header-nav">
+        <a href="/index.html">Home</a>
+        <a href="/finance/">Finance</a>
+        <a href="/insurance/">Insurance</a>
+        <a href="/business-software/">Business & Software</a>
+<a href="/blog/index.html">Blog</a>
+        <a href="/about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 메인 레이아웃 -->
+  <div class="layout">
+
+    <!-- 사이드바 네비게이션 -->
+    <aside class="sidebar">
+      <div class="sidebar-logo">CalcuFinder</div>
+      <nav class="sidebar-nav">
+        <a href="/index.html">Home</a>
+        <a href="/finance/">Finance</a>
+        <a href="/insurance/" class="active">Insurance</a>
+        <a href="/business-software/">Business & software</a>
+<a href="/blog/index.html">Blog</a>
+        <a href="/about.html">About</a>
+      </nav>
+    </aside>
+
+    <!-- 가운데 메인 콘텐츠 -->
+    <main class="content">
+      <div class="content-inner">
+        <h1>Car Risk &amp; Coverage Needs Calculator</h1>
+        <p>
+          Get a high-level view of your car insurance risk profile and see what kind of
+          coverage might make sense. This tool does not give quotes or recommend any
+          specific insurer – it’s for education and planning only.
+        </p>
+
+        <div class="meta-row">
+          <span class="pill">Category: Car insurance</span>
+          <span class="pill">Audience: Drivers worldwide</span>
+        </div>
+
+        <div class="tool-layout">
+          <!-- 입력 카드 -->
+          <section class="card">
+            <h2 class="section-heading">Inputs</h2>
+
+            <div class="field-group">
+              <label for="country">Country (for context)</label>
+              <input
+                id="country"
+                type="text"
+                placeholder="e.g. Australia, United States, United Kingdom"
+                oninput="updateResults()"
+              />
+              <p class="hint">
+                Used only to show context notes – this tool does not check real insurers in your country.
+              </p>
+            </div>
+
+            <div class="field-group">
+              <label for="vehicleType">Vehicle type</label>
+              <select id="vehicleType" onchange="updateResults()">
+                <option value="">Select</option>
+                <option value="small">Small car / hatchback</option>
+                <option value="suv">SUV / crossover</option>
+                <option value="large">Large car / ute / van</option>
+                <option value="moto">Motorcycle / scooter</option>
+                <option value="other">Other vehicle</option>
+              </select>
+            </div>
+
+            <div class="field-group">
+              <label for="vehicleValue">Approximate vehicle value</label>
+              <input
+                id="vehicleValue"
+                type="number"
+                min="0"
+                step="100"
+                placeholder="e.g. 25000"
+                oninput="updateResults()"
+              />
+              <p class="hint">
+                Use your local currency. This is just for risk level – not for real quotes.
+              </p>
+            </div>
+
+            <div class="field-group">
+              <label for="use">Primary use</label>
+              <select id="use" onchange="updateResults()">
+                <option value="">Select</option>
+                <option value="occasional">Occasional / social only</option>
+                <option value="commute">Daily commuting</option>
+                <option value="longdistance">Frequent long-distance driving</option>
+                <option value="business">Business / delivery / rideshare</option>
+              </select>
+            </div>
+
+            <div class="field-group">
+              <label for="kms">Approximate distance per year</label>
+              <input
+                id="kms"
+                type="number"
+                min="0"
+                step="500"
+                placeholder="e.g. 12000"
+                oninput="updateResults()"
+              />
+              <p class="hint">Enter kilometres or miles – whichever you use most.</p>
+            </div>
+
+            <div class="field-group">
+              <label for="parking">Overnight parking</label>
+              <select id="parking" onchange="updateResults()">
+                <option value="">Select</option>
+                <option value="street">Mostly street parking</option>
+                <option value="shared">Shared open car park</option>
+                <option value="garage">Locked garage / private driveway</option>
+              </select>
+            </div>
+
+            <div class="field-group">
+              <label for="ageBand">Main driver age band</label>
+              <select id="ageBand" onchange="updateResults()">
+                <option value="">Select</option>
+                <option value="under25">Under 25</option>
+                <option value="25to40">25–40</option>
+                <option value="41to60">41–60</option>
+                <option value="60plus">60+</option>
+              </select>
+            </div>
+
+            <div class="field-group">
+              <label for="claims">Accident / claim history (last 5 years)</label>
+              <select id="claims" onchange="updateResults()">
+                <option value="">Select</option>
+                <option value="none">No claims or at-fault accidents</option>
+                <option value="minor">One minor claim or incident</option>
+                <option value="multiple">Multiple claims / at-fault accidents</option>
+              </select>
+            </div>
+
+            <div class="field-group">
+              <label for="fund">Emergency fund for car expenses</label>
+              <select id="fund" onchange="updateResults()">
+                <option value="">Select</option>
+                <option value="low">Less than 1 month of usual income saved</option>
+                <option value="medium">About 1–3 months saved</option>
+                <option value="high">More than 3 months saved</option>
+              </select>
+            </div>
+
+            <p class="hint">
+              This helper provides approximate guidance only. For actual premiums or coverage,
+              compare official policy documents and quotes from licensed insurers in your country.
+            </p>
+          </section>
+
+          <!-- 결과 카드 -->
+          <section class="card">
+            <h2 class="results-title">Results</h2>
+            <div id="resultsContent">
+              <p>
+                Enter details about your car, driving pattern, and emergency fund to see an
+                estimated risk profile and coverage ideas.
+              </p>
+            </div>
+          </section>
+        </div>
+
+        <!-- 제휴링크 안내 문구 -->
+        <p class="affiliate-note">
+          Some pages on CalcuFinder may include affiliate links. If you click and make a purchase,
+            we may earn a small commission at no extra cost to you. This helps support the project
+            and keeps the tools free to use.
+        </p>
+      </div>
+    </main>
+
+    <!-- 오른쪽 광고 (숨김) -->
+    <aside class="ads"></aside>
+  </div>
+
+  <!-- 하단 푸터 -->
+  <footer>
+    <p>© CalcuFinder. Tools for smarter decisions, worldwide.</p>
+    <nav>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/disclosure.html">Disclosure</a>
+    </nav>
+  </footer>
+
+  <script>
+    function calculateRiskScore() {
+      let score = 30; // base
+
+      const vehicleType = document.getElementById("vehicleType").value;
+      const value = parseFloat(document.getElementById("vehicleValue").value);
+      const use = document.getElementById("use").value;
+      const kms = parseFloat(document.getElementById("kms").value);
+      const parking = document.getElementById("parking").value;
+      const ageBand = document.getElementById("ageBand").value;
+      const claims = document.getElementById("claims").value;
+      const fund = document.getElementById("fund").value;
+
+      // Vehicle type
+      if (vehicleType === "small") score += 4;
+      if (vehicleType === "suv") score += 8;
+      if (vehicleType === "large") score += 10;
+      if (vehicleType === "moto") score += 12;
+
+      // Vehicle value
+      if (!isNaN(value)) {
+        if (value > 40000) score += 8;
+        if (value > 80000) score += 6; // 추가 상향
+      }
+
+      // Use
+      if (use === "commute") score += 6;
+      if (use === "longdistance") score += 10;
+      if (use === "business") score += 12;
+
+      // Distance
+      if (!isNaN(kms)) {
+        if (kms > 15000) score += 6;
+        if (kms > 25000) score += 6;
+      }
+
+      // Parking
+      if (parking === "street") score += 10;
+      if (parking === "shared") score += 6;
+      if (parking === "garage") score += 0;
+
+      // Age band
+      if (ageBand === "under25") score += 12;
+      if (ageBand === "25to40") score += 6;
+      if (ageBand === "41to60") score += 4;
+      if (ageBand === "60plus") score += 8;
+
+      // Claims
+      if (claims === "minor") score += 10;
+      if (claims === "multiple") score += 20;
+
+      // Emergency fund
+      if (fund === "low") score += 12;
+      if (fund === "medium") score += 6;
+      if (fund === "high") score += 0;
+
+      if (score < 0) score = 0;
+      if (score > 100) score = 100;
+      return score;
+    }
+
+    function getRiskBand(score) {
+      if (score < 40) return { band: "Low", className: "score-low" };
+      if (score < 70) return { band: "Medium", className: "score-medium" };
+      return { band: "High", className: "score-high" };
+    }
+
+    function coverageSuggestion(score, fund) {
+      let baseType;
+      if (score < 40) {
+        baseType = "Third-party property or basic third-party, fire & theft cover may be enough in some cases, especially if your car is lower value.";
+      } else if (score < 70) {
+        baseType = "Third-party, fire & theft or a mid-range comprehensive policy may be worth considering, depending on car value and your budget.";
+      } else {
+        baseType = "Comprehensive cover with higher limits is more likely to be appropriate, especially if your car is higher value or you rely on it heavily.";
+      }
+
+      let adjust = "";
+      if (fund === "low") {
+        adjust =
+          " Because your emergency fund is on the lower side, you may want to be careful about excess amounts and out-of-pocket costs.";
+      } else if (fund === "high") {
+        adjust =
+          " With a stronger emergency fund, you may be more comfortable choosing a higher excess in exchange for lower premiums.";
+      }
+
+      return baseType + adjust;
+    }
+
+    function buildCountryNote(country) {
+      if (!country) return "";
+      const c = country.trim().toLowerCase();
+      if (!c) return "";
+
+      let text =
+        "Car insurance rules, minimum coverage, and claim processes differ a lot by country. Always check your local laws and make sure any insurer you choose is properly licensed.";
+
+      if (c.includes("australia")) {
+        text +=
+          " In Australia, Compulsory Third Party (CTP) cover is separate from optional comprehensive or third-party policies, so be sure you understand what each policy includes.";
+      } else if (c.includes("united kingdom") || c === "uk") {
+        text +=
+          " In the UK, there are different levels such as third-party only, third-party, fire & theft, and comprehensive – each with different levels of protection.";
+      } else if (c.includes("united states") || c === "usa" || c === "us") {
+        text +=
+          " In the US, required minimum liability cover varies by state, and you may want higher limits than the legal minimum to protect your finances.";
+      }
+
+      return text;
+    }
+
+    function updateResults() {
+      const vehicleType = document.getElementById("vehicleType").value;
+      const valueRaw = document.getElementById("vehicleValue").value;
+      const use = document.getElementById("use").value;
+      const kmsRaw = document.getElementById("kms").value;
+      const parking = document.getElementById("parking").value;
+      const ageBand = document.getElementById("ageBand").value;
+      const claims = document.getElementById("claims").value;
+      const fund = document.getElementById("fund").value;
+      const country = document.getElementById("country").value;
+
+      const hasAnyInput =
+        vehicleType ||
+        valueRaw ||
+        use ||
+        kmsRaw ||
+        parking ||
+        ageBand ||
+        claims ||
+        fund ||
+        country;
+
+      const container = document.getElementById("resultsContent");
+
+      if (!hasAnyInput) {
+        container.innerHTML =
+          "<p>Enter details about your car, driving pattern, and emergency fund to see an estimated risk profile and coverage ideas.</p>";
+        return;
+      }
+
+      const score = calculateRiskScore();
+      const bandInfo = getRiskBand(score);
+      const coverageText = coverageSuggestion(score, fund || "");
+      const countryNote = buildCountryNote(country);
+
+      const summaryParts = [];
+
+      // Vehicle
+      if (vehicleType === "small") summaryParts.push("small car or hatchback");
+      else if (vehicleType === "suv") summaryParts.push("SUV or crossover");
+      else if (vehicleType === "large") summaryParts.push("larger car, ute, or van");
+      else if (vehicleType === "moto") summaryParts.push("motorcycle or scooter");
+      else if (vehicleType === "other") summaryParts.push("other vehicle type");
+
+      // Use
+      if (use === "occasional") summaryParts.push("used occasionally for social or personal trips");
+      if (use === "commute") summaryParts.push("used mainly for daily commuting");
+      if (use === "longdistance") summaryParts.push("used for frequent long-distance driving");
+      if (use === "business") summaryParts.push("used for business, delivery, or rideshare");
+
+      // Parking
+      if (parking === "street") summaryParts.push("usually parked on the street overnight");
+      if (parking === "shared") summaryParts.push("parked in shared open car parks");
+      if (parking === "garage") summaryParts.push("parked in a locked garage or private driveway");
+
+      const situationSummary =
+        summaryParts.length > 0
+          ? summaryParts.join(", ")
+          : "your current driving pattern and vehicle situation";
+
+      let fundSummary = "";
+      if (fund === "low") {
+        fundSummary =
+          "Your emergency fund is on the lower side, so unexpected repairs, excess payments, or a write-off could be more stressful.";
+      } else if (fund === "medium") {
+        fundSummary =
+          "You have a moderate emergency fund, which can help with excesses, smaller repairs, or short-term car hire.";
+      } else if (fund === "high") {
+        fundSummary =
+          "You have a stronger emergency fund, which gives you more flexibility in choosing excess amounts and premium levels.";
+      }
+
+      let claimsSummary = "";
+      if (claims === "none") {
+        claimsSummary = "You indicated no at-fault accidents or claims in the last five years.";
+      } else if (claims === "minor") {
+        claimsSummary = "You mentioned one minor claim or incident in the last five years.";
+      } else if (claims === "multiple") {
+        claimsSummary =
+          "You indicated multiple claims or at-fault accidents in the last five years, which can significantly affect both risk and pricing.";
+      }
+
+      const bandClass = "score-pill " + bandInfo.className;
+
+      container.innerHTML = `
+        <div class="result-block">
+          <span class="${bandClass}">
+            Overall risk level: ${bandInfo.band} (approx. score ${score}/100)
+          </span>
+          <p style="margin-top:6px;">
+            This score is a rough indication of how likely it is that car-related costs
+            and incidents could put pressure on your budget.
+          </p>
+        </div>
+
+        <div class="result-block">
+          <h3>1. Snapshot of your situation</h3>
+          <p>
+            We looked at ${situationSummary}, together with your driver age band,
+            claim history, and emergency fund.
+          </p>
+          ${claimsSummary ? `<p style="margin-top:4px;">${claimsSummary}</p>` : ""}
+          ${fundSummary ? `<p style="margin-top:4px;">${fundSummary}</p>` : ""}
+        </div>
+
+        <div class="result-block">
+          <h3>2. Coverage style that may fit</h3>
+          <p>${coverageText}</p>
+          <ul>
+            <li><strong>Third-party only:</strong> Usually the minimum level, covering damage you cause to other people’s property.</li>
+            <li><strong>Third-party, fire &amp; theft:</strong> Adds some protection if your car is stolen or damaged by fire.</li>
+            <li><strong>Comprehensive:</strong> Broadest protection for your own car as well as others, with higher premiums.</li>
+          </ul>
+        </div>
+
+        <div class="result-block">
+          <h3>3. Things to compare between policies</h3>
+          <ul>
+            <li>Liability limits for damage to other people’s property.</li>
+            <li>How your car’s value is treated (agreed value vs market value).</li>
+            <li>Excess amounts and how they change for young or additional drivers.</li>
+            <li>Optional extras like hire car after an accident, windscreen cover, or roadside assistance.</li>
+            <li>How claims history and driver age affect pricing and conditions.</li>
+          </ul>
+        </div>
+
+        <div class="result-block">
+          <h3>4. Important disclaimer</h3>
+          <p>
+            This tool is for general information only. It does not take into account your full situation
+            and is not financial advice. For personalised guidance, speak with a licensed adviser or
+            insurance specialist in your country, and always read the full policy documents before
+            buying cover.
+          </p>
+          ${
+            countryNote
+              ? `<p style="margin-top:4px;">${countryNote}</p>`
+              : ""
+          }
+        </div>
+      `;
+    }
+
+    // 초기 상태
+    updateResults();
+  </script>
+</body>
+</html>

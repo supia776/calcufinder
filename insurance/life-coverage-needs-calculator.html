@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- life-coverage-needs-calculator.html -->
+<title>Life Coverage Needs Calculator | How much life insurance?</title>
+<meta name="description" content="Estimate how much life insurance cover your family may need to replace income, pay debts, and reach key goals.">
+
+<link rel="canonical" href="https://calcufinder.com/insurance/life-coverage-needs-calculator.html">
+
+<meta property="og:title" content="Life Coverage Needs Calculator | How much life insurance?">
+<meta property="og:description" content="Use the Life Coverage Needs Calculator to estimate cover based on income, dependants, and liabilities.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://calcufinder.com/insurance/life-coverage-needs-calculator.html">
+<meta property="og:image" content="https://calcufinder.com/assets/og-image.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Life Coverage Needs Calculator | How much life insurance?">
+<meta name="twitter:description" content="See different life insurance cover levels and how they support your family if something happens.">
+<meta name="twitter:image" content="https://calcufinder.com/assets/og-image.png">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9077859826573424"
+     crossorigin="anonymous"></script>
+     <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y7NKFF4N71"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Y7NKFF4N71');
+</script>
+
+  <style>
+    :root {
+      --bg-main: #f5f5f5;
+      --bg-card: #ffffff;
+      --bg-sidebar: #ffffff;
+      --bg-ads: #fafafa;
+      --border-soft: #e0e0e0;
+      --text-main: #111111;
+      --text-muted: #666666;
+      --accent: #111111;
+      --link: #1a0dab;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.5;
+      color: var(--text-main);
+      background: var(--bg-main);
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* ===== 상단 헤더 ===== */
+    .site-header {
+      background: #ffffff;
+      border-bottom: 1px solid #e5e5e5;
+      padding: 12px 24px;
+      width: 100%;
+    }
+
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo-img {
+      height: 65px;
+      width: auto;
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .logo-img {
+        height: 40px;
+      }
+    }
+
+    .header-nav {
+      display: flex;
+      gap: 28px;
+    }
+
+    .header-nav a {
+      font-size: 15px;
+      text-decoration: none;
+      color: #222222;
+      font-weight: 500;
+    }
+
+    .header-nav a:hover {
+      color: #0077cc;
+    }
+
+    /* ===== 전체 레이아웃: 사이드바 / 메인 / 광고 ===== */
+    .layout {
+      display: grid;
+      grid-template-columns: 220px minmax(0, 1fr) 280px;
+      min-height: calc(100vh - 70px);
+    }
+
+    /* ---- 왼쪽: 사이드바 네비게이션 ---- */
+    .sidebar {
+      background: var(--bg-sidebar);
+      border-right: 1px solid var(--border-soft);
+      padding: 24px 20px;
+      position: sticky;
+      top: 0;
+      align-self: start;
+      height: 100vh;
+      overflow-y: auto;
+    }
+
+    .sidebar-logo {
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      font-size: 18px;
+      margin-bottom: 24px;
+    }
+
+    .sidebar-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .sidebar-nav a {
+      padding: 8px 10px;
+      border-radius: 6px;
+      color: var(--text-main);
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .sidebar-nav a.active {
+      background: #111111;
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .sidebar-nav a:hover {
+      background: #eeeeee;
+      text-decoration: none;
+    }
+
+    /* ---- 가운데: 메인 콘텐츠 ---- */
+    .content {
+      padding: 32px 32px 40px;
+    }
+
+    .content-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    h1, h2, h3 {
+      margin-top: 0;
+      letter-spacing: -0.01em;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 15px;
+      color: var(--text-main);
+      margin: 0 0 12px;
+      max-width: 720px;
+    }
+
+    .meta-row {
+      margin-top: 6px;
+      font-size: 13px;
+      color: #666666;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .pill {
+      font-size: 12px;
+      padding: 3px 9px;
+      background: #ffffff;
+      border-radius: 999px;
+      border: 1px solid var(--border-soft);
+    }
+
+    /* 레이아웃: 입력 / 결과 카드 */
+    .tool-layout {
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+      gap: 24px;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border-radius: 8px;
+      border: 1px solid #eeeeee;
+      padding: 18px 20px;
+    }
+
+    h2.section-heading {
+      font-size: 19px;
+      margin: 0 0 12px;
+    }
+
+    label {
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    .field-group {
+      margin-bottom: 14px;
+    }
+
+    select,
+    input[type="number"],
+    input[type="text"] {
+      width: 100%;
+      padding: 9px 11px;
+      border-radius: 4px;
+      border: 1px solid #cccccc;
+      font-size: 14px;
+      background: #ffffff;
+      box-sizing: border-box;
+    }
+
+    input::placeholder {
+      color: #aaaaaa;
+    }
+
+    .hint {
+      font-size: 12px;
+      color: #777777;
+      margin-top: 4px;
+    }
+
+    /* 결과 영역 */
+    .results-title {
+      font-size: 19px;
+      margin-bottom: 8px;
+    }
+
+    .score-pill {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .score-low {
+      background: #e6f4ea;
+      color: #137333;
+    }
+
+    .score-medium {
+      background: #fff4ce;
+      color: #8a6d1a;
+    }
+
+    .score-high {
+      background: #fce8e6;
+      color: #c5221f;
+    }
+
+    .result-block {
+      margin-bottom: 12px;
+    }
+
+    .result-block h3 {
+      font-size: 15px;
+      margin: 0 0 4px;
+    }
+
+    .result-block p {
+      font-size: 14px;
+      margin: 0;
+      max-width: none;
+    }
+
+    .result-block ul {
+      padding-left: 18px;
+      margin: 4px 0 0;
+      font-size: 14px;
+    }
+
+    /* 숫자 강조 */
+    .number-emphasis {
+      font-weight: 700;
+    }
+
+    /* ---- Affiliate note ---- */
+    .affiliate-note {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin: 32px 0 12px;
+    }
+
+    /* ---- 오른쪽: 광고 영역 (현재는 숨김) ---- */
+    .ads {
+      display: none;
+      background: var(--bg-ads);
+      border-left: 1px solid var(--border-soft);
+      padding: 24px 20px;
+      position: sticky;
+      top: 0;
+      align-self: start;
+      height: 100vh;
+      overflow-y: auto;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    /* ---- Footer ---- */
+    footer {
+      border-top: 1px solid #eeeeee;
+      background: #ffffff;
+      font-size: 13px;
+      color: #555555;
+      padding: 12px 32px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    footer nav {
+      margin-left: auto;
+    }
+
+    footer nav a {
+      margin-left: 12px;
+      color: #555555;
+      text-decoration: none;
+    }
+
+    footer nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* ---- 반응형 ---- */
+    @media (max-width: 960px) {
+      .layout {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .sidebar {
+        position: static;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid var(--border-soft);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+
+      .sidebar-logo {
+        margin-bottom: 8px;
+      }
+
+      .sidebar-nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 4px;
+      }
+
+      .sidebar-nav a {
+        font-size: 13px;
+        padding: 6px 8px;
+      }
+
+      .content {
+        padding: 20px 16px 28px;
+      }
+
+      .tool-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .ads {
+        display: none;
+      }
+    }
+/* ===== 공통: 클릭 막힌 비활성 링크 스타일 ===== */
+.disabled-link {
+  pointer-events: none;   /* 클릭 안 됨 */
+  cursor: default;        /* 손가락 커서 안 나오게 */
+  color: #999999;         /* 회색 처리 */
+  text-decoration: none;
+}
+
+/* 사이드바 / 상단 네비에서 hover 해도 그대로 보이게 */
+.sidebar-nav a.disabled-link:hover,
+.header-nav a.disabled-link:hover {
+  background: transparent;
+  color: #999999;
+  text-decoration: none;
+}
+  </style>
+</head>
+
+<body>
+  <!-- 상단 헤더 -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/index.html">
+        <img src="/assets/logo.png" alt="CalcuFinder logo" class="logo-img">
+      </a>
+
+      <nav class="header-nav">
+        <a href="/index.html">Home</a>
+        <a href="/finance/">Finance</a>
+        <a href="/insurance/">Insurance</a>
+        <a href="/business-software/">Business & Software</a>
+<a href="/blog/index.html">Blog</a>
+        <a href="/about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 메인 레이아웃 -->
+  <div class="layout">
+
+    <!-- 사이드바 네비게이션 -->
+    <aside class="sidebar">
+      <div class="sidebar-logo">CalcuFinder</div>
+      <nav class="sidebar-nav">
+        <a href="/index.html">Home</a>
+        <a href="/finance/">Finance</a>
+        <a href="/insurance/" class="active">Insurance</a>
+        <a href="/business-software/">Business & software</a>
+<a href="/blog/index.html">Blog</a>
+        <a href="/about.html">About</a>
+      </nav>
+    </aside>
+
+    <!-- 가운데 메인 콘텐츠 -->
+    <main class="content">
+      <div class="content-inner">
+        <h1>Life Coverage Needs Calculator</h1>
+        <p>
+          Get a rough estimate of how much life insurance cover you may want, based on your income,
+          debts, savings, and dependants. This is a starting point only – not personal financial advice.
+        </p>
+
+        <div class="meta-row">
+          <span class="pill">Category: Life insurance</span>
+          <span class="pill">Audience: Individuals & families worldwide</span>
+        </div>
+
+        <div class="tool-layout">
+          <!-- 입력 카드 -->
+          <section class="card">
+            <h2 class="section-heading">Inputs</h2>
+
+            <div class="field-group">
+              <label for="country">Country (for context)</label>
+              <input
+                id="country"
+                type="text"
+                placeholder="e.g. Australia, United States, Canada"
+                oninput="updateResults()"
+              />
+              <p class="hint">
+                Used only for context notes – this tool does not look up real products or tax rules.
+              </p>
+            </div>
+
+            <div class="field-group">
+              <label for="ageBand">Age band</label>
+              <select id="ageBand" onchange="updateResults()">
+                <option value="">Select</option>
+                <option value="under30">Under 30</option>
+                <option value="30to45">30–45</option>
+                <option value="46to60">46–60</option>
+                <option value="60plus">60+</option>
+              </select>
+            </div>
+
+            <div class="field-group">
+              <label for="household">Household & dependants</label>
+              <select id="household" onchange="updateResults()">
+                <option value="">Select</option>
+                <option value="single">Single, no dependants</option>
+                <option value="couple">Couple, no dependants</option>
+                <option value="youngFamily">Family with young dependants</option>
+                <option value="olderFamily">Family with older or fewer dependants</option>
+              </select>
+            </div>
+
+            <div class="field-group">
+              <label for="role">Your income role</label>
+              <select id="role" onchange="updateResults()">
+                <option value="">Select</option>
+                <option value="primary">Primary income for the household</option>
+                <option value="equal">One of two main incomes</option>
+                <option value="secondary">Secondary / smaller income</option>
+              </select>
+            </div>
+
+            <div class="field-group">
+              <label for="annualIncome">Annual after-tax income (approx.)</label>
+              <input
+                id="annualIncome"
+                type="number"
+                min="0"
+                step="1000"
+                placeholder="e.g. 60000"
+                oninput="updateResults()"
+              />
+              <p class="hint">
+                Enter the approximate amount your household actually receives from your income each year,
+                in your local currency.
+              </p>
+            </div>
+
+            <div class="field-group">
+              <label for="yearsReplace">Years of income you want to replace</label>
+              <input
+                id="yearsReplace"
+                type="number"
+                min="0"
+                step="1"
+                placeholder="e.g. 10"
+                oninput="updateResults()"
+              />
+              <p class="hint">
+                Common ranges are 5–10 years when children are young, or until major debts are cleared.
+              </p>
+            </div>
+
+            <div class="field-group">
+              <label for="debts">Total debts to clear (mortgage, loans, etc.)</label>
+              <input
+                id="debts"
+                type="number"
+                min="0"
+                step="1000"
+                placeholder="e.g. 300000"
+                oninput="updateResults()"
+              />
+              <p class="hint">
+                Include major debts you would like to see fully or mostly repaid, in the same currency as income.
+              </p>
+            </div>
+
+            <div class="field-group">
+              <label for="savings">Existing savings & investments</label>
+              <input
+                id="savings"
+                type="number"
+                min="0"
+                step="1000"
+                placeholder="e.g. 50000"
+                oninput="updateResults()"
+              />
+              <p class="hint">
+                Include emergency fund and accessible investments that could support your household.
+              </p>
+            </div>
+
+            <div class="field-group">
+              <label for="existingCover">Existing life insurance cover</label>
+              <input
+                id="existingCover"
+                type="number"
+                min="0"
+                step="1000"
+                placeholder="e.g. 200000"
+                oninput="updateResults()"
+              />
+              <p class="hint">
+                Include any standalone life policies, plus death cover inside pensions/super, if relevant.
+              </p>
+            </div>
+
+            <div class="field-group">
+              <label for="riskComfort">Comfort with lower coverage</label>
+              <select id="riskComfort" onchange="updateResults()">
+                <option value="">Select</option>
+                <option value="low">I prefer to be more fully covered</option>
+                <option value="medium">I’m okay with a balanced, middle estimate</option>
+                <option value="high">I’m comfortable with a tighter, lower estimate</option>
+              </select>
+            </div>
+
+            <p class="hint">
+              This helper uses simple, approximate logic. It cannot account for every factor such as
+              tax, investment returns, or future changes in your life.
+            </p>
+          </section>
+
+          <!-- 결과 카드 -->
+          <section class="card">
+            <h2 class="results-title">Results</h2>
+            <div id="resultsContent">
+              <p>
+                Add your income, debts, savings, and dependants to see a rough coverage estimate
+                in your local currency.
+              </p>
+            </div>
+          </section>
+        </div>
+
+        <!-- 제휴링크 안내 문구 -->
+        <p class="affiliate-note">
+          Some pages on CalcuFinder may include affiliate links. If you click and make a purchase,
+            we may earn a small commission at no extra cost to you. This helps support the project
+            and keeps the tools free to use.
+        </p>
+      </div>
+    </main>
+
+    <!-- 오른쪽 광고 (숨김) -->
+    <aside class="ads"></aside>
+  </div>
+
+  <!-- 하단 푸터 -->
+  <footer>
+    <p>© CalcuFinder. Tools for smarter decisions, worldwide.</p>
+    <nav>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/disclosure.html">Disclosure</a>
+    </nav>
+  </footer>
+
+  <script>
+    function toLocalStringSafe(value) {
+      if (isNaN(value)) return "-";
+      try {
+        return value.toLocaleString(undefined, { maximumFractionDigits: 0 });
+      } catch (e) {
+        return String(Math.round(value));
+      }
+    }
+
+    function calculateBaseCoverage() {
+      const annualIncome = parseFloat(document.getElementById("annualIncome").value);
+      const yearsReplace = parseFloat(document.getElementById("yearsReplace").value);
+      const debts = parseFloat(document.getElementById("debts").value);
+      const savings = parseFloat(document.getElementById("savings").value);
+      const existingCover = parseFloat(document.getElementById("existingCover").value);
+
+      const incomePart = !isNaN(annualIncome) && !isNaN(yearsReplace)
+        ? annualIncome * yearsReplace
+        : 0;
+
+      const debtPart = !isNaN(debts) ? debts : 0;
+      const savingsPart = !isNaN(savings) ? savings : 0;
+      const existingPart = !isNaN(existingCover) ? existingCover : 0;
+
+      let rawNeed = incomePart + debtPart - savingsPart - existingPart;
+      if (rawNeed < 0) rawNeed = 0;
+      return {
+        rawNeed,
+        incomePart,
+        debtPart,
+        savingsPart,
+        existingPart
+      };
+    }
+
+    function adjustForContext(rawNeed) {
+      const household = document.getElementById("household").value;
+      const role = document.getElementById("role").value;
+      const riskComfort = document.getElementById("riskComfort").value;
+
+      let factor = 1.0;
+
+      // Dependants / household
+      if (household === "youngFamily") factor += 0.15;
+      if (household === "olderFamily") factor += 0.05;
+      if (household === "single") factor -= 0.15;
+      if (household === "couple") factor -= 0.05;
+
+      // Role
+      if (role === "primary") factor += 0.15;
+      if (role === "equal") factor += 0.05;
+      if (role === "secondary") factor -= 0.10;
+
+      // Risk comfort
+      if (riskComfort === "low") factor += 0.1;
+      if (riskComfort === "high") factor -= 0.1;
+
+      if (factor < 0.4) factor = 0.4;
+      if (factor > 1.6) factor = 1.6;
+
+      return rawNeed * factor;
+    }
+
+    function getCoverageBand(amount) {
+      if (amount <= 0) {
+        return { band: "Zero or very low", className: "score-low" };
+      }
+      // 밴드는 금액이 아니라 "상대적 필요도" 느낌으로
+      if (amount < 200000) return { band: "Lower", className: "score-low" };
+      if (amount < 800000) return { band: "Moderate", className: "score-medium" };
+      return { band: "Higher", className: "score-high" };
+    }
+
+    function buildCountryNote(country) {
+      if (!country) return "";
+      const c = country.trim().toLowerCase();
+      if (!c) return "";
+
+      let text =
+        "Life insurance rules, tax treatment, and typical cover amounts differ by country. Always check how policies work where you live.";
+
+      if (c.includes("australia")) {
+        text +=
+          " In Australia, many people hold life cover inside superannuation as well as separate retail policies. Fees, tax, and beneficiary rules can differ between them.";
+      } else if (c.includes("united kingdom") || c === "uk") {
+        text +=
+          " In the UK, you may see different structures such as level term, decreasing term (often linked to a mortgage), and whole-of-life cover.";
+      } else if (c.includes("united states") || c === "usa" || c === "us") {
+        text +=
+          " In the US, there is a wide range of term and permanent policies, and tax rules around beneficiaries, estate planning, and company benefits can be important.";
+      }
+
+      return text;
+    }
+
+    function updateResults() {
+      const country = document.getElementById("country").value;
+      const ageBand = document.getElementById("ageBand").value;
+      const household = document.getElementById("household").value;
+      const role = document.getElementById("role").value;
+      const riskComfort = document.getElementById("riskComfort").value;
+
+      const annualIncomeRaw = document.getElementById("annualIncome").value;
+      const yearsReplaceRaw = document.getElementById("yearsReplace").value;
+      const debtsRaw = document.getElementById("debts").value;
+      const savingsRaw = document.getElementById("savings").value;
+      const existingCoverRaw = document.getElementById("existingCover").value;
+
+      const hasAnyInput =
+        country ||
+        ageBand ||
+        household ||
+        role ||
+        riskComfort ||
+        annualIncomeRaw ||
+        yearsReplaceRaw ||
+        debtsRaw ||
+        savingsRaw ||
+        existingCoverRaw;
+
+      const container = document.getElementById("resultsContent");
+
+      if (!hasAnyInput) {
+        container.innerHTML =
+          "<p>Add your income, debts, savings, and dependants to see a rough coverage estimate in your local currency.</p>";
+        return;
+      }
+
+      const base = calculateBaseCoverage();
+      const adjusted = adjustForContext(base.rawNeed);
+      const bandInfo = getCoverageBand(adjusted);
+      const bandClass = "score-pill " + bandInfo.className;
+
+      const annualIncome = parseFloat(annualIncomeRaw);
+      const yearsReplace = parseFloat(yearsReplaceRaw);
+
+      const countryNote = buildCountryNote(country);
+
+      // 상황 설명 조각
+      const summaryParts = [];
+      if (ageBand === "under30") summaryParts.push("younger adult age band");
+      if (ageBand === "30to45") summaryParts.push("early–mid career age band");
+      if (ageBand === "46to60") summaryParts.push("mid–later career age band");
+      if (ageBand === "60plus") summaryParts.push("older age band");
+
+      if (household === "single") summaryParts.push("single, with no dependants");
+      if (household === "couple") summaryParts.push("couple, with no dependants");
+      if (household === "youngFamily") summaryParts.push("family with younger dependants");
+      if (household === "olderFamily") summaryParts.push("family with older or fewer dependants");
+
+      if (role === "primary") summaryParts.push("primary income for the household");
+      if (role === "equal") summaryParts.push("one of two main incomes");
+      if (role === "secondary") summaryParts.push("a secondary income role");
+
+      const situationSummary =
+        summaryParts.length > 0
+          ? summaryParts.join(", ")
+          : "your current age, household, and income role";
+
+      // 텍스트 작성
+      const formattedAdjusted = toLocalStringSafe(adjusted);
+      const formattedIncomePart = toLocalStringSafe(base.incomePart);
+      const formattedDebtPart = toLocalStringSafe(base.debtPart);
+      const formattedSavingsPart = toLocalStringSafe(base.savingsPart);
+      const formattedExistingPart = toLocalStringSafe(base.existingPart);
+
+      container.innerHTML = `
+        <div class="result-block">
+          <span class="${bandClass}">
+            Coverage need level: ${bandInfo.band}
+          </span>
+          <p style="margin-top:6px;">
+            Based on the inputs you provided, this is a high-level view of how important
+            life cover could be for supporting your household if your income stopped.
+          </p>
+        </div>
+
+        <div class="result-block">
+          <h3>1. Approximate coverage estimate</h3>
+          <p>
+            A rough coverage amount for your situation is around
+            <span class="number-emphasis">${formattedAdjusted}</span>
+            in your local currency.
+          </p>
+          <p style="margin-top:6px;">
+            This comes from adding together the income you’d like to replace and debts to clear,
+            then subtracting savings and existing cover.
+          </p>
+          <ul>
+            <li><strong>Income replacement part:</strong> ~${formattedIncomePart}</li>
+            <li><strong>Debt-clearing part:</strong> ~${formattedDebtPart}</li>
+            <li><strong>Minus savings &amp; investments:</strong> ~${formattedSavingsPart}</li>
+            <li><strong>Minus existing life cover:</strong> ~${formattedExistingPart}</li>
+          </ul>
+        </div>
+
+        <div class="result-block">
+          <h3>2. Snapshot of your situation</h3>
+          <p>
+            We considered ${situationSummary}, plus the years of income you’d like to cover and how
+            comfortable you are with taking on more risk.
+          </p>
+          ${
+            !isNaN(annualIncome) && !isNaN(yearsReplace)
+              ? `<p style="margin-top:4px;">
+                   You entered an annual after-tax income of about
+                   <span class="number-emphasis">${toLocalStringSafe(
+                     annualIncome
+                   )}</span> and a target of
+                   <span class="number-emphasis">${yearsReplace}</span> year(s)
+                   of income replacement.
+                 </p>`
+              : ""
+          }
+        </div>
+
+        <div class="result-block">
+          <h3>3. How you might use this number</h3>
+          <p>
+            You don’t have to match this estimate exactly. Some people choose a round number near
+            this level, while others adjust it up or down based on budget, other assets, or how
+            independent their dependants already are.
+          </p>
+          <ul>
+            <li>Use it as one input when comparing term policies from different insurers.</li>
+            <li>Stress-test it against your budget: higher cover usually means higher premiums.</li>
+            <li>Review it over time as debts fall and your savings or family situation changes.</li>
+          </ul>
+        </div>
+
+        <div class="result-block">
+          <h3>4. Important disclaimer</h3>
+          <p>
+            This tool is for general information only. It does not account for every detail of your
+            financial life and is not personal financial advice. For decisions about life insurance
+            and estate planning, speak with licensed professionals in your country and read full
+            product documents before buying or changing cover.
+          </p>
+          ${
+            countryNote
+              ? `<p style="margin-top:4px;">${countryNote}</p>`
+              : ""
+          }
+        </div>
+      `;
+    }
+
+    // 초기 상태
+    updateResults();
+  </script>
+</body>
+</html>

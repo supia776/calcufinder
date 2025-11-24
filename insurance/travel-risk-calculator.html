@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- travel-risk-calculator.html -->
+<title>Travel Risk Calculator | Plan your travel insurance cover</title>
+<meta name="description" content="Estimate travel risks and compare insurance cover levels for trips, including medical, luggage, and cancellation.">
+
+<link rel="canonical" href="https://calcufinder.com/insurance/travel-risk-calculator.html">
+
+<meta property="og:title" content="Travel Risk Calculator | Plan your travel insurance cover">
+<meta property="og:description" content="Use the Travel Risk Calculator to see how different levels of travel insurance protect you on your next trip.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://calcufinder.com/insurance/travel-risk-calculator.html">
+<meta property="og:image" content="https://calcufinder.com/assets/og-image.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Travel Risk Calculator | Plan your travel insurance cover">
+<meta name="twitter:description" content="Compare travel insurance options and match cover to your risk level and budget.">
+<meta name="twitter:image" content="https://calcufinder.com/assets/og-image.png">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9077859826573424"
+     crossorigin="anonymous"></script>
+     <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y7NKFF4N71"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Y7NKFF4N71');
+</script>
+
+  <style>
+    :root {
+      --bg-main: #f5f5f5;
+      --bg-card: #ffffff;
+      --bg-sidebar: #ffffff;
+      --bg-ads: #fafafa;
+      --border-soft: #e0e0e0;
+      --text-main: #111111;
+      --text-muted: #666666;
+      --accent: #111111;
+      --link: #1a0dab;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.5;
+      color: var(--text-main);
+      background: var(--bg-main);
+      font-size: 15px;
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* ===== 상단 헤더 ===== */
+    .site-header {
+      background: #ffffff;
+      border-bottom: 1px solid #e5e5e5;
+      padding: 12px 24px;
+      width: 100%;
+    }
+
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo-img {
+      height: 65px;
+      width: auto;
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .logo-img {
+        height: 40px;
+      }
+    }
+
+    .header-nav {
+      display: flex;
+      gap: 28px;
+    }
+
+    .header-nav a {
+      font-size: 15px;
+      text-decoration: none;
+      color: #222222;
+      font-weight: 500;
+    }
+
+    .header-nav a:hover {
+      color: #0077cc;
+    }
+
+    /* ===== 전체 레이아웃: 사이드바 / 메인 / 광고 ===== */
+    .layout {
+      display: grid;
+      grid-template-columns: 220px minmax(0, 1fr) 280px;
+      min-height: calc(100vh - 70px);
+    }
+
+    /* ---- 왼쪽: 사이드바 네비게이션 ---- */
+    .sidebar {
+      background: var(--bg-sidebar);
+      border-right: 1px solid var(--border-soft);
+      padding: 24px 20px;
+      position: sticky;
+      top: 0;
+      align-self: start;
+      height: 100vh;
+      overflow-y: auto;
+    }
+
+    .sidebar-logo {
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      font-size: 18px;
+      margin-bottom: 24px;
+    }
+
+    .sidebar-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .sidebar-nav a {
+      padding: 8px 10px;
+      border-radius: 6px;
+      color: var(--text-main);
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .sidebar-nav a.active {
+      background: #111111;
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .sidebar-nav a:hover {
+      background: #eeeeee;
+      text-decoration: none;
+    }
+
+    /* ---- 가운데: 메인 콘텐츠 ---- */
+    .content {
+      padding: 32px 32px 40px;
+    }
+
+    .content-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    h1, h2, h3 {
+      margin-top: 0;
+      letter-spacing: -0.01em;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 15px;
+      color: var(--text-main);
+      margin: 0 0 12px;
+      max-width: 720px;
+    }
+
+    .meta-row {
+      margin-top: 6px;
+      font-size: 13px;
+      color: #666666;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .pill {
+      font-size: 12px;
+      padding: 3px 9px;
+      background: #ffffff;
+      border-radius: 999px;
+      border: 1px solid var(--border-soft);
+    }
+
+    /* 레이아웃: 입력 / 결과 카드 */
+    .tool-layout {
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+      gap: 24px;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border-radius: 8px;
+      border: 1px solid #eeeeee;
+      padding: 18px 20px;
+    }
+
+    h2.section-heading {
+      font-size: 19px;
+      margin: 0 0 12px;
+    }
+
+    label {
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    .field-group {
+      margin-bottom: 14px;
+    }
+
+    select,
+    input[type="number"],
+    input[type="text"] {
+      width: 100%;
+      padding: 9px 11px;
+      border-radius: 4px;
+      border: 1px solid #cccccc;
+      font-size: 14px;
+      background: #ffffff;
+      box-sizing: border-box;
+    }
+
+    input::placeholder {
+      color: #aaaaaa;
+    }
+
+    .hint {
+      font-size: 12px;
+      color: #777777;
+      margin-top: 4px;
+    }
+
+    /* 결과 영역 */
+    .results-title {
+      font-size: 19px;
+      margin-bottom: 8px;
+    }
+
+    .score-pill {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .score-low {
+      background: #e6f4ea;
+      color: #137333;
+    }
+
+    .score-medium {
+      background: #fff4ce;
+      color: #8a6d1a;
+    }
+
+    .score-high {
+      background: #fce8e6;
+      color: #c5221f;
+    }
+
+    .result-block {
+      margin-bottom: 12px;
+    }
+
+    .result-block h3 {
+      font-size: 15px;
+      margin: 0 0 4px;
+    }
+
+    .result-block p {
+      font-size: 14px;
+      margin: 0;
+      max-width: none;
+    }
+
+    .result-block ul {
+      padding-left: 18px;
+      margin: 4px 0 0;
+      font-size: 14px;
+    }
+
+    /* 제휴 안내 */
+    .affiliate-note {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin: 32px 0 12px;
+    }
+
+    /* 오른쪽 광고 영역 (숨김) */
+    .ads {
+      display: none;
+      background: var(--bg-ads);
+      border-left: 1px solid var(--border-soft);
+      padding: 24px 20px;
+      position: sticky;
+      top: 0;
+      align-self: start;
+      height: 100vh;
+      overflow-y: auto;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .ads h2 {
+      font-size: 15px;
+      margin: 0 0 12px;
+    }
+
+    .ad-slot {
+      border-radius: 10px;
+      border: 1px dashed #cccccc;
+      background: #ffffff;
+      padding: 16px 12px;
+      text-align: center;
+      margin-bottom: 12px;
+      font-size: 12px;
+      color: #888888;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid #eeeeee;
+      background: #ffffff;
+      font-size: 13px;
+      color: #555555;
+      padding: 12px 32px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    footer nav {
+      margin-left: auto;
+    }
+
+    footer nav a {
+      margin-left: 12px;
+      color: #555555;
+      text-decoration: none;
+    }
+
+    footer nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* 반응형 */
+    @media (max-width: 960px) {
+      .layout {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .sidebar {
+        position: static;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid var(--border-soft);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+
+      .sidebar-logo {
+        margin-bottom: 8px;
+      }
+
+      .sidebar-nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 4px;
+      }
+
+      .sidebar-nav a {
+        font-size: 13px;
+        padding: 6px 8px;
+      }
+
+      .content {
+        padding: 20px 16px 28px;
+      }
+
+      .tool-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .ads {
+        display: none;
+      }
+    }
+/* ===== 공통: 클릭 막힌 비활성 링크 스타일 ===== */
+.disabled-link {
+  pointer-events: none;   /* 클릭 안 됨 */
+  cursor: default;        /* 손가락 커서 안 나오게 */
+  color: #999999;         /* 회색 처리 */
+  text-decoration: none;
+}
+
+/* 사이드바 / 상단 네비에서 hover 해도 그대로 보이게 */
+.sidebar-nav a.disabled-link:hover,
+.header-nav a.disabled-link:hover {
+  background: transparent;
+  color: #999999;
+  text-decoration: none;
+}    
+  </style>
+</head>
+
+<body>
+  <!-- 상단 헤더 -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/index.html">
+        <img src="/assets/logo.png" alt="CalcuFinder logo" class="logo-img">
+      </a>
+
+      <nav class="header-nav">
+        <a href="/index.html">Home</a>
+        <a href="/finance/">Finance</a>
+        <a href="/insurance/">Insurance</a>
+        <a href="/business-software/">Business & Software</a>
+<a href="/blog/index.html">Blog</a>
+        <a href="/about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 메인 레이아웃 -->
+  <div class="layout">
+    <!-- 사이드바 -->
+    <aside class="sidebar">
+      <div class="sidebar-logo">CalcuFinder</div>
+      <nav class="sidebar-nav">
+        <a href="/index.html">Home</a>
+        <a href="/finance/">Finance</a>
+        <a href="/insurance/" class="active">Insurance</a>
+        <a href="/business-software/">Business & software</a>
+<a href="/blog/index.html">Blog</a>
+        <a href="/about.html">About</a>
+      </nav>
+    </aside>
+
+    <!-- 가운데 메인 콘텐츠 -->
+    <main class="content">
+      <div class="content-inner">
+        <h1>Travel Risk & Coverage Needs Calculator</h1>
+        <p>
+          Get a high-level view of your travel risk profile and what kind of travel insurance coverage
+          might make sense. This tool does not provide quotes or recommend any specific insurer.
+        </p>
+
+        <div class="meta-row">
+          <span class="pill">Category: Travel & trip risk</span>
+          <span class="pill">Audience: Global travellers & nomads</span>
+        </div>
+
+        <div class="tool-layout">
+          <!-- INPUTS -->
+          <section class="card">
+            <h2 class="section-heading">Inputs</h2>
+
+            <div class="field-group">
+              <label for="homeCountry">Home country</label>
+              <input
+                id="homeCountry"
+                type="text"
+                placeholder="e.g. Australia, United States, Germany"
+                oninput="updateResults()"
+              />
+              <p class="hint">
+                Used only for context notes – rules differ by where you live and where the policy is issued.
+              </p>
+            </div>
+
+            <div class="field-group">
+              <label for="destRegion">Main destination region</label>
+              <select id="destRegion" onchange="updateResults()">
+                <option value="">Select</option>
+                <option value="domestic">Domestic travel only</option>
+                <option value="regional">Regional (e.g. within Europe, within Asia-Pacific)</option>
+                <option value="global">Multiple regions / long-haul international</option>
+              </select>
+            </div>
+
+            <div class="field-group">
+              <label for="tripType">Trip type</label>
+              <select id="tripType" onchange="updateResults()">
+                <option value="">Select</option>
+                <option value="shortHoliday">Short holiday (up to ~2 weeks)</option>
+                <option value="longHoliday">Longer trip (2–8 weeks)</option>
+                <option value="remoteWork">Remote work / digital nomad</option>
+                <option value="backpacking">Backpacking / multi-country</option>
+              </select>
+            </div>
+
+            <div class="field-group">
+              <label for="tripLength">Approximate trip length (days)</label>
+              <input
+                id="tripLength"
+                type="number"
+                min="1"
+                step="1"
+                placeholder="e.g. 14"
+                oninput="updateResults()"
+              />
+            </div>
+
+            <div class="field-group">
+              <label for="tripCost">Approximate total trip cost</label>
+              <input
+                id="tripCost"
+                type="number"
+                min="0"
+                step="100"
+                placeholder="e.g. 4000"
+                oninput="updateResults()"
+              />
+              <p class="hint">
+                Include flights, accommodation, and pre-paid tours in your local currency.
+              </p>
+            </div>
+
+            <div class="field-group">
+              <label for="healthProfile">Health & medical profile</label>
+              <select id="healthProfile" onchange="updateResults()">
+                <option value="">Select</option>
+                <option value="low">Generally healthy, no major conditions</option>
+                <option value="medium">Some manageable conditions</option>
+                <option value="high">Significant or chronic health conditions</option>
+              </select>
+              <p class="hint">
+                Many policies have exclusions or extra rules for pre-existing conditions.
+              </p>
+            </div>
+
+            <div class="field-group">
+              <label for="activityRisk">Activities you expect to do</label>
+              <select id="activityRisk" onchange="updateResults()">
+                <option value="">Select</option>
+                <option value="low">Low-risk (sightseeing, cafes, city breaks)</option>
+                <option value="medium">Moderate (hiking, light sports, road trips)</option>
+                <option value="high">Higher risk (snow sports, diving, adventure activities)</option>
+              </select>
+            </div>
+
+            <div class="field-group">
+              <label for="existingCover">Existing coverage you already have</label>
+              <select id="existingCover" onchange="updateResults()">
+                <option value="">Select</option>
+                <option value="none">No travel cover yet</option>
+                <option value="cardLimited">Credit card or bank account with limited travel cover</option>
+                <option value="strong">Separate policy or membership with strong cover</option>
+              </select>
+            </div>
+
+            <div class="field-group">
+              <label for="riskComfort">Comfort with risk & out-of-pocket costs</label>
+              <select id="riskComfort" onchange="updateResults()">
+                <option value="">Select</option>
+                <option value="low">I prefer higher protection and less surprise costs</option>
+                <option value="medium">Balanced – some risk is okay</option>
+                <option value="high">I’m okay self-insuring more and taking higher risk</option>
+              </select>
+            </div>
+
+            <p class="hint">
+              This helper is intentionally simple. It cannot factor in every medical detail, visa rule,
+              or policy wording. Use it as a conversation starter, not a final answer.
+            </p>
+          </section>
+
+          <!-- RESULTS -->
+          <section class="card">
+            <h2 class="results-title">Results</h2>
+            <div id="resultsContent">
+              <p>
+                Add your trip details, activities, and existing cover to see an estimated risk band
+                and coverage ideas.
+              </p>
+            </div>
+          </section>
+        </div>
+
+        <!-- 제휴 링크 안내 문구 -->
+        <p class="affiliate-note">
+          Some pages on CalcuFinder may include affiliate links. If you click and make a purchase,
+            we may earn a small commission at no extra cost to you. This helps support the project
+            and keeps the tools free to use.
+        </p>
+      </div>
+    </main>
+
+    <!-- 광고 자리 (숨김) -->
+    <aside class="ads"></aside>
+  </div>
+
+  <!-- 하단 푸터 -->
+  <footer>
+    <p>© CalcuFinder. Tools for smarter decisions, worldwide.</p>
+    <nav>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/disclosure.html">Disclosure</a>
+    </nav>
+  </footer>
+
+  <script>
+    function calculateTravelRiskScore() {
+      let score = 30; // base
+
+      const destRegion = document.getElementById("destRegion").value;
+      const tripType = document.getElementById("tripType").value;
+      const tripLength = parseFloat(document.getElementById("tripLength").value);
+      const tripCost = parseFloat(document.getElementById("tripCost").value);
+      const healthProfile = document.getElementById("healthProfile").value;
+      const activityRisk = document.getElementById("activityRisk").value;
+      const existingCover = document.getElementById("existingCover").value;
+      const riskComfort = document.getElementById("riskComfort").value;
+
+      // Destination region
+      if (destRegion === "domestic") score += 0;
+      if (destRegion === "regional") score += 6;
+      if (destRegion === "global") score += 12;
+
+      // Trip type
+      if (tripType === "shortHoliday") score += 4;
+      if (tripType === "longHoliday") score += 8;
+      if (tripType === "remoteWork") score += 10;
+      if (tripType === "backpacking") score += 12;
+
+      // Trip length
+      if (!isNaN(tripLength)) {
+        if (tripLength <= 7) score += 2;
+        else if (tripLength <= 21) score += 6;
+        else score += 10;
+      }
+
+      // Trip cost – higher cost = more to lose on cancellations etc.
+      if (!isNaN(tripCost)) {
+        if (tripCost > 2000) score += 6;
+        if (tripCost > 8000) score += 10;
+      }
+
+      // Health profile
+      if (healthProfile === "medium") score += 8;
+      if (healthProfile === "high") score += 16;
+
+      // Activity risk
+      if (activityRisk === "medium") score += 6;
+      if (activityRisk === "high") score += 14;
+
+      // Existing cover (more cover = less incremental risk)
+      if (existingCover === "none") score += 10;
+      if (existingCover === "cardLimited") score += 4;
+      if (existingCover === "strong") score -= 6;
+
+      // Risk comfort – if you hate risk, we tilt higher
+      if (riskComfort === "low") score += 6;
+      if (riskComfort === "high") score -= 4;
+
+      // Clamp
+      if (score < 0) score = 0;
+      if (score > 100) score = 100;
+      return score;
+    }
+
+    function getRiskBand(score) {
+      if (score < 35) return { band: "Lower", className: "score-low" };
+      if (score < 70) return { band: "Moderate", className: "score-medium" };
+      return { band: "Higher", className: "score-high" };
+    }
+
+    function buildCountryNote(homeCountry) {
+      if (!homeCountry) return "";
+      const c = homeCountry.trim().toLowerCase();
+      if (!c) return "";
+
+      let text =
+        "Travel insurance rules, medical costs, and evacuation options can differ a lot by home country and destination. Always check how policies work for citizens or residents of your country.";
+
+      if (c.includes("australia")) {
+        text +=
+          " For Australians, it’s common to see different regions (e.g. domestic, Asia-Pacific, worldwide) and some policies may require you to hold cover for the entire trip from departure.";
+      } else if (c.includes("united kingdom") || c === "uk") {
+        text +=
+          " For UK travellers, check how European Health Insurance arrangements interact with private cover, and how Brexit has changed some assumptions.";
+      } else if (c.includes("united states") || c === "usa" || c === "us") {
+        text +=
+          " For US travellers, medical costs abroad and emergency evacuation can be particularly important areas to compare between policies.";
+      }
+
+      return text;
+    }
+
+    function buildSummaryText() {
+      const destRegion = document.getElementById("destRegion").value;
+      const tripType = document.getElementById("tripType").value;
+      const healthProfile = document.getElementById("healthProfile").value;
+      const activityRisk = document.getElementById("activityRisk").value;
+
+      const parts = [];
+
+      if (tripType === "shortHoliday") parts.push("a short holiday");
+      if (tripType === "longHoliday") parts.push("a longer trip");
+      if (tripType === "remoteWork") parts.push("a remote work / digital nomad style trip");
+      if (tripType === "backpacking") parts.push("a backpacking or multi-country trip");
+
+      if (destRegion === "domestic") parts.push("within your home country");
+      if (destRegion === "regional") parts.push("within a regional area (e.g. Europe or Asia-Pacific)");
+      if (destRegion === "global") parts.push("across multiple regions or long-haul routes");
+
+      if (healthProfile === "low") parts.push("with a generally healthy profile");
+      if (healthProfile === "medium") parts.push("with some manageable health conditions");
+      if (healthProfile === "high") parts.push("with more significant or chronic health conditions");
+
+      if (activityRisk === "low") parts.push("doing mostly low-risk activities");
+      if (activityRisk === "medium") parts.push("including some moderate outdoor activities");
+      if (activityRisk === "high") parts.push("including higher-risk or adventure activities");
+
+      if (parts.length === 0) return "your current travel plans and health profile";
+      return parts.join(", ");
+    }
+
+    function coverageStyleSuggestion(score) {
+      if (score < 35) {
+        return (
+          "Your answers suggest that a lighter level of cover may be enough for many trips, " +
+          "but medical and liability cover can still be important. You might focus on policies " +
+          "with strong emergency medical cover and basic cancellation, rather than every possible extra."
+        );
+      }
+      if (score < 70) {
+        return (
+          "Your situation points to a balanced level of travel cover. Comprehensive emergency medical " +
+          "and evacuation benefits, plus trip cancellation and baggage cover, may be worth considering, " +
+          "especially for longer or higher-cost trips."
+        );
+      }
+      return (
+        "Your inputs suggest a higher overall risk level. Comprehensive cover with strong medical, " +
+        "evacuation, and cancellation benefits – plus specific adventure or work add-ons where needed – " +
+        "may be worth comparing, subject to your budget and any exclusions."
+      );
+    }
+
+    function activityNotes(activityRisk) {
+      if (activityRisk === "high") {
+        return (
+          "For higher-risk activities (like snow sports, diving, or adventure tours), many insurers " +
+          "use special add-ons or separate categories. Check whether each planned activity is explicitly covered."
+        );
+      }
+      if (activityRisk === "medium") {
+        return (
+          "For moderate activities (such as hiking or light sports), it’s still worth checking the policy " +
+          "sections on exclusions, rental vehicles, and guided tours."
+        );
+      }
+      return "";
+    }
+
+    function existingCoverNotes(existingCover) {
+      if (existingCover === "cardLimited") {
+        return (
+          "Credit card or bank travel cover can be useful, but limits, excess amounts, and activation rules " +
+          "(such as paying for flights with that card) are important to confirm."
+        );
+      }
+      if (existingCover === "strong") {
+        return (
+          "If you already hold strong cover, this calculator can help you decide whether the level feels " +
+          "high, low, or about right – but always cross-check against your actual policy wording."
+        );
+      }
+      return "";
+    }
+
+    function updateResults() {
+      const homeCountry = document.getElementById("homeCountry").value;
+      const tripLengthRaw = document.getElementById("tripLength").value;
+      const tripCostRaw = document.getElementById("tripCost").value;
+      const existingCover = document.getElementById("existingCover").value;
+      const riskComfort = document.getElementById("riskComfort").value;
+
+      const destRegion = document.getElementById("destRegion").value;
+      const tripType = document.getElementById("tripType").value;
+      const healthProfile = document.getElementById("healthProfile").value;
+      const activityRisk = document.getElementById("activityRisk").value;
+
+      const hasAnyInput =
+        homeCountry ||
+        destRegion ||
+        tripType ||
+        tripLengthRaw ||
+        tripCostRaw ||
+        healthProfile ||
+        activityRisk ||
+        existingCover ||
+        riskComfort;
+
+      const container = document.getElementById("resultsContent");
+
+      if (!hasAnyInput) {
+        container.innerHTML = `
+          <p>
+            Add your trip details, activities, and existing cover to see an estimated risk band
+            and coverage ideas.
+          </p>
+        `;
+        return;
+      }
+
+      const score = calculateTravelRiskScore();
+      const bandInfo = getRiskBand(score);
+      const bandClass = "score-pill " + bandInfo.className;
+
+      const tripLength = parseFloat(tripLengthRaw);
+      const tripCost = parseFloat(tripCostRaw);
+
+      const summaryText = buildSummaryText();
+      const countryNote = buildCountryNote(homeCountry);
+      const coverageText = coverageStyleSuggestion(score);
+      const activityText = activityNotes(activityRisk);
+      const existingText = existingCoverNotes(existingCover);
+
+      container.innerHTML = `
+        <div class="result-block">
+          <span class="${bandClass}">
+            Overall travel risk band: ${bandInfo.band} (approx. score ${score}/100)
+          </span>
+          <p style="margin-top:6px;">
+            This is a high-level view of how much financial and medical risk your trip could create,
+            based on your answers.
+          </p>
+        </div>
+
+        <div class="result-block">
+          <h3>1. Snapshot of your trip</h3>
+          <p>
+            We looked at ${summaryText}.
+          </p>
+          ${
+            !isNaN(tripLength)
+              ? `<p style="margin-top:4px;">
+                   You entered a trip length of about <strong>${tripLength}</strong> day(s).
+                 </p>`
+              : ""
+          }
+          ${
+            !isNaN(tripCost)
+              ? `<p style="margin-top:4px;">
+                   You estimated your total trip cost at roughly <strong>${tripCost.toLocaleString()}</strong>
+                   in your local currency.
+                 </p>`
+              : ""
+          }
+        </div>
+
+        <div class="result-block">
+          <h3>2. Coverage style that may fit</h3>
+          <p>${coverageText}</p>
+          <ul>
+            <li><strong>Emergency medical &amp; evacuation:</strong> Often the most important part for serious events.</li>
+            <li><strong>Trip cancellation &amp; interruption:</strong> Can help with non-refundable flights and bookings.</li>
+            <li><strong>Baggage &amp; personal items:</strong> Useful but usually secondary to medical cover.</li>
+          </ul>
+        </div>
+
+        <div class="result-block">
+          <h3>3. Details to double-check</h3>
+          <ul>
+            <li>Any exclusions related to pre-existing medical conditions.</li>
+            <li>How your destination region and trip length affect cover.</li>
+            <li>Whether higher-risk activities or remote areas need add-ons.</li>
+            <li>Excess amounts, claim limits, and how you need to pay for treatment.</li>
+          </ul>
+          ${
+            activityText
+              ? `<p style="margin-top:4px;">${activityText}</p>`
+              : ""
+          }
+          ${
+            existingText
+              ? `<p style="margin-top:4px;">${existingText}</p>`
+              : ""
+          }
+        </div>
+
+        <div class="result-block">
+          <h3>4. Important disclaimer</h3>
+          <p>
+            This tool is for general information only. It does not consider every detail of your health,
+            travel history, or legal requirements, and it is not financial, legal, or medical advice.
+            For real decisions, compare actual policy documents and speak with licensed professionals
+            in your country before buying or changing cover.
+          </p>
+          ${
+            countryNote
+              ? `<p style="margin-top:4px;">${countryNote}</p>`
+              : ""
+          }
+        </div>
+      `;
+    }
+
+    // 초기 상태
+    updateResults();
+  </script>
+</body>
+</html>

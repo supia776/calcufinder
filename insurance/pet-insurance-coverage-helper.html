@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- pet-insurance-coverage-helper.html -->
+<title>Pet Insurance Coverage Helper | Plan cover for your pet</title>
+<meta name="description" content="Estimate how much pet insurance cover you may want based on vet cost scenarios and your budget.">
+
+<link rel="canonical" href="https://calcufinder.com/insurance/pet-insurance-coverage-helper.html">
+
+<meta property="og:title" content="Pet Insurance Coverage Helper | Plan cover for your pet">
+<meta property="og:description" content="Use the Pet Insurance Coverage Helper to explore vet bill scenarios and the level of cover that feels comfortable.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://calcufinder.com/insurance/pet-insurance-coverage-helper.html">
+<meta property="og:image" content="https://calcufinder.com/assets/og-image.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pet Insurance Coverage Helper | Plan cover for your pet">
+<meta name="twitter:description" content="Test different pet insurance options and see potential out-of-pocket costs.">
+<meta name="twitter:image" content="https://calcufinder.com/assets/og-image.png">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9077859826573424"
+     crossorigin="anonymous"></script>
+     <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y7NKFF4N71"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Y7NKFF4N71');
+</script>
+
+  <style>
+    :root {
+      --bg-main: #f5f5f5;
+      --bg-card: #ffffff;
+      --bg-sidebar: #ffffff;
+      --bg-ads: #fafafa;
+      --border-soft: #e0e0e0;
+      --text-main: #111111;
+      --text-muted: #666666;
+      --accent: #111111;
+      --link: #1a0dab;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.5;
+      color: var(--text-main);
+      background: var(--bg-main);
+      font-size: 15px;
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* ===== 상단 헤더 ===== */
+    .site-header {
+      background: #ffffff;
+      border-bottom: 1px solid #e5e5e5;
+      padding: 12px 24px;
+      width: 100%;
+    }
+
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo-img {
+      height: 65px;
+      width: auto;
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .logo-img {
+        height: 40px;
+      }
+    }
+
+    .header-nav {
+      display: flex;
+      gap: 28px;
+    }
+
+    .header-nav a {
+      font-size: 15px;
+      text-decoration: none;
+      color: #222222;
+      font-weight: 500;
+    }
+
+    .header-nav a:hover {
+      color: #0077cc;
+    }
+
+    /* ===== 전체 레이아웃: 사이드바 / 메인 / 광고 ===== */
+    .layout {
+      display: grid;
+      grid-template-columns: 220px minmax(0, 1fr) 280px;
+      min-height: calc(100vh - 70px);
+    }
+
+    /* ---- 왼쪽: 사이드바 네비게이션 ---- */
+    .sidebar {
+      background: var(--bg-sidebar);
+      border-right: 1px solid var(--border-soft);
+      padding: 24px 20px;
+      position: sticky;
+      top: 0;
+      align-self: start;
+      height: 100vh;
+      overflow-y: auto;
+    }
+
+    .sidebar-logo {
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      font-size: 18px;
+      margin-bottom: 24px;
+    }
+
+    .sidebar-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .sidebar-nav a {
+      padding: 8px 10px;
+      border-radius: 6px;
+      color: var(--text-main);
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .sidebar-nav a.active {
+      background: #111111;
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .sidebar-nav a:hover {
+      background: #eeeeee;
+      text-decoration: none;
+    }
+
+    /* ---- 가운데: 메인 콘텐츠 ---- */
+    .content {
+      padding: 32px 32px 40px;
+    }
+
+    .content-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    h1, h2, h3 {
+      margin-top: 0;
+      letter-spacing: -0.01em;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      max-width: 720px;
+    }
+
+    .meta-row {
+      margin-top: 6px;
+      font-size: 13px;
+      color: #666666;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .pill {
+      font-size: 12px;
+      padding: 3px 9px;
+      background: #ffffff;
+      border-radius: 999px;
+      border: 1px solid var(--border-soft);
+      margin-right: 0;
+    }
+
+    /* 입력/결과 2컬럼 레이아웃 */
+    .tool-layout {
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      gap: 24px;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border-radius: 8px;
+      border: 1px solid #eeeeee;
+      padding: 18px 20px;
+    }
+
+    h2.section-heading,
+    .results-title {
+      font-size: 19px;
+      margin: 0 0 12px;
+    }
+
+    label {
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    .field-group {
+      margin-bottom: 14px;
+    }
+
+    select,
+    input[type="number"],
+    input[type="text"] {
+      width: 100%;
+      padding: 9px 11px;
+      border-radius: 4px;
+      border: 1px solid #cccccc;
+      font-size: 14px;
+      background: #ffffff;
+      box-sizing: border-box;
+    }
+
+    input::placeholder {
+      color: #aaaaaa;
+    }
+
+    .hint {
+      font-size: 12px;
+      color: #777777;
+      margin-top: 4px;
+    }
+
+    /* 결과 스타일 */
+    .score-pill {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .score-low {
+      background: #e6f4ea;
+      color: #137333;
+    }
+    .score-medium {
+      background: #fff4ce;
+      color: #8a6d1a;
+    }
+    .score-high {
+      background: #fce8e6;
+      color: #c5221f;
+    }
+
+    .result-block {
+      margin-bottom: 12px;
+    }
+    .result-block h3 {
+      font-size: 15px;
+      margin: 0 0 4px;
+    }
+    .result-block p {
+      font-size: 14px;
+      margin: 0;
+      max-width: none;
+    }
+    .result-block ul {
+      padding-left: 18px;
+      margin: 4px 0 0;
+      font-size: 14px;
+    }
+
+    /* 제휴 안내 */
+    .affiliate-note {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin: 32px 0 12px;
+    }
+
+    /* 오른쪽 광고 영역 (숨김) */
+    .ads {
+      display: none;
+      background: var(--bg-ads);
+      border-left: 1px solid var(--border-soft);
+      padding: 24px 20px;
+      position: sticky;
+      top: 0;
+      align-self: start;
+      height: 100vh;
+      overflow-y: auto;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .ads h2 {
+      font-size: 15px;
+      margin: 0 0 12px;
+    }
+
+    .ad-slot {
+      border-radius: 10px;
+      border: 1px dashed #cccccc;
+      background: #ffffff;
+      padding: 16px 12px;
+      text-align: center;
+      margin-bottom: 12px;
+      font-size: 12px;
+      color: #888888;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid #eeeeee;
+      background: #ffffff;
+      font-size: 13px;
+      color: #555555;
+      padding: 12px 32px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    footer nav {
+      margin-left: auto;
+    }
+
+    footer nav a {
+      margin-left: 12px;
+      color: #555555;
+      text-decoration: none;
+    }
+
+    footer nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* 반응형 */
+    @media (max-width: 960px) {
+      .layout {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .sidebar {
+        position: static;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid var(--border-soft);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+
+      .sidebar-logo {
+        margin-bottom: 8px;
+      }
+
+      .sidebar-nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 4px;
+      }
+
+      .sidebar-nav a {
+        font-size: 13px;
+        padding: 6px 8px;
+      }
+
+      .content {
+        padding: 20px 16px 28px;
+      }
+
+      .tool-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .ads {
+        display: none;
+      }
+    }
+/* ===== 공통: 클릭 막힌 비활성 링크 스타일 ===== */
+.disabled-link {
+  pointer-events: none;   /* 클릭 안 됨 */
+  cursor: default;        /* 손가락 커서 안 나오게 */
+  color: #999999;         /* 회색 처리 */
+  text-decoration: none;
+}
+
+/* 사이드바 / 상단 네비에서 hover 해도 그대로 보이게 */
+.sidebar-nav a.disabled-link:hover,
+.header-nav a.disabled-link:hover {
+  background: transparent;
+  color: #999999;
+  text-decoration: none;
+}    
+  </style>
+</head>
+
+<body>
+  <!-- 상단 헤더 -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/index.html">
+        <img src="/assets/logo.png" alt="CalcuFinder logo" class="logo-img">
+      </a>
+
+      <nav class="header-nav">
+        <a href="/index.html">Home</a>
+        <a href="/finance/">Finance</a>
+        <a href="/insurance/">Insurance</a>
+        <a href="/business-software/">Business & Software</a>
+<a href="/blog/index.html">Blog</a>
+        <a href="/about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 메인 레이아웃 -->
+  <div class="layout">
+    <!-- 사이드바 -->
+    <aside class="sidebar">
+      <div class="sidebar-logo">CalcuFinder</div>
+      <nav class="sidebar-nav">
+        <a href="/index.html">Home</a>
+        <a href="/finance/">Finance</a>
+        <a href="/insurance/" class="active">Insurance</a>
+        <a href="/business-software/">Business & software</a>
+<a href="/blog/index.html">Blog</a>
+        <a href="/about.html">About</a>
+      </nav>
+    </aside>
+
+    <!-- 가운데 메인 콘텐츠 -->
+    <main class="content">
+      <div class="content-inner">
+        <h1>Pet Insurance Coverage Helper</h1>
+        <p>
+          Get an educational estimate of your pet’s risk profile and see what type of
+          pet insurance coverage might make sense. This tool does not provide quotes or
+          recommend any specific insurer.
+        </p>
+
+        <div class="meta-row">
+          <span class="pill">Category: Pet care & insurance</span>
+          <span class="pill">Audience: Global pet owners</span>
+        </div>
+
+        <div class="tool-layout">
+          <!-- INPUTS -->
+          <section class="card">
+            <h2 class="section-heading">Inputs</h2>
+
+            <div class="field-group">
+              <label>Country (for context)</label>
+              <input
+                id="country"
+                type="text"
+                placeholder="e.g. Australia, United States, United Kingdom"
+                oninput="updateResults()"
+              >
+              <p class="hint">
+                Used only to show context notes – this tool does not check real insurers in your country.
+              </p>
+            </div>
+
+            <div class="field-group">
+              <label>Pet type</label>
+              <select id="petType" onchange="updateResults()">
+                <option value="">Select</option>
+                <option value="dog">Dog</option>
+                <option value="cat">Cat</option>
+                <option value="other">Other small pet</option>
+              </select>
+            </div>
+
+            <div class="field-group">
+              <label>Breed size / risk profile</label>
+              <select id="breedRisk" onchange="updateResults()">
+                <option value="">Select</option>
+                <option value="low">Small / mixed breed, generally low medical risk</option>
+                <option value="medium">Medium size or moderate-risk breed</option>
+                <option value="high">Large / giant breed or high-risk breed</option>
+              </select>
+            </div>
+
+            <div class="field-group">
+              <label>Pet age (years)</label>
+              <input
+                id="age"
+                type="number"
+                min="0"
+                step="0.1"
+                placeholder="e.g. 3"
+                oninput="updateResults()"
+              >
+            </div>
+
+            <div class="field-group">
+              <label>Typical activity / lifestyle</label>
+              <select id="activity" onchange="updateResults()">
+                <option value="">Select</option>
+                <option value="indoor">Mostly indoor / low activity</option>
+                <option value="mixed">Indoor & outdoor / moderate activity</option>
+                <option value="outdoor">Very active / outdoor / working or sport</option>
+              </select>
+            </div>
+
+            <div class="field-group">
+              <label>Pre-existing or chronic conditions</label>
+              <select id="conditions" onchange="updateResults()">
+                <option value="">Select</option>
+                <option value="none">None known</option>
+                <option value="minor">Minor issues (e.g. allergies)</option>
+                <option value="major">Major or chronic conditions</option>
+              </select>
+              <p class="hint">
+                Many insurers exclude pre-existing conditions. Check the policy wording carefully.
+              </p>
+            </div>
+
+            <div class="field-group">
+              <label>Emergency vet fund available</label>
+              <select id="emergencyFund" onchange="updateResults()">
+                <option value="">Select</option>
+                <option value="low">Less than 1 month of typical income saved</option>
+                <option value="medium">Around 1–3 months saved</option>
+                <option value="high">More than 3 months saved</option>
+              </select>
+            </div>
+
+            <div class="field-group">
+              <label>Preferred reimbursement level</label>
+              <select id="reimbursement" onchange="updateResults()">
+                <option value="">Select</option>
+                <option value="basic">Okay with high excess / lower payouts</option>
+                <option value="standard">Balanced excess and reimbursement</option>
+                <option value="comprehensive">Prefer higher reimbursement / lower excess</option>
+              </select>
+            </div>
+
+            <p class="hint">
+              This helper provides approximate guidance only. For actual premiums or coverage, compare
+              official product disclosure documents from licensed insurers in your country.
+            </p>
+          </section>
+
+          <!-- RESULTS -->
+          <section class="card">
+            <h2 class="results-title">Results</h2>
+            <div id="resultsContent">
+              <p>Enter details about your pet to see an estimated risk profile and coverage ideas.</p>
+            </div>
+          </section>
+        </div>
+
+        <!-- 제휴 링크 안내 문구 -->
+        <p class="affiliate-note">
+          Some pages on CalcuFinder may include affiliate links. If you click and make a purchase,
+            we may earn a small commission at no extra cost to you. This helps support the project
+            and keeps the tools free to use.
+        </p>
+      </div>
+    </main>
+
+    <!-- 광고 자리 (숨김) -->
+    <aside class="ads"></aside>
+  </div>
+
+  <!-- 하단 푸터 -->
+  <footer>
+    <p>© CalcuFinder. Tools for smarter decisions, worldwide.</p>
+    <nav>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/disclosure.html">Disclosure</a>
+    </nav>
+  </footer>
+
+  <script>
+    function calculateRiskScore() {
+      let score = 30; // base
+
+      const petType = document.getElementById("petType").value;
+      const breedRisk = document.getElementById("breedRisk").value;
+      const age = parseFloat(document.getElementById("age").value);
+      const activity = document.getElementById("activity").value;
+      const conditions = document.getElementById("conditions").value;
+      const emergencyFund = document.getElementById("emergencyFund").value;
+
+      // Pet type
+      if (petType === "dog") score += 10;
+      if (petType === "cat") score += 5;
+      if (petType === "other") score += 0;
+
+      // Breed risk
+      if (breedRisk === "medium") score += 8;
+      if (breedRisk === "high") score += 16;
+
+      // Age
+      if (!isNaN(age)) {
+        if (age < 2) score += 4;          // young – accidents, but fewer chronic issues
+        else if (age <= 7) score += 8;    // adult
+        else score += 16;                 // senior
+      }
+
+      // Activity
+      if (activity === "mixed") score += 6;
+      if (activity === "outdoor") score += 12;
+
+      // Health conditions
+      if (conditions === "minor") score += 10;
+      if (conditions === "major") score += 20;
+
+      // Emergency fund (lower fund = higher risk of financial stress)
+      if (emergencyFund === "low") score += 16;
+      if (emergencyFund === "medium") score += 8;
+      if (emergencyFund === "high") score += 0;
+
+      // Clamp
+      if (score < 0) score = 0;
+      if (score > 100) score = 100;
+      return score;
+    }
+
+    function getRiskBand(score) {
+      if (score < 40) return { band: "Low", className: "score-low" };
+      if (score < 70) return { band: "Medium", className: "score-medium" };
+      return { band: "High", className: "score-high" };
+    }
+
+    function coverageSuggestion(score, reimbursement) {
+      // Decide coverage type string
+      let baseType;
+      if (score < 40) baseType = "Accident-only or basic accident & illness cover";
+      else if (score < 70) baseType = "Standard accident & illness cover";
+      else baseType = "Comprehensive accident & illness cover with higher annual limits";
+
+      let adjust = "";
+      if (reimbursement === "basic") {
+        adjust = " You indicated you are comfortable with higher excess and lower reimbursement, " +
+                 "so you might focus on affordable plans that still cover emergencies.";
+      } else if (reimbursement === "comprehensive") {
+        adjust = " Because you prefer stronger reimbursement, you may want policies with higher " +
+                 "annual limits and lower excess, even if premiums are higher.";
+      } else if (reimbursement === "standard") {
+        adjust = " A mid-range plan with balanced excess and coverage limits may be a good starting point.";
+      }
+
+      return baseType + adjust;
+    }
+
+    function buildCountryNote(country) {
+      if (!country) return "";
+      const c = country.trim().toLowerCase();
+      if (!c) return "";
+
+      let text = "Pet insurance availability and rules differ by country. ";
+      text += "Always check local regulations and make sure any insurer you choose is properly licensed.";
+
+      if (c.includes("australia")) {
+        text += " In Australia, most policies exclude pre-existing conditions and may limit cover " +
+                "for hereditary issues, so read Product Disclosure Statements carefully.";
+      } else if (c.includes("united kingdom") || c === "uk") {
+        text += " In the UK, you can usually choose between lifetime, annual, and accident-only cover; " +
+                "lifetime policies typically give the most stable long-term protection.";
+      } else if (c.includes("united states") || c === "usa" || c === "us") {
+        text += " In the US, coverage and pricing can vary by state, and some breeds may have " +
+                "specific waiting periods or exclusions.";
+      }
+
+      return text;
+    }
+
+    function updateResults() {
+      const petType = document.getElementById("petType").value;
+      const breedRisk = document.getElementById("breedRisk").value;
+      const ageRaw = document.getElementById("age").value;
+      const activity = document.getElementById("activity").value;
+      const conditions = document.getElementById("conditions").value;
+      const emergencyFund = document.getElementById("emergencyFund").value;
+      const reimbursement = document.getElementById("reimbursement").value;
+      const country = document.getElementById("country").value;
+
+      const hasAnyInput =
+        petType || breedRisk || ageRaw || activity || conditions || emergencyFund || reimbursement || country;
+
+      const container = document.getElementById("resultsContent");
+
+      if (!hasAnyInput) {
+        container.innerHTML = "<p>Enter details about your pet to see an estimated risk profile and coverage ideas.</p>";
+        return;
+      }
+
+      const score = calculateRiskScore();
+      const bandInfo = getRiskBand(score);
+      const coverageText = coverageSuggestion(score, reimbursement || "");
+      const countryNote = buildCountryNote(country);
+
+      const lifestyleSummaryParts = [];
+      if (petType) lifestyleSummaryParts.push(petType === "other" ? "other small pet" : petType);
+      if (breedRisk === "low") lifestyleSummaryParts.push("lower-risk breed/size");
+      if (breedRisk === "medium") lifestyleSummaryParts.push("medium-risk breed/size");
+      if (breedRisk === "high") lifestyleSummaryParts.push("higher-risk breed/size");
+      if (activity === "indoor") lifestyleSummaryParts.push("mostly indoor lifestyle");
+      if (activity === "mixed") lifestyleSummaryParts.push("mixed indoor / outdoor lifestyle");
+      if (activity === "outdoor") lifestyleSummaryParts.push("very active / outdoor lifestyle");
+
+      const lifestyleSummary = lifestyleSummaryParts.length
+        ? lifestyleSummaryParts.join(", ")
+        : "your pet’s current lifestyle";
+
+      let healthSummary = "";
+      if (conditions === "none") {
+        healthSummary = "No known pre-existing conditions were selected.";
+      } else if (conditions === "minor") {
+        healthSummary = "You mentioned minor health issues such as allergies or sensitivities.";
+      } else if (conditions === "major") {
+        healthSummary = "You indicated major or chronic conditions; many policies may treat these as pre-existing.";
+      }
+
+      let fundSummary = "";
+      if (emergencyFund === "low") {
+        fundSummary = "Your emergency fund is on the lower side, so unexpected vet bills could be stressful.";
+      } else if (emergencyFund === "medium") {
+        fundSummary = "You have a moderate emergency fund, which can help with excesses and smaller bills.";
+      } else if (emergencyFund === "high") {
+        fundSummary = "You have a stronger emergency fund, which may give you more flexibility in choosing excess levels.";
+      }
+
+      const bandClass = "score-pill " + bandInfo.className;
+
+      container.innerHTML = `
+        <div class="result-block">
+          <span class="${bandClass}">
+            Overall risk level: ${bandInfo.band} (approx. score ${score}/100)
+          </span>
+          <p style="margin-top:6px;">
+            Based on the details you entered, this is a high-level view of how likely it is that
+            pet medical costs could place pressure on your budget.
+          </p>
+        </div>
+
+        <div class="result-block">
+          <h3>1. Snapshot of your situation</h3>
+          <p>
+            We considered ${lifestyleSummary} together with your pet’s age, health status, and
+            emergency fund.
+          </p>
+          ${healthSummary ? `<p style="margin-top:4px;">${healthSummary}</p>` : ""}
+          ${fundSummary ? `<p style="margin-top:4px;">${fundSummary}</p>` : ""}
+        </div>
+
+        <div class="result-block">
+          <h3>2. Coverage style that may fit</h3>
+          <p>${coverageText}</p>
+          <ul>
+            <li><strong>Accident-only:</strong> Usually cheaper, but does not cover illness.</li>
+            <li><strong>Accident + illness:</strong> More balanced cover for most unexpected vet bills.</li>
+            <li><strong>Comprehensive:</strong> Higher annual limits and often more extras, with higher premiums.</li>
+          </ul>
+        </div>
+
+        <div class="result-block">
+          <h3>3. Policy features to compare</h3>
+          <ul>
+            <li>Annual limit and per-condition limits.</li>
+            <li>Excess / deductible and co-payment percentage.</li>
+            <li>Waiting periods for accidents, illnesses, and specific conditions.</li>
+            <li>How pre-existing conditions and hereditary issues are treated.</li>
+            <li>Optional extras such as dental, physiotherapy, or behavioural treatment.</li>
+          </ul>
+        </div>
+
+        <div class="result-block">
+          <h3>4. Important disclaimer</h3>
+          <p>
+            This tool is for general information only. It does not take into account your full situation
+            and is not financial advice. For personalised guidance, speak with a licensed financial adviser
+            or insurance specialist, and always read the full policy documents before buying cover.
+          </p>
+          ${countryNote ? `<p style="margin-top:4px;">${countryNote}</p>` : ""}
+        </div>
+      `;
+    }
+
+    // Initial state
+    updateResults();
+  </script>
+</body>
+</html>
