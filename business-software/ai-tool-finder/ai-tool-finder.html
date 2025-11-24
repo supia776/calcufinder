@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ai-tool-finder.html -->
+<title>AI Tool Finder | Compare AI tools for your workflow</title>
+<meta name="description" content="Find the right AI tool for your workflow. Compare features, pricing, and value with the AI Tool Finder calculator.">
+
+<link rel="canonical" href="https://calcufinder.com/business-software/ai-tool-finder.html">
+
+<meta property="og:title" content="AI Tool Finder | Compare AI tools for your workflow">
+<meta property="og:description" content="Quickly shortlist AI tools by price, features, and use cases with CalcuFinder's AI Tool Finder calculator.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://calcufinder.com/business-software/ai-tool-finder.html">
+<meta property="og:image" content="https://calcufinder.com/assets/og-image.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI Tool Finder | Compare AI tools for your workflow">
+<meta name="twitter:description" content="Compare AI tools side by side and choose the best one for your needs using this simple calculator.">
+<meta name="twitter:image" content="https://calcufinder.com/assets/og-image.png">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9077859826573424"
+     crossorigin="anonymous"></script>
+     <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y7NKFF4N71"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Y7NKFF4N71');
+</script>
+
+
+  <style>
+    :root {
+      --bg-main: #f5f5f5;
+      --bg-card: #ffffff;
+      --bg-sidebar: #ffffff;
+      --bg-ads: #fafafa;
+      --border-soft: #e0e0e0;
+      --text-main: #111111;
+      --text-muted: #666666;
+      --accent: #111111;
+      --link: #1a0dab;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.5;
+      color: var(--text-main);
+      background: var(--bg-main);
+      font-size: 15px;
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* HEADER */
+    .site-header {
+      background:#ffffff;
+      border-bottom:1px solid #e5e5e5;
+      padding:12px 24px;
+      width:100%;
+    }
+    .header-inner {
+      max-width:1200px;
+      margin:0 auto;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+    .logo-img {
+      height:65px;
+      width:auto;
+      display:block;
+    }
+    @media(max-width:768px){
+      .logo-img{height:40px;}
+    }
+
+    .header-nav{
+      display:flex;
+      gap:28px;
+    }
+    .header-nav a{
+      font-size:15px;
+      text-decoration:none;
+      color:#222222;
+      font-weight:500;
+    }
+    .header-nav a:hover{
+      color:#0077cc;
+    }
+
+    /* LAYOUT */
+    .layout{
+      display:grid;
+      grid-template-columns:220px minmax(0,1fr) 280px;
+      min-height:calc(100vh - 70px);
+    }
+
+    /* SIDEBAR */
+    .sidebar{
+      background:var(--bg-sidebar);
+      border-right:1px solid var(--border-soft);
+      padding:24px 20px;
+      position:sticky;
+      top:0;
+      align-self:start;
+      height:100vh;
+      overflow-y:auto;
+    }
+    .sidebar-logo{
+      font-weight:700;
+      letter-spacing:0.05em;
+      font-size:18px;
+      margin-bottom:24px;
+    }
+    .sidebar-nav{
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+    }
+    .sidebar-nav a{
+      padding:8px 10px;
+      border-radius:6px;
+      color:var(--text-main);
+      font-size:14px;
+      font-weight:500;
+    }
+    .sidebar-nav a.active{
+      background:#111111;
+      color:#ffffff;
+    }
+    .sidebar-nav a:hover{
+      background:#eeeeee;
+      text-decoration:none;
+    }
+
+    /* CONTENT */
+    .content{
+      padding:32px 32px 40px;
+    }
+    .content-inner{
+      max-width:1100px;
+      margin:0 auto;
+    }
+
+    h1,h2,h3{
+      margin-top:0;
+      letter-spacing:-0.01em;
+    }
+    h1{
+      font-size:28px;
+      margin-bottom:10px;
+    }
+    p{
+      max-width:720px;
+    }
+
+    .meta-row{
+      margin-top:6px;
+      font-size:13px;
+      color:#666666;
+      display:flex;
+      flex-wrap:wrap;
+      gap:6px;
+    }
+    .pill{
+      font-size:12px;
+      padding:3px 9px;
+      background:#ffffff;
+      border-radius:999px;
+      border:1px solid var(--border-soft);
+    }
+
+    /* AI TOOL LAYOUT */
+    .tool-layout{
+      margin-top:24px;
+      display:grid;
+      grid-template-columns:minmax(0,0.9fr) minmax(0,1.1fr);
+      gap:24px;
+    }
+
+    .card{
+      background:#ffffff;
+      border-radius:10px;
+      border:1px solid var(--border-soft);
+      padding:20px 20px 18px;
+      box-shadow:0 1px 2px rgba(0,0,0,0.03);
+    }
+
+    h2.section-heading{
+      font-size:19px;
+      margin:0 0 12px;
+    }
+
+    label{
+      font-size:14px;
+      font-weight:500;
+      display:block;
+      margin-bottom:5px;
+    }
+    .field-group{
+      margin-bottom:14px;
+    }
+    select{
+      width:100%;
+      padding:9px 11px;
+      border-radius:6px;
+      border:1px solid #cccccc;
+      font-size:14px;
+      background:#ffffff;
+    }
+
+    .hint{
+      font-size:12px;
+      color:#777777;
+      margin-top:4px;
+    }
+
+    .small-note{
+      font-size:12px;
+      color:#777777;
+      margin-top:8px;
+      max-width:720px;
+    }
+
+    .results-title{
+      font-size:19px;
+      margin-bottom:8px;
+    }
+
+    /* TOOL LIST */
+    .tool-list{
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+      margin-top:6px;
+    }
+
+    .tool-item{
+      border-bottom:1px solid #eeeeee;
+      padding-bottom:10px;
+    }
+    .tool-item:last-child{
+      border-bottom:none;
+      padding-bottom:0;
+    }
+
+    .tool-header{
+      display:flex;
+      justify-content:space-between;
+      align-items:baseline;
+      gap:8px;
+      margin-bottom:4px;
+      flex-wrap:wrap;
+    }
+    .tool-name{
+      font-size:15px;
+      font-weight:600;
+    }
+    .tool-category{
+      font-size:12px;
+      color:#777777;
+    }
+
+    .tool-desc{
+      font-size:14px;
+      color:#444444;
+      margin:0 0 4px;
+      max-width:none;
+    }
+
+    .tool-tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap:6px;
+      margin:4px 0 6px;
+    }
+    .badge{
+      font-size:11px;
+      padding:2px 7px;
+      border-radius:999px;
+      border:1px solid #dddddd;
+      background:#fafafa;
+      color:#555555;
+    }
+
+    .price-line{
+      font-size:13px;
+      color:#555555;
+      margin-bottom:4px;
+    }
+
+    .tool-footer{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:6px;
+      font-size:12px;
+      color:#777777;
+    }
+
+    .visit-link{
+      font-size:13px;
+      font-weight:500;
+      text-decoration:none;
+    }
+    .visit-link:hover{
+      text-decoration:underline;
+    }
+
+    /* Affiliate note */
+    .affiliate-note{
+      font-size:13px;
+      color:var(--text-muted);
+      margin:28px 0 12px;
+    }
+
+    /* ADS (hidden) */
+    .ads{display:none;}
+
+    /* FOOTER */
+    footer{
+      border-top:1px solid #eeeeee;
+      background:#ffffff;
+      font-size:13px;
+      color:#555555;
+      padding:12px 32px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+    footer p{
+      margin:0;
+    }
+    footer nav{
+      margin-left:auto;
+    }
+    footer nav a{
+      margin-left:12px;
+      color:#555555;
+      text-decoration:none;
+    }
+    footer nav a:hover{
+      text-decoration:underline;
+    }
+
+    /* MOBILE */
+    @media(max-width:960px){
+      .layout{
+        grid-template-columns:1fr;
+        min-height:auto;
+      }
+      .sidebar{
+        position:static;
+        height:auto;
+        border-right:none;
+        border-bottom:1px solid var(--border-soft);
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        flex-wrap:wrap;
+      }
+      .sidebar-logo{
+        margin-bottom:8px;
+      }
+      .sidebar-nav{
+        flex-direction:row;
+        flex-wrap:wrap;
+        gap:4px;
+      }
+      .sidebar-nav a{
+        font-size:13px;
+        padding:6px 8px;
+      }
+      .content{
+        padding:20px 16px 28px;
+      }
+      .tool-layout{
+        grid-template-columns:1fr;
+      }
+    }
+/* ===== 공통: 클릭 막힌 비활성 링크 스타일 ===== */
+.disabled-link {
+  pointer-events: none;   /* 클릭 안 됨 */
+  cursor: default;        /* 손가락 커서 안 나오게 */
+  color: #999999;         /* 회색 처리 */
+  text-decoration: none;
+}
+
+/* 사이드바 / 상단 네비에서 hover 해도 그대로 보이게 */
+.sidebar-nav a.disabled-link:hover,
+.header-nav a.disabled-link:hover {
+  background: transparent;
+  color: #999999;
+  text-decoration: none;
+}    
+  </style>
+</head>
+
+<body>
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/index.html">
+      <img src="/assets/logo.png" alt="CalcuFinder logo" class="logo-img" />
+    </a>
+    <nav class="header-nav">
+      <a href="/index.html">Home</a>
+      <a href="/finance/">Finance</a>
+      <a href="/insurance/">Insurance</a>
+      <a href="/business-software/" class="active">Business & Software</a>
+<a href="/blog/index.html">Blog</a>
+      <a href="/about.html">About</a>
+    </nav>
+  </div>
+</header>
+
+<div class="layout">
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">CalcuFinder</div>
+    <nav class="sidebar-nav">
+      <a href="/index.html">Home</a>
+      <a href="/finance/">Finance</a>
+      <a href="/insurance/">Insurance</a>
+      <a href="/business-software/" class="active">Business & software</a>
+<a href="/blog/index.html">Blog</a>
+      <a href="/about.html">About</a>
+    </nav>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="content">
+    <div class="content-inner">
+      <h1>AI Tool Finder</h1>
+      <p>
+        Browse AI tools for writing, audio, video, design, and productivity. This page gives a simple,
+        human-readable overview so you can shortlist tools and then visit the official sites to confirm
+        pricing, limits, and terms.
+      </p>
+
+      <div class="meta-row">
+        <span class="pill">Category: Business & software</span>
+        <span class="pill">Audience: Individuals, Creators, remote workers</span>
+      </div>
+
+      <div class="tool-layout">
+        <!-- FILTERS -->
+        <section class="card">
+          <h2 class="section-heading">Filter (optional)</h2>
+
+          <div class="field-group">
+            <label for="useCase">Primary use case</label>
+            <select id="useCase" onchange="filterTools()">
+              <option value="">All</option>
+              <option value="writing">Writing & text</option>
+              <option value="audio">Music & voice</option>
+              <option value="video">Video & editing</option>
+              <option value="image">Image & design</option>
+              <option value="productivity">Productivity & workflow</option>
+            </select>
+          </div>
+
+          <div class="field-group">
+            <label for="priceType">Pricing style</label>
+            <select id="priceType" onchange="filterTools()">
+              <option value="">All</option>
+              <option value="free">Free / free tier</option>
+              <option value="paid">Paid plans</option>
+              <option value="mixed">Free + paid tiers</option>
+            </select>
+          </div>
+
+          <div class="field-group">
+            <label for="skillLevel">Skill level</label>
+            <select id="skillLevel" onchange="filterTools()">
+              <option value="">All</option>
+              <option value="beginner">Beginner-friendly</option>
+              <option value="intermediate">Intermediate</option>
+              <option value="advanced">Advanced / pro</option>
+            </select>
+          </div>
+
+          <p class="hint">
+            Filters are simple tags only. Always double-check current features and pricing on each official website.
+          </p>
+
+          <p class="small-note">
+            Most example prices here are described in broad ranges and often in USD.  
+            To think in your own currency, you can use the
+            <a href="/finance/currency-converter.html">Currency Converter calculator</a>
+            on CalcuFinder.
+          </p>
+        </section>
+
+        <!-- RESULTS -->
+        <section class="card">
+          <h2 class="results-title">Tools overview</h2>
+          <div id="toolList" class="tool-list">
+            <!-- JavaScript가 여기 안에 도구 목록을 그림 -->
+          </div>
+        </section>
+      </div>
+
+      <!-- Affiliate note -->
+      <p class="affiliate-note">
+        Some pages on CalcuFinder may include affiliate links. If you click and make a purchase,
+            we may earn a small commission at no extra cost to you. This helps support the project
+            and keeps the tools free to use.
+      </p>
+    </div>
+  </main>
+
+  <!-- ADS (reserved, hidden) -->
+  <aside class="ads"></aside>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>© CalcuFinder. Tools for smarter decisions, worldwide.</p>
+  <nav>
+    <a href="/about.html">About</a>
+    <a href="/contact.html">Contact</a>
+    <a href="/privacy.html">Privacy</a>
+    <a href="/disclosure.html">Disclosure</a>
+  </nav>
+</footer>
+
+<script>
+  // 간단한 도구 데이터 (이름, 용도, 가격태그, 스킬레벨, 설명)
+  const aiTools = [
+    {
+      name: "Gemini",
+      useCase: "writing",
+      priceType: "mixed",
+      skill: "beginner",
+      category: "General AI / writing",
+      priceNote: "Free tier + paid plans (often around US$20–US$30/m for pro tiers).",
+      desc: "Google’s family of AI models for chat, writing, coding, and research. Integrates with Google services.",
+      link: "https://gemini.google.com"
+    },
+    {
+      name: "ChatGPT / OpenAI",
+      useCase: "writing",
+      priceType: "mixed",
+      skill: "beginner",
+      category: "General AI / writing",
+      priceNote: "Free basic tier; paid plans vary by region and model access.",
+      desc: "Conversational AI for writing, brainstorming, coding help, and everyday research.",
+      link: "https://chat.openai.com"
+    },
+    {
+      name: "Nano Banana",
+      useCase: "writing",
+      priceType: "mixed",
+      skill: "intermediate",
+      category: "Writing & productivity",
+      priceNote: "Typically offers free and paid plans; check site for current tiers.",
+      desc: "Lightweight AI writing and productivity helper aimed at fast drafts and summaries.",
+      link: "http://www.ainanobanana.io"
+    },
+    {
+      name: "Udio",
+      useCase: "audio",
+      priceType: "mixed",
+      skill: "beginner",
+      category: "Music & audio generation",
+      priceNote: "Free credits in beta; paid tiers for heavier use.",
+      desc: "Generative music tool for creating songs and soundscapes with text prompts.",
+      link: "https://www.udio.com"
+    },
+    {
+      name: "Suno",
+      useCase: "audio",
+      priceType: "mixed",
+      skill: "beginner",
+      category: "Music & audio generation",
+      priceNote: "Free tier plus paid subscription options.",
+      desc: "Song and music generation platform, popular for quick demos and creative experiments.",
+      link: "https://www.suno.ai"
+    },
+    {
+      name: "Supertone",
+      useCase: "audio",
+      priceType: "paid",
+      skill: "advanced",
+      category: "Voice & audio",
+      priceNote: "Enterprise / pro-focused pricing; often custom quotes.",
+      desc: "AI voice and singing synthesis tools geared towards studios and production teams.",
+      link: "https://www.supertone.ai"
+    },
+    {
+      name: "VEO",
+      useCase: "video",
+      priceType: "mixed",
+      skill: "intermediate",
+      category: "Video generation",
+      priceNote: "Pricing and access may still be evolving; check official docs.",
+      desc: "Experimental high-quality video generation model from Google, for cinematic clips from text prompts.",
+      link: "https://gemini.google.com"
+    },
+    {
+      name: "Sora",
+      useCase: "video",
+      priceType: "mixed",
+      skill: "advanced",
+      category: "Video generation",
+      priceNote: "Access and pricing subject to change; often limited or invite-only.",
+      desc: "OpenAI’s text-to-video model for generating detailed short clips from prompts.",
+      link: "http://www.openai.com"
+    },
+    {
+      name: "CapCut",
+      useCase: "video",
+      priceType: "mixed",
+      skill: "beginner",
+      category: "Video editing",
+      priceNote: "Free core app with optional paid features and cloud storage.",
+      desc: "User-friendly video editor with AI tools for captions, templates, and social content.",
+      link: "https://www.capcut.com"
+    },
+    {
+      name: "Vrew",
+      useCase: "video",
+      priceType: "mixed",
+      skill: "beginner",
+      category: "Video editing & captions",
+      priceNote: "Free tier with paid upgrades; pricing can vary by region.",
+      desc: "Subtitle-focused video editor with speech-to-text, caption styling, and basic editing tools.",
+      link: "https://vrew.voyagerx.com"
+    },
+    {
+      name: "Topview",
+      useCase: "video",
+      priceType: "mixed",
+      skill: "intermediate",
+      category: "Short-form / reels",
+      priceNote: "Often positioned for marketers; check site for current plans.",
+      desc: "Tools aimed at short-form video, reels, and performance-style edits.",
+      link: "http://www.topview.ai"
+    },
+    {
+      name: "Hailuo",
+      useCase: "audio",
+      priceType: "mixed",
+      skill: "intermediate",
+      category: "Voice / dubbing",
+      priceNote: "Free + paid tiers; details depend on region.",
+      desc: "AI voice and dubbing platform useful for narration and multi-language content.",
+      link: "http://hailuoai.video"
+    },
+    {
+      name: "Kling",
+      useCase: "video",
+      priceType: "mixed",
+      skill: "advanced",
+      category: "Video generation",
+      priceNote: "Rapidly evolving pricing and access model; check official site.",
+      desc: "High-fidelity text-to-video generation tool with focus on realism and motion.",
+      link: "http://klingai.com"
+    },
+    {
+      name: "Magiclight",
+      useCase: "image",
+      priceType: "mixed",
+      skill: "intermediate",
+      category: "Image & design",
+      priceNote: "Often offers free credits; paid tiers for heavier usage.",
+      desc: "Image-focused AI for lighting, mood, and quick visual concepts.",
+      link: "http://www.magiclight.ai"
+    },
+    {
+      name: "Pixabay",
+      useCase: "image",
+      priceType: "free",
+      skill: "beginner",
+      category: "Stock & images",
+      priceNote: "Free stock images and some AI-generated assets under specific licenses.",
+      desc: "Large library of free photos, vector art, and some AI imagery for projects.",
+      link: "https://pixabay.com"
+    },
+    {
+      name: "Filmora",
+      useCase: "video",
+      priceType: "paid",
+      skill: "beginner",
+      category: "Video editing",
+      priceNote: "Paid license with options for yearly or lifetime; free trial often available.",
+      desc: "Beginner-friendly video editing software including AI effects and audio tools.",
+      link: "https://filmora.wondershare.com"
+    },
+    {
+      name: "Premiere Pro",
+      useCase: "video",
+      priceType: "paid",
+      skill: "advanced",
+      category: "Professional editing",
+      priceNote: "Subscription via Adobe Creative Cloud, typically billed monthly.",
+      desc: "Professional-grade video editor with AI-powered features (speech to text, reframing, color tools).",
+      link: "https://www.adobe.com/products/premiere.html"
+    }
+  ];
+
+  function renderTools(list){
+    const container = document.getElementById("toolList");
+    if (!list.length){
+      container.innerHTML = "<p>No tools match these filters. Try widening your selection.</p>";
+      return;
+    }
+
+    container.innerHTML = list.map(tool => `
+      <div class="tool-item">
+        <div class="tool-header">
+          <div class="tool-name">${tool.name}</div>
+          <div class="tool-category">${tool.category}</div>
+        </div>
+        <p class="tool-desc">${tool.desc}</p>
+        <div class="tool-tags">
+          <span class="badge">${labelUseCase(tool.useCase)}</span>
+          <span class="badge">${labelPrice(tool.priceType)}</span>
+          <span class="badge">${labelSkill(tool.skill)}</span>
+        </div>
+        <p class="price-line">${tool.priceNote}</p>
+        <div class="tool-footer">
+          <span>Check each site for current pricing, limits, and terms.</span>
+          ${tool.link && tool.link !== "#" ? `
+            <a class="visit-link" href="${tool.link}" target="_blank" rel="noopener noreferrer">
+              Visit website →
+            </a>` : ""}
+        </div>
+      </div>
+    `).join("");
+  }
+
+  function labelUseCase(code){
+    if (code === "writing") return "Writing & text";
+    if (code === "audio") return "Music & audio";
+    if (code === "video") return "Video & editing";
+    if (code === "image") return "Image & design";
+    if (code === "productivity") return "Productivity & workflow";
+    return "General";
+  }
+
+  function labelPrice(code){
+    if (code === "free") return "Free / free tier";
+    if (code === "paid") return "Paid only";
+    if (code === "mixed") return "Free + paid tiers";
+    return "Pricing varies";
+  }
+
+  function labelSkill(code){
+    if (code === "beginner") return "Beginner-friendly";
+    if (code === "intermediate") return "Intermediate";
+    if (code === "advanced") return "Advanced / pro";
+    return "All levels";
+  }
+
+  function filterTools(){
+    const useCase = document.getElementById("useCase").value;
+    const priceType = document.getElementById("priceType").value;
+    const skill = document.getElementById("skillLevel").value;
+
+    const filtered = aiTools.filter(t => {
+      if (useCase && t.useCase !== useCase) return false;
+      if (priceType && t.priceType !== priceType) return false;
+      if (skill && t.skill !== skill) return false;
+      return true;
+    });
+
+    renderTools(filtered);
+  }
+
+  // 초기 렌더
+  renderTools(aiTools);
+</script>
+
+</body>
+</html>
