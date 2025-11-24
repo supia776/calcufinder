@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CalcuFinder – Article</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="description" content="Detailed investment, FIRE, books and global economy articles from CalcuFinder." />
+
+  <style>
+    html {
+      color-scheme: light;
+    }
+
+    :root {
+      --bg-main: #f5f5f5;
+      --bg-card: #ffffff;
+      --bg-sidebar: #ffffff;
+      --border-soft: #e0e0e0;
+      --text-main: #111111;
+      --text-muted: #666666;
+      --link: #1a0dab;
+      --accent: #111111;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.6;
+      background: var(--bg-main);
+      color: var(--text-main);
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* ===== 공통 상단 헤더 ===== */
+    .site-header {
+      background: #ffffff;
+      border-bottom: 1px solid #e5e5e5;
+      padding: 12px 24px;
+      width: 100%;
+    }
+
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo-img {
+      height: 60px;
+      width: auto;
+      display: block;
+    }
+
+    .header-nav {
+      display: flex;
+      gap: 24px;
+    }
+
+    .header-nav a {
+      font-size: 15px;
+      text-decoration: none;
+      color: #222222;
+      font-weight: 500;
+    }
+
+    .header-nav a:hover {
+      color: #0077cc;
+    }
+
+    /* ===== 전체 레이아웃 (사이드바 / 메인) ===== */
+    .layout {
+      display: grid;
+      grid-template-columns: 220px minmax(0, 1fr);
+      min-height: calc(100vh - 70px);
+    }
+
+    /* ---- 왼쪽 사이드바 ---- */
+    .sidebar {
+      background: var(--bg-sidebar);
+      border-right: 1px solid var(--border-soft);
+      padding: 24px 20px;
+      position: sticky;
+      top: 0;
+      align-self: start;
+      height: 100vh;
+      overflow-y: auto;
+      color: var(--text-main);
+    }
+
+    .sidebar-logo {
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      font-size: 18px;
+      margin-bottom: 24px;
+    }
+
+    .sidebar-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .sidebar-nav a {
+      padding: 8px 10px;
+      border-radius: 6px;
+      color: var(--text-main);
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .sidebar-nav a.active {
+      background: #111111;
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .sidebar-nav a:hover {
+      background: #eeeeee;
+      text-decoration: none;
+    }
+
+    /* ---- 가운데 메인 영역 ---- */
+    .content {
+      padding: 32px 32px 40px;
+    }
+
+    .content-inner {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    h1, h2, h3 {
+      margin-top: 0;
+      letter-spacing: -0.01em;
+    }
+
+    h1 {
+      font-size: 30px;
+      margin-bottom: 8px;
+    }
+
+    .article-meta {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .category-chip {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border-soft);
+      font-size: 12px;
+      margin-right: 8px;
+      background: #ffffff;
+      color: #444;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin: 10px 0 18px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .tag-list li {
+      font-size: 12px;
+      padding: 3px 9px;
+      border-radius: 999px;
+      border: 1px solid var(--border-soft);
+      background: #ffffff;
+      color: #444;
+    }
+
+    .cover-wrapper {
+      margin: 16px 0 22px;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--border-soft);
+      background: #fafafa;
+    }
+
+    .cover-wrapper img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      max-height: 360px;
+    }
+
+    .article-body p {
+      margin: 0 0 14px;
+      font-size: 15px;
+      color: #222;
+    }
+
+    .article-body p + p {
+      margin-top: 0;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 13px;
+      margin-bottom: 16px;
+      color: #555;
+    }
+
+    .back-link span {
+      font-size: 16px;
+    }
+
+    .status-message {
+      margin-top: 40px;
+      font-size: 15px;
+      color: var(--text-muted);
+    }
+
+    /* ===== 푸터 ===== */
+    footer {
+      border-top: 1px solid #eeeeee;
+      background: #ffffff;
+      font-size: 13px;
+      color: #555555;
+      padding: 12px 32px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    footer nav {
+      margin-left: auto;
+    }
+
+    footer nav a {
+      margin-left: 12px;
+      color: #555555;
+      text-decoration: none;
+    }
+
+    footer nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* ===== 반응형 ===== */
+    @media (max-width: 960px) {
+      .layout {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .sidebar {
+        position: static;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid var(--border-soft);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+
+      .sidebar-logo {
+        margin-bottom: 8px;
+      }
+
+      .sidebar-nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 4px;
+      }
+
+      .sidebar-nav a {
+        font-size: 13px;
+        padding: 6px 8px;
+      }
+
+      .content {
+        padding: 20px 16px 28px;
+      }
+
+      footer {
+        padding: 10px 16px 16px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+      }
+
+      footer nav {
+        margin-left: 0;
+      }
+    }
+
+    @media (prefers-color-scheme: dark) {
+      body {
+        background: var(--bg-main);
+        color: var(--text-main);
+      }
+
+      .sidebar,
+      .site-header,
+      footer {
+        background: #ffffff;
+        color: var(--text-main);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 상단 헤더 -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/index.html">
+        <img src="/assets/logo.png" alt="CalcuFinder logo" class="logo-img" />
+      </a>
+      <nav class="header-nav">
+        <a href="/index.html">Home</a>
+        <a href="/finance/index.html">Finance</a>
+        <a href="/insurance/index.html">Insurance</a>
+        <a href="/business-software/index.html">Business &amp; Software</a>
+        <a href="/blog/index.html" class="active">Blog</a>
+        <a href="/about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 메인 레이아웃 -->
+  <div class="layout">
+    <!-- 왼쪽 사이드바 -->
+    <aside class="sidebar">
+      <div class="sidebar-logo">CalcuFinder</div>
+      <nav class="sidebar-nav">
+        <a href="/index.html">Home</a>
+        <a href="/finance/index.html">Finance</a>
+        <a href="/insurance/index.html">Insurance</a>
+        <a href="/business-software/index.html">Business &amp; software</a>
+        <a href="/blog/index.html" class="active">Blog</a>
+        <a href="/about.html">About</a>
+      </nav>
+    </aside>
+
+    <!-- 가운데 컨텐츠 -->
+    <main class="content">
+      <div class="content-inner">
+        <a href="javascript:history.back();" class="back-link">
+          <span>←</span> Back
+        </a>
+
+        <section id="article-section">
+          <h1 id="post-title">Loading…</h1>
+          <div class="article-meta" id="post-meta"></div>
+          <ul class="tag-list" id="post-tags"></ul>
+          <div class="cover-wrapper" id="post-cover" style="display:none;"></div>
+          <div class="article-body" id="post-body"></div>
+          <p class="status-message" id="status-message" style="display:none;"></p>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <!-- 푸터 -->
+  <footer>
+    <p>© CalcuFinder. Tools for smarter decisions, worldwide.</p>
+    <nav>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/disclosure.html">Disclosure</a>
+    </nav>
+  </footer>
+
+  <script>
+    function getSlugFromUrl() {
+      try {
+        const params = new URLSearchParams(window.location.search);
+        return params.get("slug") || "";
+      } catch (e) {
+        return "";
+      }
+    }
+
+    function escapeHtml(str) {
+      return str
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;");
+    }
+
+    async function loadPost() {
+      const slug = getSlugFromUrl();
+      const titleEl = document.getElementById("post-title");
+      const metaEl = document.getElementById("post-meta");
+      const tagsEl = document.getElementById("post-tags");
+      const bodyEl = document.getElementById("post-body");
+      const coverEl = document.getElementById("post-cover");
+      const statusEl = document.getElementById("status-message");
+
+      if (!slug) {
+        titleEl.textContent = "No article found.";
+        statusEl.style.display = "block";
+        statusEl.textContent = "The article link is missing a slug parameter.";
+        return;
+      }
+
+      try {
+        const res = await fetch(
+          `/.netlify/functions/notion-blog?mode=detail&slug=${encodeURIComponent(
+            slug
+          )}`
+        );
+
+        if (!res.ok) {
+          titleEl.textContent = "Article not found.";
+          statusEl.style.display = "block";
+          statusEl.textContent = "This article could not be loaded. It may have been unpublished or the link is incorrect.";
+          return;
+        }
+
+        const post = await res.json();
+
+        // 제목
+        titleEl.textContent = post.title || "(Untitled)";
+
+        // 메타 (카테고리 + 업데이트 날짜)
+        const lastEdited = post.lastEdited
+          ? new Date(post.lastEdited).toLocaleDateString(undefined, {
+              year: "numeric",
+              month: "short",
+              day: "numeric",
+            })
+          : "";
+
+        let metaParts = [];
+        if (post.category) {
+          metaParts.push(post.category);
+        }
+        if (lastEdited) {
+          metaParts.push(`Last updated ${lastEdited}`);
+        }
+        metaEl.textContent = metaParts.join(" · ");
+
+        // 태그
+        tagsEl.innerHTML = "";
+        if (post.tags && post.tags.length) {
+          post.tags.forEach((tag) => {
+            const li = document.createElement("li");
+            li.textContent = tag;
+            tagsEl.appendChild(li);
+          });
+        }
+
+        // 커버 이미지
+        if (post.coverImage) {
+          coverEl.style.display = "block";
+          coverEl.innerHTML = `<img src="${escapeHtml(
+            post.coverImage
+          )}" alt="">`;
+        } else {
+          coverEl.style.display = "none";
+        }
+
+        // 본문
+        bodyEl.innerHTML = "";
+        if (post.content) {
+          const blocks = post.content
+            .split(/\n\s*\n/)  // 빈 줄 기준으로 문단 나누기
+            .map((b) => b.trim())
+            .filter((b) => b.length > 0);
+
+          if (!blocks.length) {
+            const p = document.createElement("p");
+            p.textContent = "This article has no content yet.";
+            bodyEl.appendChild(p);
+          } else {
+            blocks.forEach((block) => {
+              const p = document.createElement("p");
+              p.textContent = block;
+              bodyEl.appendChild(p);
+            });
+          }
+        } else {
+          const p = document.createElement("p");
+          p.textContent = "This article has no content yet.";
+          bodyEl.appendChild(p);
+        }
+      } catch (err) {
+        console.error("Error loading post:", err);
+        titleEl.textContent = "Error loading article.";
+        statusEl.style.display = "block";
+        statusEl.textContent = "Something went wrong while loading this article. Please try again later.";
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", loadPost);
+  </script>
+</body>
+</html>
