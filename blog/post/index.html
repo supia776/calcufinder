@@ -445,20 +445,20 @@
         titleEl.textContent = post.title || "(Untitled)";
 
         // 메타 (카테고리 + 업데이트 날짜)
-        const lastEdited = post.lastEdited
-          ? new Date(post.lastEdited).toLocaleDateString(undefined, {
-              year: "numeric",
-              month: "short",
-              day: "numeric",
-            })
-          : "";
+        const publishedDate = post.createdTime
+  ? new Date(post.createdTime).toLocaleDateString(undefined, {
+      month: "long",   // November
+      day: "numeric",  // 24
+      year: "numeric", // 2025
+    })
+  : "";
 
         let metaParts = [];
         if (post.category) {
           metaParts.push(post.category);
         }
         if (lastEdited) {
-          metaParts.push(`Last updated ${lastEdited}`);
+          metaParts.push(`Published on ${publishedDate}`);
         }
         metaEl.textContent = metaParts.join(" · ");
 
