@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- loan-repayment.html -->
+<title>Loan Repayment Calculator | Plan your debt payoff</title>
+<meta name="description" content="Calculate monthly repayments, total interest, and payoff time for personal, car, or home loans.">
+
+<link rel="canonical" href="https://calcufinder.com/finance/loan-repayment.html">
+
+<meta property="og:title" content="Loan Repayment Calculator | Plan your debt payoff">
+<meta property="og:description" content="Use the Loan Repayment Calculator to see your payment schedule, interest cost, and payoff date.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://calcufinder.com/finance/loan-repayment.html">
+<meta property="og:image" content="https://calcufinder.com/assets/og-image.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Loan Repayment Calculator | Plan your debt payoff">
+<meta name="twitter:description" content="Quickly estimate payments and interest for any loan amount and rate.">
+<meta name="twitter:image" content="https://calcufinder.com/assets/og-image.png">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9077859826573424"
+     crossorigin="anonymous"></script>
+     <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y7NKFF4N71"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Y7NKFF4N71');
+</script>
+
+
+  <style>
+    :root {
+      --bg-main: #f5f5f5;
+      --bg-card: #ffffff;
+      --bg-sidebar: #ffffff;
+      --bg-ads: #fafafa;
+      --border-soft: #e0e0e0;
+      --text-main: #111111;
+      --text-muted: #666666;
+      --accent: #111111;
+      --link: #1a0dab;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.5;
+      color: var(--text-main);
+      background: var(--bg-main);
+      font-size: 15px;
+    }
+
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* HEADER */
+    .site-header {
+      background:#ffffff;
+      border-bottom:1px solid #e5e5e5;
+      padding:12px 24px;
+      width:100%;
+    }
+    .header-inner {
+      max-width:1200px;
+      margin:0 auto;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+    .logo-img {
+      height:65px;
+      width:auto;
+      display:block;
+    }
+    @media(max-width:768px){
+      .logo-img{height:40px;}
+    }
+
+    .header-nav{
+      display:flex;
+      gap:28px;
+    }
+    .header-nav a{
+      font-size:15px;
+      text-decoration:none;
+      color:#222222;
+      font-weight:500;
+    }
+    .header-nav a:hover{
+      color:#0077cc;
+    }
+
+    /* LAYOUT */
+    .layout{
+      display:grid;
+      grid-template-columns:220px minmax(0,1fr) 280px;
+      min-height:calc(100vh - 70px);
+    }
+
+    /* SIDEBAR */
+    .sidebar{
+      background:var(--bg-sidebar);
+      border-right:1px solid var(--border-soft);
+      padding:24px 20px;
+      position:sticky;
+      top:0;
+      align-self:start;
+      height:100vh;
+      overflow-y:auto;
+    }
+    .sidebar-logo{
+      font-weight:700;
+      letter-spacing:0.05em;
+      font-size:18px;
+      margin-bottom:24px;
+    }
+    .sidebar-nav{
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+    }
+    .sidebar-nav a{
+      padding:8px 10px;
+      border-radius:6px;
+      color:var(--text-main);
+      font-size:14px;
+      font-weight:500;
+    }
+    .sidebar-nav a.active{
+      background:#111111;
+      color:#ffffff;
+    }
+    .sidebar-nav a:hover{
+      background:#eeeeee;
+      text-decoration:none;
+    }
+
+    /* CONTENT */
+    .content{
+      padding:32px 32px 40px;
+    }
+    .content-inner{
+      max-width:1100px;
+      margin:0 auto;
+    }
+
+    h1,h2,h3{
+      margin-top:0;
+      letter-spacing:-0.01em;
+    }
+    h1{
+      font-size:28px;
+      margin-bottom:10px;
+    }
+    p{
+      max-width:720px;
+    }
+
+    .meta-row{
+      margin-top:6px;
+      font-size:13px;
+      color:#666666;
+      display:flex;
+      flex-wrap:wrap;
+      gap:6px;
+    }
+    .pill{
+      font-size:12px;
+      padding:3px 9px;
+      background:#ffffff;
+      border-radius:999px;
+      border:1px solid var(--border-soft);
+    }
+
+    .tool-layout{
+      margin-top:24px;
+      display:grid;
+      grid-template-columns:minmax(0,0.95fr) minmax(0,1.05fr);
+      gap:24px;
+    }
+
+    .card{
+      background:#ffffff;
+      border-radius:10px;
+      border:1px solid var(--border-soft);
+      padding:20px 20px 18px;
+      box-shadow:0 1px 2px rgba(0,0,0,0.03);
+    }
+
+    h2.section-heading{
+      font-size:19px;
+      margin:0 0 12px;
+    }
+
+    label{
+      font-size:14px;
+      font-weight:500;
+      display:block;
+      margin-bottom:5px;
+    }
+    .field-group{
+      margin-bottom:14px;
+    }
+
+    input[type="number"], input[type="text"]{
+      width:100%;
+      padding:9px 11px;
+      border-radius:6px;
+      border:1px solid #cccccc;
+      font-size:14px;
+      background:#ffffff;
+    }
+    input::placeholder{
+      color:#aaaaaa;
+    }
+
+    .hint{
+      font-size:12px;
+      color:#777777;
+      margin-top:4px;
+    }
+
+    button.primary-btn{
+      margin-top:6px;
+      padding:9px 18px;
+      border-radius:6px;
+      border:none;
+      background:#111111;
+      color:#ffffff;
+      font-size:14px;
+      font-weight:500;
+      cursor:pointer;
+    }
+    button.primary-btn:hover{
+      opacity:0.9;
+    }
+
+    /* RESULTS */
+    .results-title{
+      font-size:19px;
+      margin-bottom:8px;
+    }
+    .result-block{
+      margin-bottom:14px;
+    }
+
+    .result-main{
+      font-size:20px;
+      font-weight:700;
+      margin-bottom:6px;
+    }
+    .result-main .value{
+      font-weight:700;
+    }
+
+    .result-row{
+      display:flex;
+      justify-content:space-between;
+      align-items:baseline;
+      font-size:15px;
+      margin-bottom:6px;
+    }
+    .result-label{
+      color:#444444;
+    }
+    .result-value{
+      font-size:20px;
+      font-weight:700;
+    }
+
+    .result-sub{
+      font-size:14px;
+      color:#444444;
+      margin-bottom:4px;
+    }
+    .result-block p{
+      font-size:14px;
+      margin:0 0 4px;
+      max-width:none;
+    }
+
+    /* Affiliate note */
+    .affiliate-note{
+      font-size:13px;
+      color:var(--text-muted);
+      margin:32px 0 12px;
+    }
+
+    /* ADS (hidden) */
+    .ads{display:none;}
+
+    /* FOOTER */
+    footer{
+      border-top:1px solid #eeeeee;
+      background:#ffffff;
+      font-size:13px;
+      color:#555555;
+      padding:12px 32px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+    footer p{
+      margin:0;
+    }
+    footer nav{
+      margin-left:auto;
+    }
+    footer nav a{
+      margin-left:12px;
+      color:#555555;
+      text-decoration:none;
+    }
+    footer nav a:hover{
+      text-decoration:underline;
+    }
+
+    /* MOBILE */
+    @media(max-width:960px){
+      .layout{
+        grid-template-columns:1fr;
+        min-height:auto;
+      }
+      .sidebar{
+        position:static;
+        height:auto;
+        border-right:none;
+        border-bottom:1px solid var(--border-soft);
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        flex-wrap:wrap;
+      }
+      .sidebar-logo{
+        margin-bottom:8px;
+      }
+      .sidebar-nav{
+        flex-direction:row;
+        flex-wrap:wrap;
+        gap:4px;
+      }
+      .sidebar-nav a{
+        font-size:13px;
+        padding:6px 8px;
+      }
+      .content{
+        padding:20px 16px 28px;
+      }
+      .tool-layout{
+        grid-template-columns:1fr;
+      }
+    }
+/* ===== 공통: 클릭 막힌 비활성 링크 스타일 ===== */
+.disabled-link {
+  pointer-events: none;   /* 클릭 안 됨 */
+  cursor: default;        /* 손가락 커서 안 나오게 */
+  color: #999999;         /* 회색 처리 */
+  text-decoration: none;
+}
+
+/* 사이드바 / 상단 네비에서 hover 해도 그대로 보이게 */
+.sidebar-nav a.disabled-link:hover,
+.header-nav a.disabled-link:hover {
+  background: transparent;
+  color: #999999;
+  text-decoration: none;
+}
+  </style>
+</head>
+
+<body>
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/index.html">
+      <img src="/assets/logo.png" alt="CalcuFinder logo" class="logo-img" />
+    </a>
+    <nav class="header-nav">
+      <a href="/index.html">Home</a>
+      <a href="/finance/">Finance</a>
+      <a href="/insurance/">Insurance</a>
+      <a href="/business-software/">Business & Software</a>
+<a href="/blog/index.html">Blog</a>
+      <a href="/about.html">About</a>
+    </nav>
+  </div>
+</header>
+
+<div class="layout">
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">CalcuFinder</div>
+    <nav class="sidebar-nav">
+      <a href="/index.html">Home</a>
+      <a href="/finance/" class="active">Finance</a>
+      <a href="/insurance/">Insurance</a>
+      <a href="/business-software/">Business & software</a>
+<a href="/blog/index.html">Blog</a>
+      <a href="/about.html">About</a>
+    </nav>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="content">
+    <div class="content-inner">
+      <h1>Loan Repayment Calculator</h1>
+      <p>
+        Estimate a simple loan repayment plan and see how extra monthly payments could change your payoff time and
+        total interest. This is a rough model only, not a full amortisation schedule.
+      </p>
+
+      <div class="meta-row">
+        <span class="pill">Category: Finance</span>
+        <span class="pill">Audience: Borrowers</span>
+      </div>
+
+      <div class="tool-layout">
+        <!-- INPUTS -->
+        <section class="card">
+          <h2 class="section-heading">Inputs</h2>
+
+          <div class="field-group">
+            <label for="currencyLabel">Currency label (for your reference only)</label>
+            <input
+              id="currencyLabel"
+              type="text"
+              placeholder="e.g. AUD, USD, EUR, KRW"
+              oninput="updateLoan()"
+            />
+            <p class="hint">
+              The calculator does not convert currencies. Treat every amount as your local currency.
+            </p>
+          </div>
+
+          <div class="field-group">
+            <label for="loanAmount">Loan amount (current balance)</label>
+            <input
+              id="loanAmount"
+              type="number"
+              min="0"
+              step="100"
+              placeholder="e.g. 300000"
+              oninput="updateLoan()"
+            />
+          </div>
+
+          <div class="field-group">
+            <label for="interestRate">Interest rate (per year, %)</label>
+            <input
+              id="interestRate"
+              type="number"
+              min="0"
+              max="40"
+              step="0.1"
+              placeholder="e.g. 6.5"
+              oninput="updateLoan()"
+            />
+          </div>
+
+          <div class="field-group">
+            <label for="termYears">Target payoff horizon (years)</label>
+            <input
+              id="termYears"
+              type="number"
+              min="1"
+              max="40"
+              step="1"
+              placeholder="e.g. 25"
+              oninput="updateLoan()"
+            />
+            <p class="hint">
+              This is how long you want to model the loan over, not necessarily the original bank term.
+            </p>
+          </div>
+
+          <div class="field-group">
+            <label for="extraMonthly">Extra payment on top of the required amount (optional)</label>
+            <input
+              id="extraMonthly"
+              type="number"
+              min="0"
+              step="10"
+              placeholder="e.g. 200"
+              oninput="updateLoan()"
+            />
+            <p class="hint">
+              This extra is added on top of the modelled “standard” repayment to see how much faster you could clear the loan.
+            </p>
+          </div>
+
+          <button type="button" class="primary-btn" onclick="updateLoan()">
+            Calculate repayment
+          </button>
+
+          <p class="hint" style="margin-top:10px;">
+            This is a simplified calculation. Actual lender calculations, fees, and rules may be different.
+          </p>
+        </section>
+
+        <!-- RESULTS -->
+        <section class="card">
+          <h2 class="results-title">Results</h2>
+          <div id="resultsContent">
+            <p>
+              Enter loan amount, interest rate, term, and (optionally) an extra monthly payment to see an estimated
+              monthly repayment and payoff comparison.
+            </p>
+          </div>
+        </section>
+      </div>
+
+      <!-- Affiliate note -->
+      <p class="affiliate-note">
+        Some pages on CalcuFinder may include affiliate links. If you click and make a purchase,
+            we may earn a small commission at no extra cost to you. This helps support the project
+            and keeps the tools free to use.
+      </p>
+    </div>
+  </main>
+
+  <!-- ADS (hidden for now) -->
+  <aside class="ads"></aside>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>© CalcuFinder. Tools for smarter decisions, worldwide.</p>
+  <nav>
+    <a href="/about.html">About</a>
+    <a href="/contact.html">Contact</a>
+    <a href="/privacy.html">Privacy</a>
+    <a href="/disclosure.html">Disclosure</a>
+  </nav>
+</footer>
+
+<script>
+  function formatDuration(months) {
+    if (!isFinite(months) || months <= 0) return "—";
+    const total = Math.round(months);
+    const years = Math.floor(total / 12);
+    const restMonths = total % 12;
+    if (years === 0) return restMonths + (restMonths === 1 ? " month" : " months");
+    if (restMonths === 0) return years + (years === 1 ? " year" : " years");
+    return years + (years === 1 ? " year " : " years ") +
+           restMonths + (restMonths === 1 ? " month" : " months");
+  }
+
+  function calcStandardPayment(P, annualRate, years) {
+    const n = years * 12;
+    if (P <= 0 || n <= 0) return 0;
+    const r = annualRate / 100 / 12;
+    if (r <= 0) {
+      return P / n;
+    }
+    const factor = Math.pow(1 + r, n);
+    return P * r * factor / (factor - 1);
+  }
+
+  function simulateLoan(P, annualRate, monthlyPay) {
+    if (P <= 0 || monthlyPay <= 0) {
+      return { months: 0, totalInterest: 0 };
+    }
+    const r = annualRate / 100 / 12;
+    let balance = P;
+    let interestTotal = 0;
+    let months = 0;
+    const maxMonths = 1200; // safety cap
+
+    if (r <= 0) {
+      // no interest: simple division
+      months = Math.ceil(balance / monthlyPay);
+      return { months, totalInterest: 0 };
+    }
+
+    while (balance > 0 && months < maxMonths) {
+      const interest = balance * r;
+      interestTotal += interest;
+      balance = balance + interest - monthlyPay;
+      if (balance < 0) balance = 0;
+      months++;
+    }
+
+    return { months, totalInterest: interestTotal };
+  }
+
+  function updateLoan() {
+    const currencyLabel = document.getElementById("currencyLabel").value.trim();
+    const loanAmount = parseFloat(document.getElementById("loanAmount").value);
+    const interestRate = parseFloat(document.getElementById("interestRate").value);
+    const termYears = parseFloat(document.getElementById("termYears").value);
+    const extraMonthly = parseFloat(document.getElementById("extraMonthly").value);
+
+    const container = document.getElementById("resultsContent");
+
+    if (isNaN(loanAmount) || loanAmount <= 0 ||
+        isNaN(interestRate) || interestRate < 0 ||
+        isNaN(termYears) || termYears <= 0) {
+      container.innerHTML = `
+        <p>
+          To see an estimate, please enter a loan amount, interest rate, and payoff horizon in years.
+          Extra payments are optional.
+        </p>
+      `;
+      return;
+    }
+
+    const unit = currencyLabel ? " " + currencyLabel : "";
+
+    const basePayment = calcStandardPayment(loanAmount, interestRate, termYears);
+    const baseSim = simulateLoan(loanAmount, interestRate, basePayment);
+    const baseDuration = formatDuration(baseSim.months);
+    const baseInterest = baseSim.totalInterest;
+
+    let extraPay = (!isNaN(extraMonthly) && extraMonthly > 0) ? extraMonthly : 0;
+    let withExtraSim = null;
+
+    if (extraPay > 0) {
+      const combined = basePayment + extraPay;
+      withExtraSim = simulateLoan(loanAmount, interestRate, combined);
+    }
+
+    let extraBlock = "";
+    if (withExtraSim) {
+      const extraDuration = formatDuration(withExtraSim.months);
+      const extraInterest = withExtraSim.totalInterest;
+      const monthsSaved = Math.max(0, baseSim.months - withExtraSim.months);
+      const interestSaved = Math.max(0, baseInterest - extraInterest);
+
+      extraBlock = `
+        <div class="result-block">
+          <h3>With extra monthly payments</h3>
+          <div class="result-row">
+            <div class="result-label">Approx. combined monthly payment:</div>
+            <div class="result-value">
+              ${(basePayment + extraPay).toLocaleString(undefined,{maximumFractionDigits:0})}${unit}
+            </div>
+          </div>
+          <div class="result-row">
+            <div class="result-label">Estimated payoff time:</div>
+            <div class="result-value">${extraDuration}</div>
+          </div>
+          <div class="result-row">
+            <div class="result-label">Estimated total interest paid:</div>
+            <div class="result-value">
+              ${extraInterest.toLocaleString(undefined,{maximumFractionDigits:0})}${unit}
+            </div>
+          </div>
+          <p class="result-sub" style="margin-top:6px;">
+            Compared with the basic schedule, this could save about
+            ${interestSaved.toLocaleString(undefined,{maximumFractionDigits:0})}${unit}
+            in interest and roughly ${monthsSaved} months of payments, if rates and payments stay constant.
+          </p>
+        </div>
+      `;
+    }
+
+    container.innerHTML = `
+      <div class="result-block">
+        <div class="result-main">
+          <span class="value">
+            Here’s a simple estimate of your loan under these assumptions.
+          </span>
+        </div>
+      </div>
+
+      <div class="result-block">
+        <h3>Standard repayment (no extra)</h3>
+        <div class="result-row">
+          <div class="result-label">Approx. monthly payment:</div>
+          <div class="result-value">
+            ${basePayment.toLocaleString(undefined,{maximumFractionDigits:0})}${unit}
+          </div>
+        </div>
+        <div class="result-row">
+          <div class="result-label">Estimated payoff time:</div>
+          <div class="result-value">${baseDuration}</div>
+        </div>
+        <div class="result-row">
+          <div class="result-label">Estimated total interest paid:</div>
+          <div class="result-value">
+            ${baseInterest.toLocaleString(undefined,{maximumFractionDigits:0})}${unit}
+          </div>
+        </div>
+      </div>
+
+      ${extraBlock || ""}
+
+      <div class="result-block">
+        <h3>How to use this</h3>
+        <p>
+          This calculator is a rough guide. Actual bank or lender calculations may include fees, different
+          rounding rules, changing interest rates, and other conditions that are not modelled here.
+        </p>
+        <p style="margin-top:4px;">
+          Use these numbers as a starting point for planning and questions, not as a final figure for contracts.
+        </p>
+      </div>
+
+      <div class="result-block">
+        <h3>Important disclaimer</h3>
+        <p>
+          This tool is for general information only and is not financial advice. It does not take into account your
+          full circumstances, goals, or risk tolerance. For personalised guidance, consider speaking with a licensed
+          adviser or lender in your country.
+        </p>
+      </div>
+    `;
+  }
+
+  // 초기 상태
+  updateLoan();
+</script>
+
+</body>
+</html>

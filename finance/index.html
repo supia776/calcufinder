@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- finance/index.html -->
+<title>Finance Calculators | Money & investing tools | CalcuFinder</title>
+<meta name="description" content="Plan your money with simple finance calculators for FIRE, loans, investments, currency conversion, and superannuation.">
+
+<link rel="canonical" href="https://calcufinder.com/finance/">
+
+<meta property="og:title" content="Finance Calculators | Money & investing tools | CalcuFinder">
+<meta property="og:description" content="Use CalcuFinder's finance calculators to explore FIRE, loan repayments, investing vs debt, currency conversion, and super.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://calcufinder.com/finance/">
+<meta property="og:image" content="https://calcufinder.com/assets/og-image.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Finance Calculators | Money & investing tools | CalcuFinder">
+<meta name="twitter:description" content="Easy finance calculators for everyday decisions about saving, investing, and paying off debt.">
+<meta name="twitter:image" content="https://calcufinder.com/assets/og-image.png">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9077859826573424"
+     crossorigin="anonymous"></script>
+     <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y7NKFF4N71"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Y7NKFF4N71');
+</script>
+
+  <style>
+    :root {
+      --bg-main: #f5f5f5;
+      --bg-card: #ffffff;
+      --bg-sidebar: #ffffff;
+      --bg-ads: #fafafa;
+      --border-soft: #e0e0e0;
+      --text-main: #111111;
+      --text-muted: #666666;
+      --accent: #111111;
+      --link: #1a0dab;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.5;
+      color: var(--text-main);
+      background: var(--bg-main);
+      font-size: 15px;
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* ===== 상단 헤더 ===== */
+    .site-header {
+      background: #ffffff;
+      border-bottom: 1px solid #e5e5e5;
+      padding: 12px 24px;
+      width: 100%;
+    }
+
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo-img {
+      height: 65px;
+      width: auto;
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .logo-img {
+        height: 40px;
+      }
+    }
+
+    .header-nav {
+      display: flex;
+      gap: 28px;
+    }
+
+    .header-nav a {
+      font-size: 15px;
+      text-decoration: none;
+      color: #222222;
+      font-weight: 500;
+    }
+
+    .header-nav a:hover {
+      color: #0077cc;
+    }
+
+    /* ===== 전체 레이아웃: 사이드바 / 메인 / 광고 ===== */
+    .layout {
+      display: grid;
+      grid-template-columns: 220px minmax(0, 1fr) 280px;
+      min-height: calc(100vh - 70px);
+    }
+
+    /* ---- 왼쪽: 사이드바 네비게이션 ---- */
+    .sidebar {
+      background: var(--bg-sidebar);
+      border-right: 1px solid var(--border-soft);
+      padding: 24px 20px;
+      position: sticky;
+      top: 0;
+      align-self: start;
+      height: 100vh;
+      overflow-y: auto;
+    }
+
+    .sidebar-logo {
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      font-size: 18px;
+      margin-bottom: 24px;
+    }
+
+    .sidebar-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .sidebar-nav a {
+      padding: 8px 10px;
+      border-radius: 6px;
+      color: var(--text-main);
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .sidebar-nav a.active {
+      background: #111111;
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .sidebar-nav a:hover {
+      background: #eeeeee;
+      text-decoration: none;
+    }
+
+    /* ---- 가운데: 메인 콘텐츠 ---- */
+    .content {
+      padding: 32px 32px 40px;
+    }
+
+    .content-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    h1, h2, h3 {
+      margin-top: 0;
+      letter-spacing: -0.01em;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 15px;
+      color: var(--text-main);
+      margin: 0 0 12px;
+      max-width: 720px;
+    }
+
+    .meta-row {
+      margin-top: 6px;
+      font-size: 13px;
+      color: #666666;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .pill {
+      font-size: 12px;
+      padding: 3px 9px;
+      background: #ffffff;
+      border-radius: 999px;
+      border: 1px solid var(--border-soft);
+    }
+
+    /* 섹션 타이틀 */
+    .section-title {
+      font-size: 20px;
+      margin: 24px 0 4px;
+    }
+
+    .section-subtitle {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      max-width: 640px;
+    }
+
+    /* 카드 그리드 */
+    .tool-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+      margin-bottom: 32px;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border-radius: 10px;
+      border: 1px solid var(--border-soft);
+      padding: 18px 18px 16px;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+    }
+
+    .card h3 {
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin: 0 0 10px;
+      max-width: none;
+    }
+
+    .card-meta {
+      font-size: 12px;
+      color: #999999;
+      margin-bottom: 8px;
+    }
+
+    .card-link {
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    /* 제휴 안내 */
+    .affiliate-note {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin: 32px 0 12px;
+    }
+
+    /* 오른쪽 광고 영역 (숨김) */
+    .ads {
+      display: none;
+      background: var(--bg-ads);
+      border-left: 1px solid var(--border-soft);
+      padding: 24px 20px;
+      position: sticky;
+      top: 0;
+      align-self: start;
+      height: 100vh;
+      overflow-y: auto;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .ads h2 {
+      font-size: 15px;
+      margin: 0 0 12px;
+    }
+
+    .ad-slot {
+      border-radius: 10px;
+      border: 1px dashed #cccccc;
+      background: #ffffff;
+      padding: 16px 12px;
+      text-align: center;
+      margin-bottom: 12px;
+      font-size: 12px;
+      color: #888888;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid #eeeeee;
+      background: #ffffff;
+      font-size: 13px;
+      color: #555555;
+      padding: 12px 32px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    footer nav {
+      margin-left: auto;
+    }
+
+    footer nav a {
+      margin-left: 12px;
+      color: #555555;
+      text-decoration: none;
+    }
+
+    footer nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* 반응형 */
+    @media (max-width: 960px) {
+      .layout {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .sidebar {
+        position: static;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid var(--border-soft);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+
+      .sidebar-logo {
+        margin-bottom: 8px;
+      }
+
+      .sidebar-nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 4px;
+      }
+
+      .sidebar-nav a {
+        font-size: 13px;
+        padding: 6px 8px;
+      }
+
+      .content {
+        padding: 20px 16px 28px;
+      }
+
+      .tool-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .ads {
+        display: none;
+      }
+    }
+/* ===== 공통: 클릭 막힌 비활성 링크 스타일 ===== */
+.disabled-link {
+  pointer-events: none;   /* 클릭 안 됨 */
+  cursor: default;        /* 손가락 커서 안 나오게 */
+  color: #999999;         /* 회색 처리 */
+  text-decoration: none;
+}
+
+/* 사이드바 / 상단 네비에서 hover 해도 그대로 보이게 */
+.sidebar-nav a.disabled-link:hover,
+.header-nav a.disabled-link:hover {
+  background: transparent;
+  color: #999999;
+  text-decoration: none;
+}
+  </style>
+</head>
+
+<body>
+  <!-- 상단 헤더 -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/index.html">
+        <img src="/assets/logo.png" alt="CalcuFinder logo" class="logo-img">
+      </a>
+
+      <nav class="header-nav">
+        <a href="/index.html">Home</a>
+        <a href="/finance/">Finance</a>
+        <a href="/insurance/">Insurance</a>
+        <a href="/business-software/">Business & Software</a>
+<a href="/blog/index.html">Blog</a>
+        <a href="/about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 메인 레이아웃 -->
+  <div class="layout">
+    <!-- 사이드바 -->
+    <aside class="sidebar">
+      <div class="sidebar-logo">CalcuFinder</div>
+      <nav class="sidebar-nav">
+        <a href="/index.html">Home</a>
+        <a href="/finance/" class="active">Finance</a>
+        <a href="/insurance/">Insurance</a>
+        <a href="/business-software/">Business & software</a>
+<a href="/blog/index.html">Blog</a>
+        <a href="/about.html">About</a>
+      </nav>
+    </aside>
+
+    <!-- 가운데 메인 콘텐츠 -->
+    <main class="content">
+      <div class="content-inner">
+        <h1>Finance tools</h1>
+        <p>
+          Explore simple, focused calculators for FIRE timelines, investment vs debt payoff, currency conversion,
+          loan repayment, and retirement savings (superannuation / pension) — built for users around the world.
+        </p>
+
+        <div class="meta-row">
+          <span class="pill">FIRE &amp; long-term planning</span>
+          <span class="pill">Debt payoff decisions</span>
+          <span class="pill">Multi-currency friendly</span>
+        </div>
+
+        <h2 class="section-title">Finance calculators</h2>
+        <p class="section-subtitle">
+          Start with the question you’re trying to answer. You can always come back and try the others as your
+          situation changes.
+        </p>
+
+        <section class="tool-grid" aria-label="Finance tools">
+          <!-- FIRE Calculator -->
+          <article class="card">
+            <h3>FIRE Calculator</h3>
+            <p>
+              Estimate a rough timeline to financial independence using your savings rate, target annual spending,
+              and simple investment growth assumptions.
+            </p>
+            <p class="card-meta">FIRE · Savings rate · Time to independence</p>
+            <a href="/finance/fire-calculator.html" class="card-link">Open tool →</a>
+          </article>
+
+          <!-- Investment vs Debt Payoff -->
+          <article class="card">
+            <h3>Investment vs Debt Payoff Calculator</h3>
+            <p>
+              Compare a simple “invest vs pay down debt” scenario to see how extra cash might work for you in
+              either direction, using high-level assumptions.
+            </p>
+            <p class="card-meta">Investing · Debt payoff · Trade-offs</p>
+            <!-- 파일 이름이 다르면 이 href만 레이니님이 맞게 바꿔 주세요 -->
+            <a href="/finance/investment-vs-debt.html" class="card-link">Open tool →</a>
+          </article>
+
+          <!-- Currency Converter -->
+          <article class="card">
+            <h3>Currency Converter</h3>
+            <p>
+              Convert between major currencies for travel, remote work, and investing. Uses live rates when connected,
+              with a simple fallback table if not.
+            </p>
+            <p class="card-meta">Multi-currency · Travel · Remote work</p>
+            <a href="/finance/currency-converter.html" class="card-link">Open tool →</a>
+          </article>
+
+          <!-- Loan Repayment -->
+          <article class="card">
+            <h3>Loan Repayment Calculator</h3>
+            <p>
+              See how different repayment speeds, interest rates, and lump-sum payments affect the time and total
+              interest to clear your loans or credit cards.
+            </p>
+            <p class="card-meta">Loans · Credit cards · Interest</p>
+            <a href="/finance/loan-repayment.html" class="card-link">Open tool →</a>
+          </article>
+
+          <!-- Super / Pension Projection -->
+          <article class="card">
+            <h3>Superannuation / Pension Calculator</h3>
+            <p>
+              Get a rough projection of how your retirement savings could grow over time, using simple assumptions
+              for contributions and investment returns.
+            </p>
+            <p class="card-meta">Retirement · Superannuation · Pension</p>
+            <!-- 실제 super 툴 파일 이름에 맞게 href 수정 가능 -->
+            <a href="/finance/super-pension-calculator.html" class="card-link">Open tool →</a>
+          </article>
+        </section>
+
+        <!-- 제휴 링크 안내 문구 -->
+        <p class="affiliate-note">
+          Some pages on CalcuFinder may include affiliate links. If you click and make a purchase,
+            we may earn a small commission at no extra cost to you. This helps support the project
+            and keeps the tools free to use.
+        </p>
+      </div>
+    </main>
+
+    <!-- 광고 자리 (지금은 숨김) -->
+    <aside class="ads"></aside>
+  </div>
+
+  <!-- 하단 푸터 -->
+  <footer>
+    <p>© CalcuFinder. Tools for smarter decisions, worldwide.</p>
+    <nav>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/disclosure.html">Disclosure</a>
+    </nav>
+  </footer>
+</body>
+</html>

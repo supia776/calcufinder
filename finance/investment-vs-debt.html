@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- investment-vs-debt.html -->
+<title>Invest or Pay Off Debt? | Investment vs debt calculator</title>
+<meta name="description" content="Should you invest extra cash or pay down debt? Compare outcomes side by side with this simple calculator.">
+
+<link rel="canonical" href="https://calcufinder.com/finance/investment-vs-debt.html">
+
+<meta property="og:title" content="Invest or Pay Off Debt? | Investment vs debt calculator">
+<meta property="og:description" content="Compare long-term results of investing extra money versus paying off debt faster.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://calcufinder.com/finance/investment-vs-debt.html">
+<meta property="og:image" content="https://calcufinder.com/assets/og-image.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Invest or Pay Off Debt? | Investment vs debt calculator">
+<meta name="twitter:description" content="See which option may leave you better off: investing or reducing debt.">
+<meta name="twitter:image" content="https://calcufinder.com/assets/og-image.png">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9077859826573424"
+     crossorigin="anonymous"></script>
+     <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y7NKFF4N71"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Y7NKFF4N71');
+</script>
+     <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y7NKFF4N71"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Y7NKFF4N71');
+</script>
+
+
+  <style>
+    :root {
+      --bg-main: #f5f5f5;
+      --bg-card: #ffffff;
+      --bg-sidebar: #ffffff;
+      --bg-ads: #fafafa;
+      --border-soft: #e0e0e0;
+      --text-main: #111111;
+      --text-muted: #666666;
+      --accent: #111111;
+      --link: #1a0dab;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.5;
+      color: var(--text-main);
+      background: var(--bg-main);
+      font-size: 15px;
+    }
+
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* HEADER */
+    .site-header {
+      background:#ffffff;
+      border-bottom:1px solid #e5e5e5;
+      padding:12px 24px;
+      width:100%;
+    }
+    .header-inner {
+      max-width:1200px;
+      margin:0 auto;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+    .logo-img {
+      height:65px;
+      width:auto;
+      display:block;
+    }
+    @media(max-width:768px){
+      .logo-img{height:40px;}
+    }
+
+    .header-nav{
+      display:flex;
+      gap:28px;
+    }
+    .header-nav a{
+      font-size:15px;
+      text-decoration:none;
+      color:#222222;
+      font-weight:500;
+    }
+    .header-nav a:hover{
+      color:#0077cc;
+    }
+
+    /* LAYOUT */
+    .layout{
+      display:grid;
+      grid-template-columns:220px minmax(0,1fr) 280px;
+      min-height:calc(100vh - 70px);
+    }
+
+    /* SIDEBAR */
+    .sidebar{
+      background:var(--bg-sidebar);
+      border-right:1px solid var(--border-soft);
+      padding:24px 20px;
+      position:sticky;
+      top:0;
+      align-self:start;
+      height:100vh;
+      overflow-y:auto;
+    }
+    .sidebar-logo{
+      font-weight:700;
+      letter-spacing:0.05em;
+      font-size:18px;
+      margin-bottom:24px;
+    }
+    .sidebar-nav{
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+    }
+    .sidebar-nav a{
+      padding:8px 10px;
+      border-radius:6px;
+      color:var(--text-main);
+      font-size:14px;
+      font-weight:500;
+    }
+    .sidebar-nav a.active{
+      background:#111111;
+      color:#ffffff;
+    }
+    .sidebar-nav a:hover{
+      background:#eeeeee;
+      text-decoration:none;
+    }
+
+    /* CONTENT */
+    .content{
+      padding:32px 32px 40px;
+    }
+    .content-inner{
+      max-width:1100px;
+      margin:0 auto;
+    }
+
+    h1,h2,h3{
+      margin-top:0;
+      letter-spacing:-0.01em;
+    }
+    h1{
+      font-size:28px;
+      margin-bottom:10px;
+    }
+    p{
+      max-width:720px;
+    }
+
+    .meta-row{
+      margin-top:6px;
+      font-size:13px;
+      color:#666666;
+      display:flex;
+      flex-wrap:wrap;
+      gap:6px;
+    }
+    .pill{
+      font-size:12px;
+      padding:3px 9px;
+      background:#ffffff;
+      border-radius:999px;
+      border:1px solid var(--border-soft);
+    }
+
+    .tool-layout{
+      margin-top:24px;
+      display:grid;
+      grid-template-columns:minmax(0,0.95fr) minmax(0,1.05fr);
+      gap:24px;
+    }
+
+    .card{
+      background:#ffffff;
+      border-radius:10px;
+      border:1px solid var(--border-soft);
+      padding:20px 20px 18px;
+      box-shadow:0 1px 2px rgba(0,0,0,0.03);
+    }
+
+    h2.section-heading{
+      font-size:19px;
+      margin:0 0 12px;
+    }
+
+    label{
+      font-size:14px;
+      font-weight:500;
+      display:block;
+      margin-bottom:5px;
+    }
+    .field-group{
+      margin-bottom:14px;
+    }
+
+    input[type="number"], input[type="text"]{
+      width:100%;
+      padding:9px 11px;
+      border-radius:6px;
+      border:1px solid #cccccc;
+      font-size:14px;
+      background:#ffffff;
+    }
+    input::placeholder{
+      color:#aaaaaa;
+    }
+
+    .hint{
+      font-size:12px;
+      color:#777777;
+      margin-top:4px;
+    }
+
+    button.primary-btn{
+      margin-top:6px;
+      padding:9px 18px;
+      border-radius:6px;
+      border:none;
+      background:#111111;
+      color:#ffffff;
+      font-size:14px;
+      font-weight:500;
+      cursor:pointer;
+    }
+    button.primary-btn:hover{
+      opacity:0.9;
+    }
+
+    /* RESULTS */
+    .results-title{
+      font-size:19px;
+      margin-bottom:8px;
+    }
+    .result-block{
+      margin-bottom:14px;
+    }
+
+    .result-main{
+      font-size:20px;
+      font-weight:700;
+      margin-bottom:6px;
+    }
+    .result-main .value{
+      font-weight:700;
+    }
+
+    .result-row{
+      display:flex;
+      justify-content:space-between;
+      align-items:baseline;
+      font-size:15px;
+      margin-bottom:6px;
+    }
+    .result-label{
+      color:#444444;
+    }
+    .result-value{
+      font-size:20px;
+      font-weight:700;
+    }
+
+    .result-sub{
+      font-size:14px;
+      color:#444444;
+      margin-bottom:4px;
+    }
+    .result-block p{
+      font-size:14px;
+      margin:0 0 4px;
+      max-width:none;
+    }
+
+    /* Affiliate note */
+    .affiliate-note{
+      font-size:13px;
+      color:var(--text-muted);
+      margin:32px 0 12px;
+    }
+
+    /* ADS (hidden) */
+    .ads{display:none;}
+
+    /* FOOTER */
+    footer{
+      border-top:1px solid #eeeeee;
+      background:#ffffff;
+      font-size:13px;
+      color:#555555;
+      padding:12px 32px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+    footer p{
+      margin:0;
+    }
+    footer nav{
+      margin-left:auto;
+    }
+    footer nav a{
+      margin-left:12px;
+      color:#555555;
+      text-decoration:none;
+    }
+    footer nav a:hover{
+      text-decoration:underline;
+    }
+
+    /* MOBILE */
+    @media(max-width:960px){
+      .layout{
+        grid-template-columns:1fr;
+        min-height:auto;
+      }
+      .sidebar{
+        position:static;
+        height:auto;
+        border-right:none;
+        border-bottom:1px solid var(--border-soft);
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        flex-wrap:wrap;
+      }
+      .sidebar-logo{
+        margin-bottom:8px;
+      }
+      .sidebar-nav{
+        flex-direction:row;
+        flex-wrap:wrap;
+        gap:4px;
+      }
+      .sidebar-nav a{
+        font-size:13px;
+        padding:6px 8px;
+      }
+      .content{
+        padding:20px 16px 28px;
+      }
+      .tool-layout{
+        grid-template-columns:1fr;
+      }
+    }
+/* ===== 공통: 클릭 막힌 비활성 링크 스타일 ===== */
+.disabled-link {
+  pointer-events: none;   /* 클릭 안 됨 */
+  cursor: default;        /* 손가락 커서 안 나오게 */
+  color: #999999;         /* 회색 처리 */
+  text-decoration: none;
+}
+
+/* 사이드바 / 상단 네비에서 hover 해도 그대로 보이게 */
+.sidebar-nav a.disabled-link:hover,
+.header-nav a.disabled-link:hover {
+  background: transparent;
+  color: #999999;
+  text-decoration: none;
+}
+  </style>
+</head>
+
+<body>
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/index.html">
+      <img src="/assets/logo.png" alt="CalcuFinder logo" class="logo-img" />
+    </a>
+    <nav class="header-nav">
+      <a href="/index.html">Home</a>
+      <a href="/finance/">Finance</a>
+      <a href="/insurance/">Insurance</a>
+      <a href="/business-software/">Business & Software</a>
+<a href="/blog/index.html">Blog</a>
+      <a href="/about.html">About</a>
+    </nav>
+  </div>
+</header>
+
+<div class="layout">
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">CalcuFinder</div>
+    <nav class="sidebar-nav">
+      <a href="/index.html">Home</a>
+      <a href="/finance/" class="active">Finance</a>
+      <a href="/insurance/">Insurance</a>
+      <a href="/business-software/">Business & software</a>
+<a href="/blog/index.html">Blog</a>
+      <a href="/about.html">About</a>
+    </nav>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="content">
+    <div class="content-inner">
+      <h1>Investment vs Debt Payoff Calculator</h1>
+      <p>
+        Compare a simple “invest the extra money” vs “use it to pay down debt faster” scenario. This tool focuses on
+        the effect of your extra monthly amount over a chosen time horizon – not your entire financial life.
+      </p>
+
+      <div class="meta-row">
+        <span class="pill">Category: Finance</span>
+        <span class="pill">Audience: Borrowers & investors</span>
+      </div>
+
+      <div class="tool-layout">
+        <!-- INPUTS -->
+        <section class="card">
+          <h2 class="section-heading">Inputs</h2>
+
+          <div class="field-group">
+            <label for="currencyLabel">Currency label (for your reference only)</label>
+            <input
+              id="currencyLabel"
+              type="text"
+              placeholder="e.g. AUD, USD, EUR, KRW"
+              oninput="updateComparison()"
+            />
+            <p class="hint">
+              The calculator does not convert currencies. Treat all amounts as your local currency.
+            </p>
+          </div>
+
+          <div class="field-group">
+            <label for="extraMonthly">Extra amount you can put toward investing or debt each month</label>
+            <input
+              id="extraMonthly"
+              type="number"
+              min="0"
+              step="10"
+              placeholder="e.g. 500"
+              oninput="updateComparison()"
+            />
+            <p class="hint">
+              This is on top of any minimum loan repayments or retirement contributions you already make.
+            </p>
+          </div>
+
+          <div class="field-group">
+            <label for="debtRate">Debt interest rate (per year, %)</label>
+            <input
+              id="debtRate"
+              type="number"
+              min="0"
+              max="40"
+              step="0.1"
+              placeholder="e.g. 6.5"
+              oninput="updateComparison()"
+            />
+          </div>
+
+          <div class="field-group">
+            <label for="invReturn">Expected average investment return (per year, %)</label>
+            <input
+              id="invReturn"
+              type="number"
+              min="0"
+              max="20"
+              step="0.1"
+              placeholder="e.g. 7"
+              oninput="updateComparison()"
+            />
+          </div>
+
+          <div class="field-group">
+            <label for="horizonYears">Time horizon for this comparison (years)</label>
+            <input
+              id="horizonYears"
+              type="number"
+              min="1"
+              max="50"
+              step="1"
+              placeholder="e.g. 10"
+              oninput="updateComparison()"
+            />
+          </div>
+
+          <button type="button" class="primary-btn" onclick="updateComparison()">
+            Run comparison
+          </button>
+
+          <p class="hint" style="margin-top:10px;">
+            This compares only the effect of the extra monthly amount over the chosen period.
+            It does not show full loan payoff schedules or your entire portfolio.
+          </p>
+        </section>
+
+        <!-- RESULTS -->
+        <section class="card">
+          <h2 class="results-title">Results</h2>
+          <div id="resultsContent">
+            <p>
+              Enter your extra monthly amount, debt interest rate, expected investment return, and time horizon
+              to see a simple comparison.
+            </p>
+          </div>
+        </section>
+      </div>
+
+      <!-- Affiliate note -->
+      <p class="affiliate-note">
+        Some pages on CalcuFinder may include affiliate links. If you click and make a purchase,
+            we may earn a small commission at no extra cost to you. This helps support the project
+            and keeps the tools free to use.
+      </p>
+    </div>
+  </main>
+
+  <!-- ADS (hidden for now) -->
+  <aside class="ads"></aside>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>© CalcuFinder. Tools for smarter decisions, worldwide.</p>
+  <nav>
+    <a href="/about.html">About</a>
+    <a href="/contact.html">Contact</a>
+    <a href="/privacy.html">Privacy</a>
+    <a href="/disclosure.html">Disclosure</a>
+  </nav>
+</footer>
+
+<script>
+  function futureValueMonthly(contribution, rMonthly, nMonths) {
+    if (contribution <= 0 || nMonths <= 0) return 0;
+    if (rMonthly <= 0) {
+      return contribution * nMonths;
+    }
+    const factor = Math.pow(1 + rMonthly, nMonths);
+    return contribution * (factor - 1) / rMonthly;
+  }
+
+  function updateComparison() {
+    const currencyLabel = document.getElementById("currencyLabel").value.trim();
+    const extraMonthly = parseFloat(document.getElementById("extraMonthly").value);
+    const debtRate = parseFloat(document.getElementById("debtRate").value);
+    const invReturn = parseFloat(document.getElementById("invReturn").value);
+    const horizonYears = parseFloat(document.getElementById("horizonYears").value);
+
+    const container = document.getElementById("resultsContent");
+
+    if (
+      isNaN(extraMonthly) || extraMonthly <= 0 ||
+      isNaN(debtRate) ||
+      isNaN(invReturn) ||
+      isNaN(horizonYears) || horizonYears <= 0
+    ) {
+      container.innerHTML = `
+        <p>
+          To see a comparison, please enter your extra monthly amount, debt interest rate, expected investment return,
+          and time horizon.
+        </p>
+      `;
+      return;
+    }
+
+    const months = Math.round(horizonYears * 12);
+
+    const rDebtMonthly = debtRate / 100 / 12;
+    const rInvMonthly = invReturn / 100 / 12;
+
+    const valueInvest = futureValueMonthly(extraMonthly, rInvMonthly, months);
+    const valueDebt = futureValueMonthly(extraMonthly, rDebtMonthly, months);
+
+    const label = currencyLabel ? " " + currencyLabel : "";
+    const diff = valueInvest - valueDebt;
+
+    let summaryLine = "";
+    if (Math.abs(diff) < 1) {
+      summaryLine = `Over ${horizonYears.toFixed(1)} years, both choices are very similar in this simple model.`;
+    } else if (diff > 0) {
+      summaryLine = `Over ${horizonYears.toFixed(1)} years, investing the extra money comes out ahead in this model.`;
+    } else {
+      summaryLine = `Over ${horizonYears.toFixed(1)} years, paying down the debt faster comes out ahead in this model.`;
+    }
+
+    const aheadText =
+      diff > 0
+        ? `Investing is ahead by roughly ${diff.toLocaleString(undefined,{maximumFractionDigits:0})}${label}.`
+        : diff < 0
+        ? `Debt payoff is ahead by roughly ${Math.abs(diff).toLocaleString(undefined,{maximumFractionDigits:0})}${label}.`
+        : `The difference between the two options is very small under these assumptions.`;
+
+    let ruleOfThumb = "";
+    if (!isNaN(debtRate) && !isNaN(invReturn)) {
+      if (debtRate > invReturn + 1) {
+        ruleOfThumb = `Because your debt rate (${debtRate.toFixed(1)}%) is higher than your expected investment return (${invReturn.toFixed(1)}%), focusing on paying down debt often makes sense – especially for high-interest debt.`;
+      } else if (invReturn > debtRate + 1) {
+        ruleOfThumb = `Because your expected investment return (${invReturn.toFixed(1)}%) is higher than your debt rate (${debtRate.toFixed(1)}%), investing the extra can look better in this simple view, but it also comes with more risk and uncertainty.`;
+      } else {
+        ruleOfThumb = `Your debt rate (${debtRate.toFixed(1)}%) and expected investment return (${invReturn.toFixed(1)}%) are fairly close. In this range, comfort with risk and how you feel about carrying debt can matter as much as the maths.`;
+      }
+    }
+
+    container.innerHTML = `
+      <div class="result-block">
+        <div class="result-main">
+          <span class="value">${summaryLine}</span>
+        </div>
+      </div>
+
+      <div class="result-block">
+        <div class="result-row">
+          <div class="result-label">If you invest the extra each month:</div>
+          <div class="result-value">
+            ${valueInvest.toLocaleString(undefined,{maximumFractionDigits:0})}${label}
+          </div>
+        </div>
+        <div class="result-row">
+          <div class="result-label">If you use it to pay debt faster (interest saved):</div>
+          <div class="result-value">
+            ${valueDebt.toLocaleString(undefined,{maximumFractionDigits:0})}${label}
+          </div>
+        </div>
+        <div class="result-row">
+          <div class="result-label">Difference:</div>
+          <div class="result-value">
+            ${diff >= 0
+              ? diff.toLocaleString(undefined,{maximumFractionDigits:0})
+              : Math.abs(diff).toLocaleString(undefined,{maximumFractionDigits:0})
+            }${label}
+          </div>
+        </div>
+        <p class="result-sub" style="margin-top:6px;">${aheadText}</p>
+      </div>
+
+      <div class="result-block">
+        <h3>How to use this</h3>
+        <p>
+          This calculator focuses on one decision: where to send your extra monthly cash. It does not model your full
+          debt schedule, taxes, fees, or the risk of market ups and downs. Treat it as a starting point for thinking –
+          not a final answer.
+        </p>
+        ${ruleOfThumb ? `<p style="margin-top:4px;">${ruleOfThumb}</p>` : ""}
+      </div>
+
+      <div class="result-block">
+        <h3>Important disclaimer</h3>
+        <p>
+          This tool is for general information only and is not financial advice. It does not take into account your full
+          circumstances, goals, or risk tolerance. Before making major decisions, consider speaking with a licensed
+          adviser in your country.
+        </p>
+      </div>
+    `;
+  }
+
+  // 초기 상태
+  updateComparison();
+</script>
+
+</body>
+</html>

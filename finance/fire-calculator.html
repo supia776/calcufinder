@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- fire-calculator.html -->
+<title>FIRE Calculator | Financial Independence & early retirement</title>
+<meta name="description" content="Estimate how much you need to reach Financial Independence and Retire Early (FIRE), and how long it might take.">
+
+<link rel="canonical" href="https://calcufinder.com/finance/fire-calculator.html">
+
+<meta property="og:title" content="FIRE Calculator | Financial Independence & early retirement">
+<meta property="og:description" content="Use the FIRE Calculator to project your target number, savings rate, and time to financial independence.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://calcufinder.com/finance/fire-calculator.html">
+<meta property="og:image" content="https://calcufinder.com/assets/og-image.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="FIRE Calculator | Financial Independence & early retirement">
+<meta name="twitter:description" content="See how your savings rate and investment returns change your time to FIRE.">
+<meta name="twitter:image" content="https://calcufinder.com/assets/og-image.png">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9077859826573424"
+     crossorigin="anonymous"></script>
+     <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y7NKFF4N71"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Y7NKFF4N71');
+</script>
+
+  <style>
+    :root {
+      --bg-main: #f5f5f5;
+      --bg-card: #ffffff;
+      --bg-sidebar: #ffffff;
+      --bg-ads: #fafafa;
+      --border-soft: #e0e0e0;
+      --text-main: #111111;
+      --text-muted: #666666;
+      --accent: #111111;
+      --link: #1a0dab;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.5;
+      color: var(--text-main);
+      background: var(--bg-main);
+      font-size: 15px;
+    }
+
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* HEADER */
+    .site-header {
+      background:#ffffff;
+      border-bottom:1px solid #e5e5e5;
+      padding:12px 24px;
+      width:100%;
+    }
+    .header-inner {
+      max-width:1200px;
+      margin:0 auto;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+    .logo-img { height:65px; width:auto; display:block; }
+    @media(max-width:768px){ .logo-img{height:40px;} }
+
+    .header-nav{display:flex; gap:28px;}
+    .header-nav a{
+      font-size:15px;
+      text-decoration:none;
+      color:#222222;
+      font-weight:500;
+    }
+    .header-nav a:hover{color:#0077cc;}
+
+    /* LAYOUT */
+    .layout{
+      display:grid;
+      grid-template-columns:220px minmax(0,1fr) 280px;
+      min-height:calc(100vh - 70px);
+    }
+
+    /* SIDEBAR */
+    .sidebar{
+      background:var(--bg-sidebar);
+      border-right:1px solid var(--border-soft);
+      padding:24px 20px;
+      position:sticky; top:0;
+      height:100vh; overflow-y:auto;
+      align-self:start;
+    }
+    .sidebar-logo{
+      font-weight:700;
+      letter-spacing:0.05em;
+      font-size:18px;
+      margin-bottom:24px;
+    }
+    .sidebar-nav{display:flex; flex-direction:column; gap:8px;}
+    .sidebar-nav a{
+      padding:8px 10px;
+      border-radius:6px;
+      color:var(--text-main);
+      font-size:14px;
+      font-weight:500;
+    }
+    .sidebar-nav a.active{
+      background:#111111;
+      color:#ffffff;
+    }
+    .sidebar-nav a:hover{
+      background:#eeeeee;
+      text-decoration:none;
+    }
+
+    /* CONTENT */
+    .content{padding:32px 32px 40px;}
+    .content-inner{max-width:1100px;margin:0 auto;}
+
+    h1,h2,h3{
+      margin-top:0;
+      letter-spacing:-0.01em;
+    }
+    h1{font-size:28px;margin-bottom:10px;}
+    p{max-width:720px;}
+
+    .meta-row{
+      margin-top:6px;
+      font-size:13px;
+      color:#666666;
+      display:flex;
+      flex-wrap:wrap;
+      gap:6px;
+    }
+    .pill{
+      font-size:12px;
+      padding:3px 9px;
+      background:#ffffff;
+      border-radius:999px;
+      border:1px solid var(--border-soft);
+    }
+
+    .tool-layout{
+      margin-top:24px;
+      display:grid;
+      grid-template-columns:minmax(0,0.95fr) minmax(0,1.05fr);
+      gap:24px;
+    }
+
+    .card{
+      background:#ffffff;
+      border-radius:10px;
+      border:1px solid var(--border-soft);
+      padding:20px 20px 18px;
+      box-shadow:0 1px 2px rgba(0,0,0,0.03);
+    }
+
+    h2.section-heading{
+      font-size:19px;
+      margin:0 0 12px;
+    }
+
+    label{
+      font-size:14px;
+      font-weight:500;
+      display:block;
+      margin-bottom:5px;
+    }
+    .field-group{margin-bottom:14px;}
+
+    input[type="number"], input[type="text"] {
+      width:100%;
+      padding:9px 11px;
+      border-radius:6px;
+      border:1px solid #cccccc;
+      font-size:14px;
+      background:#ffffff;
+    }
+    input::placeholder{color:#aaaaaa;}
+
+    .hint{
+      font-size:12px;
+      color:#777777;
+      margin-top:4px;
+    }
+
+    button.primary-btn{
+      margin-top:6px;
+      padding:9px 18px;
+      border-radius:6px;
+      border:none;
+      background:#111111;
+      color:#ffffff;
+      font-size:14px;
+      font-weight:500;
+      cursor:pointer;
+    }
+    button.primary-btn:hover{opacity:0.9;}
+
+    /* RESULTS */
+    .results-title{
+      font-size:19px;
+      margin-bottom:8px;
+    }
+
+    .result-block{margin-bottom:14px;}
+
+    .result-main{
+      font-size:20px;
+      font-weight:700;
+      margin-bottom:6px;
+    }
+    .result-main .value{
+      font-weight:700;
+    }
+
+    .result-sub{
+      font-size:14px;
+      color:#444444;
+      margin-bottom:4px;
+    }
+
+    .result-block p{
+      font-size:14px;
+      margin:0 0 4px;
+      max-width:none;
+    }
+
+    /* Affiliate note */
+    .affiliate-note{
+      font-size:13px;
+      color:var(--text-muted);
+      margin:32px 0 12px;
+    }
+
+    /* ADS (hidden) */
+    .ads{display:none;}
+
+    /* FOOTER */
+    footer{
+      border-top:1px solid #eeeeee;
+      background:#ffffff;
+      font-size:13px;
+      color:#555555;
+      padding:12px 32px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+    footer p{margin:0;}
+    footer nav{margin-left:auto;}
+    footer nav a{
+      margin-left:12px;
+      color:#555555;
+      text-decoration:none;
+    }
+    footer nav a:hover{text-decoration:underline;}
+
+    /* MOBILE */
+    @media(max-width:960px){
+      .layout{grid-template-columns:1fr;min-height:auto;}
+      .sidebar{
+        position:static;
+        height:auto;
+        border-right:none;
+        border-bottom:1px solid var(--border-soft);
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:space-between;
+        align-items:center;
+      }
+      .sidebar-logo{margin-bottom:8px;}
+      .sidebar-nav{
+        flex-direction:row;
+        flex-wrap:wrap;
+        gap:4px;
+      }
+      .sidebar-nav a{
+        font-size:13px;
+        padding:6px 8px;
+      }
+      .content{padding:20px 16px 28px;}
+      .tool-layout{grid-template-columns:1fr;}
+    }
+/* ===== 공통: 클릭 막힌 비활성 링크 스타일 ===== */
+.disabled-link {
+  pointer-events: none;   /* 클릭 안 됨 */
+  cursor: default;        /* 손가락 커서 안 나오게 */
+  color: #999999;         /* 회색 처리 */
+  text-decoration: none;
+}
+
+/* 사이드바 / 상단 네비에서 hover 해도 그대로 보이게 */
+.sidebar-nav a.disabled-link:hover,
+.header-nav a.disabled-link:hover {
+  background: transparent;
+  color: #999999;
+  text-decoration: none;
+}
+  </style>
+</head>
+
+<body>
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/index.html">
+      <img src="/assets/logo.png" alt="CalcuFinder logo" class="logo-img">
+    </a>
+    <nav class="header-nav">
+      <a href="/index.html">Home</a>
+      <a href="/finance/">Finance</a>
+      <a href="/insurance/">Insurance</a>
+      <a href="/business-software/">Business & Software</a>
+<a href="/blog/index.html">Blog</a>
+      <a href="/about.html">About</a>
+    </nav>
+  </div>
+</header>
+
+<div class="layout">
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">CalcuFinder</div>
+    <nav class="sidebar-nav">
+      <a href="/index.html">Home</a>
+      <a href="/finance/" class="active">Finance</a>
+      <a href="/insurance/">Insurance</a>
+      <a href="/business-software/">Business & software</a>
+<a href="/blog/index.html">Blog</a>
+      <a href="/about.html">About</a>
+    </nav>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="content">
+    <div class="content-inner">
+      <h1>FIRE Calculator</h1>
+      <p>
+        Estimate a rough timeline to financial independence using your current savings, monthly contributions,
+        target annual spending, and simple growth assumptions. This is a simplified model – real life will always
+        be messier.
+      </p>
+
+      <div class="meta-row">
+        <span class="pill">Category: Finance</span>
+        <span class="pill">Audience: Global FIRE planners</span>
+      </div>
+
+      <div class="tool-layout">
+        <!-- INPUTS -->
+        <section class="card">
+          <h2 class="section-heading">Inputs</h2>
+
+          <div class="field-group">
+            <label for="currentAge">Current age (optional)</label>
+            <input
+              id="currentAge"
+              type="number"
+              min="0"
+              step="1"
+              placeholder="e.g. 35"
+              oninput="updateFIRE()"
+            />
+            <p class="hint">If you fill this in, we’ll also show an approximate FI age.</p>
+          </div>
+
+          <div class="field-group">
+            <label for="annualSpending">Target annual spending at FI</label>
+            <input
+              id="annualSpending"
+              type="number"
+              min="0"
+              step="100"
+              placeholder="e.g. 40,000"
+              oninput="updateFIRE()"
+            />
+            <p class="hint">
+              Use today’s money terms in your local currency (before thinking about inflation).
+            </p>
+          </div>
+
+          <div class="field-group">
+            <label for="withdrawalRate">Planned withdrawal rate (%)</label>
+            <input
+              id="withdrawalRate"
+              type="number"
+              min="1"
+              max="10"
+              step="0.1"
+              placeholder="e.g. 4"
+              oninput="updateFIRE()"
+            />
+            <p class="hint">
+              A common starting point is 3–4%, but this is not a recommendation or guarantee.
+            </p>
+          </div>
+
+          <div class="field-group">
+            <label for="currentPortfolio">Current investment portfolio</label>
+            <input
+              id="currentPortfolio"
+              type="number"
+              min="0"
+              step="100"
+              placeholder="e.g. 80,000"
+              oninput="updateFIRE()"
+            />
+          </div>
+
+          <div class="field-group">
+            <label for="monthlyContribution">Monthly contribution to investments</label>
+            <input
+              id="monthlyContribution"
+              type="number"
+              min="0"
+              step="50"
+              placeholder="e.g. 1,500"
+              oninput="updateFIRE()"
+            />
+          </div>
+
+          <div class="field-group">
+            <label for="annualReturn">Expected average annual return (%)</label>
+            <input
+              id="annualReturn"
+              type="number"
+              min="0"
+              max="20"
+              step="0.1"
+              placeholder="e.g. 5 or 7"
+              oninput="updateFIRE()"
+            />
+            <p class="hint">
+              This is a long-term guess before inflation. Actual markets will be more volatile.
+            </p>
+          </div>
+
+          <button type="button" class="primary-btn" onclick="updateFIRE()">
+            Calculate FIRE timeline
+          </button>
+
+          <p class="hint" style="margin-top:10px;">
+            This is a rough, educational calculation. It does not replace professional financial advice.
+          </p>
+        </section>
+
+        <!-- RESULTS -->
+        <section class="card">
+          <h2 class="results-title">Results</h2>
+          <div id="resultsContent">
+            <p>
+              Fill in your target spending, withdrawal rate, current portfolio, and monthly contributions
+              to see an approximate FI number and timeline.
+            </p>
+          </div>
+        </section>
+      </div>
+
+      <!-- Affiliate note -->
+      <p class="affiliate-note">
+Some pages on CalcuFinder may include affiliate links. If you click and make a purchase,
+            we may earn a small commission at no extra cost to you. This helps support the project
+            and keeps the tools free to use.
+      </p>
+    </div>
+  </main>
+
+  <!-- ADS (hidden) -->
+  <aside class="ads"></aside>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>© CalcuFinder. Tools for smarter decisions, worldwide.</p>
+  <nav>
+    <a href="/about.html">About</a>
+    <a href="/contact.html">Contact</a>
+    <a href="/privacy.html">Privacy</a>
+    <a href="/disclosure.html">Disclosure</a>
+  </nav>
+</footer>
+
+<script>
+  function computeFIREResult() {
+    const annualSpending = parseFloat(document.getElementById("annualSpending").value);
+    const withdrawalRate = parseFloat(document.getElementById("withdrawalRate").value);
+    const currentPortfolio = parseFloat(document.getElementById("currentPortfolio").value);
+    const monthlyContribution = parseFloat(document.getElementById("monthlyContribution").value);
+    const annualReturn = parseFloat(document.getElementById("annualReturn").value);
+
+    if (
+      isNaN(annualSpending) ||
+      isNaN(withdrawalRate) ||
+      isNaN(currentPortfolio) ||
+      isNaN(monthlyContribution) ||
+      isNaN(annualReturn) ||
+      withdrawalRate <= 0
+    ) {
+      return { valid: false };
+    }
+
+    // Target FI number
+    const fiNumber = (annualSpending * 100) / withdrawalRate; // spending / (WR%)
+
+    // If no growth and no contributions: impossible unless already at target
+    if (monthlyContribution <= 0 && currentPortfolio < fiNumber) {
+      return {
+        valid: true,
+        fiNumber,
+        reachable: false,
+        monthsToFI: null
+      };
+    }
+
+    // Monthly simulation
+    const rMonthly = Math.pow(1 + annualReturn / 100, 1 / 12) - 1;
+    let balance = currentPortfolio;
+    let months = 0;
+    const maxMonths = 80 * 12; // 80년 가드레일
+
+    while (balance < fiNumber && months < maxMonths) {
+      balance = balance * (1 + rMonthly) + monthlyContribution;
+      months += 1;
+    }
+
+    if (balance < fiNumber) {
+      // Even after max period, still not reached
+      return {
+        valid: true,
+        fiNumber,
+        reachable: false,
+        monthsToFI: null
+      };
+    }
+
+    return {
+      valid: true,
+      fiNumber,
+      reachable: true,
+      monthsToFI: months
+    };
+  }
+
+  function formatYearsMonths(totalMonths) {
+    const years = Math.floor(totalMonths / 12);
+    const months = totalMonths % 12;
+
+    const yearLabel = years === 1 ? "year" : "years";
+    const monthLabel = months === 1 ? "month" : "months";
+
+    if (years > 0 && months > 0) {
+      return `${years} ${yearLabel} ${months} ${monthLabel}`;
+    }
+    if (years > 0) {
+      return `${years} ${yearLabel}`;
+    }
+    return `${months} ${monthLabel}`;
+  }
+
+  function updateFIRE() {
+    const resultsContainer = document.getElementById("resultsContent");
+
+    const currentAgeRaw = document.getElementById("currentAge").value;
+    const annualSpendingRaw = document.getElementById("annualSpending").value;
+    const withdrawalRateRaw = document.getElementById("withdrawalRate").value;
+
+    const res = computeFIREResult();
+
+    if (!res.valid) {
+      resultsContainer.innerHTML = `
+        <p>
+          Please enter at least your target annual spending, withdrawal rate, current portfolio,
+          monthly contribution, and an estimated average annual return to see results.
+        </p>
+      `;
+      return;
+    }
+
+    const fiNumber = res.fiNumber;
+    const formattedFINumber = fiNumber.toLocaleString(undefined, {
+      maximumFractionDigits: 0
+    });
+
+    const annualSpending = parseFloat(annualSpendingRaw);
+    const withdrawalRate = parseFloat(withdrawalRateRaw);
+    const currentAge = parseFloat(currentAgeRaw);
+
+    if (!res.reachable) {
+      resultsContainer.innerHTML = `
+        <div class="result-block">
+          <div class="result-main">
+            Estimated FIRE number: <span class="value">${formattedFINumber}</span>
+          </div>
+          <p class="result-sub">
+            Based on your current portfolio and monthly contributions, this model does not reach the target
+            within a typical lifetime horizon. You may need to adjust spending, contributions, or assumptions.
+          </p>
+        </div>
+        <div class="result-block">
+          <h3>What this means</h3>
+          <p>
+            This does not mean FIRE is impossible – only that, under the current inputs, the model does not get there
+            in a reasonable time frame. You can experiment by:
+          </p>
+          <ul>
+            <li>Reducing target annual spending at FI.</li>
+            <li>Increasing monthly contributions where possible.</li>
+            <li>Revisiting expected returns (but keeping assumptions realistic and conservative).</li>
+          </ul>
+        </div>
+        <div class="result-block">
+          <h3>Important reminder</h3>
+          <p>
+            This is a simplified calculator. Real life includes taxes, inflation, investment fees, currency risk,
+            career changes, and many other factors. Always treat this as a starting point for deeper planning,
+            not a guarantee.
+          </p>
+        </div>
+      `;
+      return;
+    }
+
+    const monthsToFI = res.monthsToFI;
+    const timeLabel = formatYearsMonths(monthsToFI);
+
+    let ageLine = "";
+    if (!isNaN(currentAge)) {
+      const fiAge = currentAge + monthsToFI / 12;
+      const fiAgeRounded = Math.floor(fiAge * 10) / 10;
+      ageLine = `If these assumptions held, that would suggest an FI age of around ${fiAgeRounded}.`;
+    }
+
+    const swrNote = !isNaN(withdrawalRate)
+      ? `At a ${withdrawalRate.toFixed(1)}% withdrawal rate, this implies withdrawing about ${(annualSpending || 0).toLocaleString(undefined,{maximumFractionDigits:0})} per year in today’s money.`
+      : "";
+
+    resultsContainer.innerHTML = `
+      <div class="result-block">
+        <div class="result-main">
+          Estimated FIRE number: <span class="value">${formattedFINumber}</span>
+        </div>
+        <p class="result-sub">
+          This is the approximate portfolio size needed for your target annual spending
+          based on your chosen withdrawal rate.
+        </p>
+      </div>
+
+      <div class="result-block">
+        <div class="result-main">
+          Rough time to reach FIRE: <span class="value">${timeLabel}</span>
+        </div>
+        ${
+          ageLine
+            ? `<p class="result-sub">${ageLine}</p>`
+            : ""
+        }
+      </div>
+
+      <div class="result-block">
+        <h3>How to read this</h3>
+        <p>
+          This timeline assumes steady returns, consistent contributions, and no major changes to your spending
+          or life situation. Reality will be bumpier – markets move, incomes change, and currencies fluctuate.
+        </p>
+        ${
+          swrNote
+            ? `<p style="margin-top:4px;">${swrNote}</p>`
+            : ""
+        }
+      </div>
+
+      <div class="result-block">
+        <h3>Next steps to experiment with</h3>
+        <ul>
+          <li>Try different monthly contributions to see how much they shift the timeline.</li>
+          <li>Test more conservative return assumptions to stress-test your plan.</li>
+          <li>Adjust your target spending to see how lean vs. comfortable FI changes your path.</li>
+        </ul>
+      </div>
+
+      <div class="result-block">
+        <h3>Important disclaimer</h3>
+        <p>
+          This tool is for general information only and does not take into account your full circumstances.
+          It is not financial advice. Before making big money decisions, consider speaking with a licensed
+          adviser and doing your own detailed planning.
+        </p>
+      </div>
+    `;
+  }
+
+  // 초기 상태
+  updateFIRE();
+</script>
+</body>
+</html>

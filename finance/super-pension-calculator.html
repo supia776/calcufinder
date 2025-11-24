@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- super-pension-calculator.html -->
+<title>Super & Pension Calculator | Retirement balance projection</title>
+<meta name="description" content="Project your future super or pension balance based on contributions, returns, and fees.">
+
+<link rel="canonical" href="https://calcufinder.com/finance/super-pension-calculator.html">
+
+<meta property="og:title" content="Super & Pension Calculator | Retirement balance projection">
+<meta property="og:description" content="Estimate how your super or pension could grow over time and how contributions change your retirement outcome.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://calcufinder.com/finance/super-pension-calculator.html">
+<meta property="og:image" content="https://calcufinder.com/assets/og-image.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Super & Pension Calculator | Retirement balance projection">
+<meta name="twitter:description" content="See different retirement scenarios by changing contributions and expected returns.">
+<meta name="twitter:image" content="https://calcufinder.com/assets/og-image.png">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9077859826573424"
+     crossorigin="anonymous"></script>
+     <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y7NKFF4N71"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Y7NKFF4N71');
+</script>
+
+
+  <style>
+    :root {
+      --bg-main: #f5f5f5;
+      --bg-card: #ffffff;
+      --bg-sidebar: #ffffff;
+      --bg-ads: #fafafa;
+      --border-soft: #e0e0e0;
+      --text-main: #111111;
+      --text-muted: #666666;
+      --accent: #111111;
+      --link: #1a0dab;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.5;
+      color: var(--text-main);
+      background: var(--bg-main);
+      font-size: 15px;
+    }
+
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* HEADER */
+    .site-header {
+      background:#ffffff;
+      border-bottom:1px solid #e5e5e5;
+      padding:12px 24px;
+      width:100%;
+    }
+    .header-inner {
+      max-width:1200px;
+      margin:0 auto;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+    .logo-img {
+      height:65px;
+      width:auto;
+      display:block;
+    }
+    @media(max-width:768px){
+      .logo-img{height:40px;}
+    }
+
+    .header-nav{
+      display:flex;
+      gap:28px;
+    }
+    .header-nav a{
+      font-size:15px;
+      text-decoration:none;
+      color:#222222;
+      font-weight:500;
+    }
+    .header-nav a:hover{
+      color:#0077cc;
+    }
+
+    /* LAYOUT */
+    .layout{
+      display:grid;
+      grid-template-columns:220px minmax(0,1fr) 280px;
+      min-height:calc(100vh - 70px);
+    }
+
+    /* SIDEBAR */
+    .sidebar{
+      background:var(--bg-sidebar);
+      border-right:1px solid var(--border-soft);
+      padding:24px 20px;
+      position:sticky;
+      top:0;
+      align-self:start;
+      height:100vh;
+      overflow-y:auto;
+    }
+    .sidebar-logo{
+      font-weight:700;
+      letter-spacing:0.05em;
+      font-size:18px;
+      margin-bottom:24px;
+    }
+    .sidebar-nav{
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+    }
+    .sidebar-nav a{
+      padding:8px 10px;
+      border-radius:6px;
+      color:var(--text-main);
+      font-size:14px;
+      font-weight:500;
+    }
+    .sidebar-nav a.active{
+      background:#111111;
+      color:#ffffff;
+    }
+    .sidebar-nav a:hover{
+      background:#eeeeee;
+      text-decoration:none;
+    }
+
+    /* CONTENT */
+    .content{
+      padding:32px 32px 40px;
+    }
+    .content-inner{
+      max-width:1100px;
+      margin:0 auto;
+    }
+
+    h1,h2,h3{
+      margin-top:0;
+      letter-spacing:-0.01em;
+    }
+    h1{
+      font-size:28px;
+      margin-bottom:10px;
+    }
+    p{
+      max-width:720px;
+    }
+
+    .meta-row{
+      margin-top:6px;
+      font-size:13px;
+      color:#666666;
+      display:flex;
+      flex-wrap:wrap;
+      gap:6px;
+    }
+    .pill{
+      font-size:12px;
+      padding:3px 9px;
+      background:#ffffff;
+      border-radius:999px;
+      border:1px solid var(--border-soft);
+    }
+
+    .tool-layout{
+      margin-top:24px;
+      display:grid;
+      grid-template-columns:minmax(0,0.95fr) minmax(0,1.05fr);
+      gap:24px;
+    }
+
+    .card{
+      background:#ffffff;
+      border-radius:10px;
+      border:1px solid var(--border-soft);
+      padding:20px 20px 18px;
+      box-shadow:0 1px 2px rgba(0,0,0,0.03);
+    }
+
+    h2.section-heading{
+      font-size:19px;
+      margin:0 0 12px;
+    }
+
+    label{
+      font-size:14px;
+      font-weight:500;
+      display:block;
+      margin-bottom:5px;
+    }
+    .field-group{
+      margin-bottom:14px;
+    }
+
+    input[type="number"], input[type="text"]{
+      width:100%;
+      padding:9px 11px;
+      border-radius:6px;
+      border:1px solid #cccccc;
+      font-size:14px;
+      background:#ffffff;
+    }
+    input::placeholder{
+      color:#aaaaaa;
+    }
+
+    .hint{
+      font-size:12px;
+      color:#777777;
+      margin-top:4px;
+    }
+
+    button.primary-btn{
+      margin-top:6px;
+      padding:9px 18px;
+      border-radius:6px;
+      border:none;
+      background:#111111;
+      color:#ffffff;
+      font-size:14px;
+      font-weight:500;
+      cursor:pointer;
+    }
+    button.primary-btn:hover{
+      opacity:0.9;
+    }
+
+    /* RESULTS */
+    .results-title{
+      font-size:19px;
+      margin-bottom:8px;
+    }
+    .result-block{
+      margin-bottom:14px;
+    }
+
+    .result-main{
+      font-size:20px;
+      font-weight:700;
+      margin-bottom:6px;
+    }
+    .result-main .value{
+      font-weight:700;
+    }
+
+    .result-row{
+      display:flex;
+      justify-content:space-between;
+      align-items:baseline;
+      font-size:15px;
+      margin-bottom:6px;
+    }
+    .result-label{
+      color:#444444;
+    }
+    .result-value{
+      font-size:20px;
+      font-weight:700;
+    }
+
+    .result-sub{
+      font-size:14px;
+      color:#444444;
+      margin-bottom:4px;
+    }
+    .result-block p{
+      font-size:14px;
+      margin:0 0 4px;
+      max-width:none;
+    }
+
+    /* Affiliate note */
+    .affiliate-note{
+      font-size:13px;
+      color:var(--text-muted);
+      margin:32px 0 12px;
+    }
+
+    /* ADS (hidden) */
+    .ads{display:none;}
+
+    /* FOOTER */
+    footer{
+      border-top:1px solid #eeeeee;
+      background:#ffffff;
+      font-size:13px;
+      color:#555555;
+      padding:12px 32px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+    footer p{
+      margin:0;
+    }
+    footer nav{
+      margin-left:auto;
+    }
+    footer nav a{
+      margin-left:12px;
+      color:#555555;
+      text-decoration:none;
+    }
+    footer nav a:hover{
+      text-decoration:underline;
+    }
+
+    /* MOBILE */
+    @media(max-width:960px){
+      .layout{
+        grid-template-columns:1fr;
+        min-height:auto;
+      }
+      .sidebar{
+        position:static;
+        height:auto;
+        border-right:none;
+        border-bottom:1px solid var(--border-soft);
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        flex-wrap:wrap;
+      }
+      .sidebar-logo{
+        margin-bottom:8px;
+      }
+      .sidebar-nav{
+        flex-direction:row;
+        flex-wrap:wrap;
+        gap:4px;
+      }
+      .sidebar-nav a{
+        font-size:13px;
+        padding:6px 8px;
+      }
+      .content{
+        padding:20px 16px 28px;
+      }
+      .tool-layout{
+        grid-template-columns:1fr;
+      }
+    }
+/* ===== 공통: 클릭 막힌 비활성 링크 스타일 ===== */
+.disabled-link {
+  pointer-events: none;   /* 클릭 안 됨 */
+  cursor: default;        /* 손가락 커서 안 나오게 */
+  color: #999999;         /* 회색 처리 */
+  text-decoration: none;
+}
+
+/* 사이드바 / 상단 네비에서 hover 해도 그대로 보이게 */
+.sidebar-nav a.disabled-link:hover,
+.header-nav a.disabled-link:hover {
+  background: transparent;
+  color: #999999;
+  text-decoration: none;
+}
+  </style>
+</head>
+
+<body>
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/index.html">
+      <img src="/assets/logo.png" alt="CalcuFinder logo" class="logo-img" />
+    </a>
+    <nav class="header-nav">
+      <a href="/index.html">Home</a>
+      <a href="/finance/">Finance</a>
+      <a href="/insurance/">Insurance</a>
+      <a href="/business-software/">Business & Software</a>
+<a href="/blog/index.html">Blog</a>
+      <a href="/about.html">About</a>
+    </nav>
+  </div>
+</header>
+
+<div class="layout">
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">CalcuFinder</div>
+    <nav class="sidebar-nav">
+      <a href="/index.html">Home</a>
+      <a href="/finance/" class="active">Finance</a>
+      <a href="/insurance/">Insurance</a>
+      <a href="/business-software/">Business & software</a>
+<a href="/blog/index.html">Blog</a>
+      <a href="/about.html">About</a>
+    </nav>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="content">
+    <div class="content-inner">
+      <h1>Superannuation / Pension Projection Helper</h1>
+      <p>
+        Get a rough projection of how your superannuation / pension balance could grow over time, based on simple assumptions
+        about contributions, investment returns, and fees. This is a high-level educational tool, not a full
+        retirement plan or advice.
+      </p>
+
+      <div class="meta-row">
+        <span class="pill">Category: Finance</span>
+        <span class="pill">Audience: Global workers &amp; retirees</span>
+      </div>
+
+      <div class="tool-layout">
+        <!-- INPUTS -->
+        <section class="card">
+          <h2 class="section-heading">Inputs</h2>
+
+          <div class="field-group">
+            <label for="country">Country (for context only)</label>
+            <input
+              id="country"
+              type="text"
+              placeholder="e.g. Australia, United States, United Kingdom"
+              oninput="updateSuper()"
+            />
+            <p class="hint">
+              Used only to show context notes. The calculator does not pull any real products or legal rules.
+            </p>
+          </div>
+
+          <div class="field-group">
+            <label for="currencyLabel">Currency label (for your reference)</label>
+            <input
+              id="currencyLabel"
+              type="text"
+              placeholder="e.g. AUD, USD, EUR, KRW"
+              oninput="updateSuper()"
+            />
+            <p class="hint">
+              All numbers are treated as your local currency. No FX conversion is done here.
+            </p>
+          </div>
+
+          <div class="field-group">
+            <label for="currentAge">Current age</label>
+            <input
+              id="currentAge"
+              type="number"
+              min="16"
+              max="80"
+              step="1"
+              placeholder="e.g. 35"
+              oninput="updateSuper()"
+            />
+          </div>
+
+          <div class="field-group">
+            <label for="retireAge">Planned retirement age</label>
+            <input
+              id="retireAge"
+              type="number"
+              min="30"
+              max="80"
+              step="1"
+              placeholder="e.g. 65"
+              oninput="updateSuper()"
+            />
+            <p class="hint">
+              This is the age you would like to use as a planning horizon, not a legal retirement age.
+            </p>
+          </div>
+
+          <div class="field-group">
+            <label for="currentBalance">Current superannuation / pension balance</label>
+            <input
+              id="currentBalance"
+              type="number"
+              min="0"
+              step="1000"
+              placeholder="e.g. 120000"
+              oninput="updateSuper()"
+            />
+          </div>
+
+          <div class="field-group">
+            <label for="annualIncome">Current gross annual income</label>
+            <input
+              id="annualIncome"
+              type="number"
+              min="0"
+              step="1000"
+              placeholder="e.g. 80000"
+              oninput="updateSuper()"
+            />
+            <p class="hint">
+              This is used to estimate future contributions as a percentage of income.
+            </p>
+          </div>
+
+          <div class="field-group">
+            <label for="employerRate">Employer / mandatory contribution (% of income)</label>
+            <input
+              id="employerRate"
+              type="number"
+              min="0"
+              max="40"
+              step="0.1"
+              placeholder="e.g. 11 (Australia), or 0 if not applicable"
+              oninput="updateSuper()"
+            />
+          </div>
+
+          <div class="field-group">
+            <label for="voluntaryRate">Voluntary / personal contribution (% of income)</label>
+            <input
+              id="voluntaryRate"
+              type="number"
+              min="0"
+              max="50"
+              step="0.1"
+              placeholder="e.g. 5"
+              oninput="updateSuper()"
+            />
+          </div>
+
+          <div class="field-group">
+            <label for="returnRate">Expected investment return (% per year)</label>
+            <input
+              id="returnRate"
+              type="number"
+              min="-5"
+              max="15"
+              step="0.1"
+              placeholder="e.g. 6.5"
+              oninput="updateSuper()"
+            />
+          </div>
+
+          <div class="field-group">
+            <label for="feeRate">Estimated annual fees (% of balance)</label>
+            <input
+              id="feeRate"
+              type="number"
+              min="0"
+              max="5"
+              step="0.1"
+              placeholder="e.g. 1"
+              oninput="updateSuper()"
+            />
+            <p class="hint">
+              This is a simple percentage used to approximate ongoing admin &amp; investment fees.
+            </p>
+          </div>
+
+          <div class="field-group">
+            <label for="incomeGrowth">Annual income growth assumption (% per year)</label>
+            <input
+              id="incomeGrowth"
+              type="number"
+              min="-5"
+              max="10"
+              step="0.1"
+              placeholder="e.g. 2.5"
+              oninput="updateSuper()"
+            />
+          </div>
+
+          <div class="field-group">
+            <label for="drawdownRate">Retirement drawdown rule (% per year, e.g. 4%)</label>
+            <input
+              id="drawdownRate"
+              type="number"
+              min="1"
+              max="10"
+              step="0.1"
+              placeholder="e.g. 4"
+              oninput="updateSuper()"
+            />
+            <p class="hint">
+              Used to give a rough idea of possible annual income in retirement (before tax) under a simple rule-of-thumb.
+            </p>
+          </div>
+
+          <button type="button" class="primary-btn" onclick="updateSuper()">
+            Run projection
+          </button>
+
+          <p class="hint" style="margin-top:10px;">
+            This is a simplified projection. Real products, tax rules, and contribution caps vary by country and can
+            change over time.
+          </p>
+        </section>
+
+        <!-- RESULTS -->
+        <section class="card">
+          <h2 class="results-title">Results</h2>
+          <div id="resultsContent">
+            <p>
+              Enter your current age, planned retirement age, balance, income, contribution rates, and assumptions
+              to see a rough projection of your future super / pension balance.
+            </p>
+          </div>
+        </section>
+      </div>
+
+      <!-- Affiliate note -->
+      <p class="affiliate-note">
+        Some pages on CalcuFinder may include affiliate links. If you click and make a purchase,
+            we may earn a small commission at no extra cost to you. This helps support the project
+            and keeps the tools free to use.
+      </p>
+    </div>
+  </main>
+
+  <!-- ADS (hidden for now) -->
+  <aside class="ads"></aside>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>© CalcuFinder. Tools for smarter decisions, worldwide.</p>
+  <nav>
+    <a href="/about.html">About</a>
+    <a href="/contact.html">Contact</a>
+    <a href="/privacy.html">Privacy</a>
+    <a href="/disclosure.html">Disclosure</a>
+  </nav>
+</footer>
+
+<script>
+  function formatNumber(n) {
+    if (!isFinite(n)) return "—";
+    return n.toLocaleString(undefined, { maximumFractionDigits: 0 });
+  }
+
+  function buildCountryNote(c) {
+    if (!c) return "";
+    const cc = c.trim().toLowerCase();
+    let text = "Super and pension rules differ widely by country. Always check your local regulations, tax rules, and contribution caps.";
+    if (cc.includes("australia")) {
+      text += " In Australia, there are contribution caps and specific rules for concessional and non-concessional contributions; check official ATO guidance or your fund’s PDS.";
+    } else if (cc.includes("united kingdom") || cc === "uk") {
+      text += " In the UK, pension allowances, tax relief, and withdrawal rules can change over time; check current HMRC guidance or speak with a regulated adviser.";
+    } else if (cc.includes("united states") || cc === "usa" || cc === "us") {
+      text += " In the US, 401(k), IRA, and other retirement accounts all have different rules and limits; confirm details with plan documents or a licensed adviser.";
+    }
+    return text;
+  }
+
+  function projectSuper(options) {
+    let {
+      currentAge,
+      retireAge,
+      balance,
+      income,
+      employerRate,
+      voluntaryRate,
+      returnRate,
+      feeRate,
+      incomeGrowth
+    } = options;
+
+    const years = retireAge - currentAge;
+    if (years <= 0) {
+      return {
+        years: 0,
+        finalBalance: balance,
+        totalContrib: 0
+      };
+    }
+
+    let totalContrib = 0;
+    const rReturn = returnRate / 100;
+    const rFee = feeRate / 100;
+    const rIncome = incomeGrowth / 100;
+
+    for (let y = 0; y < years; y++) {
+      // income for this year
+      const incomeThisYear = income * Math.pow(1 + rIncome, y);
+      const contribRate = (employerRate + voluntaryRate) / 100;
+      const contrib = incomeThisYear * contribRate;
+
+      // fee on current balance (simple approximation)
+      const fee = balance * rFee;
+
+      // growth on balance after fee
+      const growth = (balance - fee) * rReturn;
+
+      balance = balance - fee + growth + contrib;
+      totalContrib += contrib;
+    }
+
+    return {
+      years,
+      finalBalance: balance,
+      totalContrib
+    };
+  }
+
+  function updateSuper() {
+    const country = document.getElementById("country").value;
+    const currencyLabel = document.getElementById("currencyLabel").value.trim();
+    const currentAge = parseFloat(document.getElementById("currentAge").value);
+    const retireAge = parseFloat(document.getElementById("retireAge").value);
+    const currentBalance = parseFloat(document.getElementById("currentBalance").value);
+    const annualIncome = parseFloat(document.getElementById("annualIncome").value);
+    const employerRate = parseFloat(document.getElementById("employerRate").value);
+    const voluntaryRate = parseFloat(document.getElementById("voluntaryRate").value) || 0;
+    const returnRate = parseFloat(document.getElementById("returnRate").value);
+    const feeRate = parseFloat(document.getElementById("feeRate").value) || 0;
+    const incomeGrowth = parseFloat(document.getElementById("incomeGrowth").value) || 0;
+    const drawdownRate = parseFloat(document.getElementById("drawdownRate").value) || 4;
+
+    const container = document.getElementById("resultsContent");
+    const unit = currencyLabel ? " " + currencyLabel : "";
+
+    const hasCoreInputs =
+      !isNaN(currentAge) &&
+      !isNaN(retireAge) &&
+      !isNaN(currentBalance) &&
+      !isNaN(annualIncome) &&
+      !isNaN(employerRate) &&
+      !isNaN(returnRate);
+
+    if (!hasCoreInputs) {
+      container.innerHTML = `
+        <p>
+          To see a projection, please enter your current age, planned retirement age, current balance, annual income,
+          employer / mandatory contribution rate, and expected investment return. Other fields are optional but helpful.
+        </p>
+      `;
+      return;
+    }
+
+    if (retireAge <= currentAge) {
+      container.innerHTML = `
+        <p>
+          Please set your planned retirement age higher than your current age to run a forward projection.
+        </p>
+      `;
+      return;
+    }
+
+    const proj = projectSuper({
+      currentAge,
+      retireAge,
+      balance: isNaN(currentBalance) ? 0 : currentBalance,
+      income: isNaN(annualIncome) ? 0 : annualIncome,
+      employerRate: isNaN(employerRate) ? 0 : employerRate,
+      voluntaryRate,
+      returnRate: isNaN(returnRate) ? 0 : returnRate,
+      feeRate,
+      incomeGrowth
+    });
+
+    const finalBalance = proj.finalBalance;
+    const totalContrib = proj.totalContrib;
+    const years = proj.years;
+
+    const drawRate = drawdownRate / 100;
+    const annualDraw = finalBalance * drawRate;
+    const monthlyDraw = annualDraw / 12;
+
+    const countryNote = buildCountryNote(country);
+
+    container.innerHTML = `
+      <div class="result-block">
+        <div class="result-main">
+          <span class="value">
+            In about ${years} years, your projected super / pension balance could be roughly
+            ${formatNumber(finalBalance)}${unit}, under these assumptions.
+          </span>
+        </div>
+      </div>
+
+      <div class="result-block">
+        <h3>1. Contributions vs growth</h3>
+        <p class="result-sub">
+          Over the period from age ${currentAge} to ${retireAge}, you would contribute approximately:
+        </p>
+        <div class="result-row">
+          <div class="result-label">Total contributions (employer + you):</div>
+          <div class="result-value">${formatNumber(totalContrib)}${unit}</div>
+        </div>
+        <p class="result-sub" style="margin-top:6px;">
+          The difference between your projected final balance and your total contributions comes from
+          net investment growth after estimated fees (and before tax).
+        </p>
+      </div>
+
+      <div class="result-block">
+        <h3>2. Simple drawdown snapshot</h3>
+        <p class="result-sub">
+          Using a simple drawdown rule of about ${drawdownRate.toFixed(1)}% per year:
+        </p>
+        <div class="result-row">
+          <div class="result-label">Approx. yearly income (before tax):</div>
+          <div class="result-value">${formatNumber(annualDraw)}${unit}</div>
+        </div>
+        <div class="result-row">
+          <div class="result-label">Approx. monthly income (before tax):</div>
+          <div class="result-value">${formatNumber(monthlyDraw)}${unit}</div>
+        </div>
+        <p class="result-sub" style="margin-top:6px;">
+          This is just a rough rule-of-thumb, not a guarantee that your money will last for any specific number of years.
+        </p>
+      </div>
+
+      <div class="result-block">
+        <h3>3. How to use this projection</h3>
+        <p>
+          Treat these numbers as a starting point for thinking about retirement savings, not a final plan.
+          You can try different contribution rates, return assumptions, fee levels, and retirement ages to see
+          how sensitive the outcome is.
+        </p>
+        <p style="margin-top:4px;">
+          Real-world outcomes will depend on investment returns, inflation, tax rules, contribution caps,
+          and changes in your income over time.
+        </p>
+      </div>
+
+      <div class="result-block">
+        <h3>4. Important disclaimer</h3>
+        <p>
+          This tool is for general information only and does not take into account your full financial situation,
+          risk tolerance, or goals. It is not financial, legal, tax, or retirement advice. For personalised guidance,
+          consider speaking with a licensed adviser or retirement specialist in your country.
+        </p>
+        ${countryNote ? `<p style="margin-top:4px;">${countryNote}</p>` : ""}
+      </div>
+    `;
+  }
+
+  // 초기 상태
+  updateSuper();
+</script>
+
+</body>
+</html>

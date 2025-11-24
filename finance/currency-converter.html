@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- currency-converter.html -->
+<title>Currency Converter | Quick FX calculator</title>
+<meta name="description" content="Convert between currencies with a simple FX calculator. Great for travel, online shopping, or freelance work.">
+
+<link rel="canonical" href="https://calcufinder.com/finance/currency-converter.html">
+
+<meta property="og:title" content="Currency Converter | Quick FX calculator">
+<meta property="og:description" content="Instantly convert between currencies using live-style inputs with CalcuFinder's currency converter.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://calcufinder.com/finance/currency-converter.html">
+<meta property="og:image" content="https://calcufinder.com/assets/og-image.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Currency Converter | Quick FX calculator">
+<meta name="twitter:description" content="Quickly convert foreign currency amounts when travelling or shopping online.">
+<meta name="twitter:image" content="https://calcufinder.com/assets/og-image.png">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9077859826573424"
+     crossorigin="anonymous"></script>
+     <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y7NKFF4N71"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Y7NKFF4N71');
+</script>
+
+  <style>
+    :root {
+      --bg-main: #f5f5f5;
+      --bg-card: #ffffff;
+      --bg-sidebar: #ffffff;
+      --bg-ads: #fafafa;
+      --border-soft: #e0e0e0;
+      --text-main: #111111;
+      --text-muted: #666666;
+      --accent: #111111;
+      --link: #1a0dab;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0; padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.5;
+      color: var(--text-main);
+      background: var(--bg-main);
+      font-size: 15px;
+    }
+
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* HEADER */
+    .site-header {
+      background:#ffffff;
+      border-bottom:1px solid #e5e5e5;
+      padding:12px 24px;
+      width:100%;
+    }
+    .header-inner {
+      max-width:1200px;
+      margin:0 auto;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+    .logo-img { height:65px; width:auto; }
+    @media(max-width:768px){ .logo-img{height:40px;} }
+
+    .header-nav{display:flex; gap:28px;}
+    .header-nav a{font-size:15px; font-weight:500; color:#222;}
+    .header-nav a:hover{color:#0077cc;}
+
+    /* LAYOUT */
+    .layout{
+      display:grid;
+      grid-template-columns:220px minmax(0,1fr) 280px;
+      min-height:calc(100vh - 70px);
+    }
+
+    /* SIDEBAR */
+    .sidebar{
+      background:var(--bg-sidebar);
+      border-right:1px solid var(--border-soft);
+      padding:24px 20px;
+      position:sticky; top:0;
+      height:100vh; overflow-y:auto;
+    }
+    .sidebar-logo{
+      font-weight:700;
+      letter-spacing:0.05em;
+      font-size:18px;
+      margin-bottom:24px;
+    }
+    .sidebar-nav{display:flex; flex-direction:column; gap:8px;}
+    .sidebar-nav a{
+      padding:8px 10px; font-size:14px; font-weight:500;
+      border-radius:6px; color:var(--text-main);
+    }
+    .sidebar-nav a.active{background:#111; color:#fff;}
+    .sidebar-nav a:hover{background:#eee;}
+
+    /* CONTENT */
+    .content{padding:32px 32px 40px;}
+    .content-inner{max-width:960px;margin:0 auto;}
+
+    h1,h2,h3{margin-top:0; letter-spacing:-0.01em;}
+    h1{font-size:28px;margin-bottom:10px;}
+    p{max-width:720px;}
+
+    .card{
+      background:#fff;
+      border-radius:10px;
+      border:1px solid var(--border-soft);
+      padding:20px 20px 18px;
+      box-shadow:0 1px 2px rgba(0,0,0,0.03);
+      margin-bottom:24px;
+    }
+
+    label{font-size:14px;font-weight:500;display:block;margin-bottom:6px;}
+    select,input{
+      width:100%;padding:9px 11px;border-radius:6px;
+      border:1px solid #ccc;font-size:14px;background:#fff;
+    }
+
+    /* RESULT STYLE */
+    .result-box{
+      margin-top:14px;padding:14px 16px;
+      background:#fff;border:1px solid var(--border-soft);
+      border-radius:8px;
+      font-size:18px;font-weight:700; color:#111;
+    }
+
+    /* AFFILIATE */
+    .affiliate-note{
+      font-size:13px;color:var(--text-muted);
+      margin:32px 0 12px;
+    }
+
+    /* ADS */
+    .ads{display:none;}
+
+    /* FOOTER */
+    footer{
+      border-top:1px solid #eee;background:#fff;
+      font-size:13px;color:#555;padding:12px 32px 18px;
+      display:flex;align-items:center;justify-content:space-between;
+    }
+    footer nav a{margin-left:12px;color:#555;}
+
+    /* MOBILE */
+    @media(max-width:960px){
+      .layout{grid-template-columns:1fr;}
+      .sidebar{
+        height:auto; border-right:none;
+        border-bottom:1px solid var(--border-soft);
+        display:flex; flex-wrap:wrap;
+        justify-content:space-between; align-items:center;
+      }
+      .sidebar-nav{flex-direction:row; gap:4px; flex-wrap:wrap;}
+      .content{padding:20px 16px 28px;}
+    }
+/* ===== 공통: 클릭 막힌 비활성 링크 스타일 ===== */
+.disabled-link {
+  pointer-events: none;   /* 클릭 안 됨 */
+  cursor: default;        /* 손가락 커서 안 나오게 */
+  color: #999999;         /* 회색 처리 */
+  text-decoration: none;
+}
+
+/* 사이드바 / 상단 네비에서 hover 해도 그대로 보이게 */
+.sidebar-nav a.disabled-link:hover,
+.header-nav a.disabled-link:hover {
+  background: transparent;
+  color: #999999;
+  text-decoration: none;
+}    
+  </style>
+</head>
+
+<body>
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/index.html">
+      <img src="/assets/logo.png" class="logo-img" alt="CalcuFinder logo">
+    </a>
+    <nav class="header-nav">
+      <a href="/index.html">Home</a>
+      <a href="/finance/">Finance</a>
+      <a href="/insurance/">Insurance</a>
+      <a href="/business-software/">Business & Software</a>
+<a href="/blog/index.html">Blog</a>
+      <a href="/about.html">About</a>
+    </nav>
+  </div>
+</header>
+
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">CalcuFinder</div>
+    <nav class="sidebar-nav">
+      <a href="/index.html">Home</a>
+      <a href="/finance/" class="active">Finance</a>
+      <a href="/insurance/">Insurance</a>
+      <a href="/business-software/">Business & software</a>
+<a href="/blog/index.html">Blog</a>
+      <a href="/about.html">About</a>
+    </nav>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="content">
+    <div class="content-inner">
+
+      <h1>Currency Converter</h1>
+      <p>
+        Convert between currencies using live rates when your device is online.
+        When offline, this tool automatically switches to a simple built-in fallback table.
+      </p>
+
+      <!-- INPUTS -->
+      <section class="card">
+        <h2>Inputs</h2>
+
+        <label>Amount</label>
+        <input type="number" id="amount" placeholder="e.g. 100" oninput="convert()" />
+
+        <label style="margin-top:14px;">From currency</label>
+        <select id="from" onchange="convert()"></select>
+
+        <label style="margin-top:14px;">To currency</label>
+        <select id="to" onchange="convert()"></select>
+      </section>
+
+      <!-- RESULT -->
+      <section class="card">
+        <h2>Result</h2>
+        <div id="result" class="result-box">
+          Enter an amount to begin.
+        </div>
+        <p id="rateNote" style="font-size:13px;color:#777;margin-top:8px;"></p>
+      </section>
+
+      <!-- Affiliate -->
+      <p class="affiliate-note">
+        Some pages on CalcuFinder may include affiliate links. If you click and make a purchase,
+            we may earn a small commission at no extra cost to you. This helps support the project
+            and keeps the tools free to use.
+      </p>
+
+    </div>
+  </main>
+
+  <aside class="ads"></aside>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>© CalcuFinder. Tools for smarter decisions, worldwide.</p>
+  <nav>
+    <a href="/about.html">About</a>
+    <a href="/contact.html">Contact</a>
+    <a href="/privacy.html">Privacy</a>
+    <a href="/disclosure.html">Disclosure</a>
+  </nav>
+</footer>
+
+<script>
+/* ---- Currency Setup ---- */
+const currencies = ["USD","EUR","GBP","AUD","CAD","JPY","KRW","NZD","SGD","CHF","HKD","CNY","THB","PHP","INR"];
+
+const from = document.getElementById("from");
+const to   = document.getElementById("to");
+
+function buildDropdowns(){
+  currencies.forEach(c=>{
+    const opt1=document.createElement("option");
+    opt1.value=c; opt1.textContent=c;
+    from.appendChild(opt1);
+
+    const opt2=document.createElement("option");
+    opt2.value=c; opt2.textContent=c;
+    to.appendChild(opt2);
+  });
+
+  from.value="USD";
+  to.value="EUR";
+}
+buildDropdowns();
+
+/* ---- Live Rate + Fallback ---- */
+async function getLiveRate(base){
+  try{
+    const r = await fetch(`https://api.exchangerate.host/latest?base=${base}`);
+    const d = await r.json();
+    return d.rates || null;
+  }catch(e){
+    return null;
+  }
+}
+
+const fallback = {
+  USD:{EUR:0.91, KRW:1330, AUD:1.51, GBP:0.78},
+  EUR:{USD:1.10, KRW:1450, AUD:1.66},
+  AUD:{USD:0.66, EUR:0.60, KRW:890}
+};
+
+async function convert(){
+  const amt = parseFloat(document.getElementById("amount").value);
+  if(isNaN(amt)){result.textContent="Enter an amount";return;}
+
+  const fromCur = from.value;
+  const toCur   = to.value;
+
+  let rateData = await getLiveRate(fromCur);
+  let rateNote = "";
+
+  let rate = null;
+
+  if(rateData && rateData[toCur]){
+    rate = rateData[toCur];
+    rateNote = "Live rate used (may differ from banks & apps).";
+  } else {
+    // fallback
+    if(fallback[fromCur] && fallback[fromCur][toCur]){
+      rate = fallback[fromCur][toCur];
+      rateNote = "Offline fallback used. Check banks/apps for exact rates.";
+    } else {
+      result.textContent="Rate unavailable.";
+      return;
+    }
+  }
+
+  const converted = amt * rate;
+  result.textContent = `${amt.toLocaleString()} ${fromCur} → ${converted.toLocaleString(undefined,{maximumFractionDigits:4})} ${toCur}`;
+  document.getElementById("rateNote").textContent = rateNote;
+}
+</script>
+
+</body>
+</html>
