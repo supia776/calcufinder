@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- saas-comparator.html -->
+<title>SaaS Plan Comparator | Compare subscriptions and pricing</title>
+<meta name="description" content="Compare SaaS plans across price, seats, features, and usage limits to choose the best subscription for your team.">
+
+<link rel="canonical" href="https://calcufinder.com/business-software/saas-comparator.html">
+
+<meta property="og:title" content="SaaS Plan Comparator | Compare subscriptions and pricing">
+<meta property="og:description" content="Use the SaaS Comparator to see which subscription plan delivers the best value per user and per feature.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://calcufinder.com/business-software/saas-comparator.html">
+<meta property="og:image" content="https://calcufinder.com/assets/og-image.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SaaS Plan Comparator | Compare subscriptions and pricing">
+<meta name="twitter:description" content="Compare SaaS plans side by side and find the best value subscription for your business.">
+<meta name="twitter:image" content="https://calcufinder.com/assets/og-image.png">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9077859826573424"
+     crossorigin="anonymous"></script>
+     <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y7NKFF4N71"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Y7NKFF4N71');
+</script>
+
+
+  <style>
+    :root {
+      --bg-main: #f5f5f5;
+      --bg-card: #ffffff;
+      --bg-sidebar: #ffffff;
+      --bg-ads: #fafafa;
+      --border-soft: #e0e0e0;
+      --text-main: #111111;
+      --text-muted: #666666;
+      --accent: #111111;
+      --link: #1a0dab;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.5;
+      color: var(--text-main);
+      background: var(--bg-main);
+      font-size: 15px;
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* HEADER */
+    .site-header {
+      background:#ffffff;
+      border-bottom:1px solid #e5e5e5;
+      padding:12px 24px;
+      width:100%;
+    }
+    .header-inner {
+      max-width:1200px;
+      margin:0 auto;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+    .logo-img {
+      height:65px;
+      width:auto;
+      display:block;
+    }
+    @media(max-width:768px){
+      .logo-img{height:40px;}
+    }
+
+    .header-nav{
+      display:flex;
+      gap:28px;
+    }
+    .header-nav a{
+      font-size:15px;
+      text-decoration:none;
+      color:#222222;
+      font-weight:500;
+    }
+    .header-nav a:hover{
+      color:#0077cc;
+    }
+
+    /* LAYOUT */
+    .layout{
+      display:grid;
+      grid-template-columns:220px minmax(0,1fr) 280px;
+      min-height:calc(100vh - 70px);
+    }
+
+    /* SIDEBAR */
+    .sidebar{
+      background:var(--bg-sidebar);
+      border-right:1px solid var(--border-soft);
+      padding:24px 20px;
+      position:sticky;
+      top:0;
+      align-self:start;
+      height:100vh;
+      overflow-y:auto;
+    }
+    .sidebar-logo{
+      font-weight:700;
+      letter-spacing:0.05em;
+      font-size:18px;
+      margin-bottom:24px;
+    }
+    .sidebar-nav{
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+    }
+    .sidebar-nav a{
+      padding:8px 10px;
+      border-radius:6px;
+      color:var(--text-main);
+      font-size:14px;
+      font-weight:500;
+    }
+    .sidebar-nav a.active{
+      background:#111111;
+      color:#ffffff;
+    }
+    .sidebar-nav a:hover{
+      background:#eeeeee;
+      text-decoration:none;
+    }
+
+    /* CONTENT */
+    .content{
+      padding:32px 32px 40px;
+    }
+    .content-inner{
+      max-width:1100px;
+      margin:0 auto;
+    }
+
+    h1,h2,h3{
+      margin-top:0;
+      letter-spacing:-0.01em;
+    }
+    h1{
+      font-size:28px;
+      margin-bottom:10px;
+    }
+    p{
+      max-width:720px;
+    }
+
+    .meta-row{
+      margin-top:6px;
+      font-size:13px;
+      color:#666666;
+      display:flex;
+      flex-wrap:wrap;
+      gap:6px;
+    }
+    .pill{
+      font-size:12px;
+      padding:3px 9px;
+      background:#ffffff;
+      border-radius:999px;
+      border:1px solid var(--border-soft);
+    }
+
+    /* PAGE LAYOUT */
+    .tool-layout{
+      margin-top:24px;
+      display:grid;
+      grid-template-columns:minmax(0,0.9fr) minmax(0,1.1fr);
+      gap:24px;
+    }
+
+    .card{
+      background:#ffffff;
+      border-radius:10px;
+      border:1px solid var(--border-soft);
+      padding:20px 20px 18px;
+      box-shadow:0 1px 2px rgba(0,0,0,0.03);
+    }
+
+    h2.section-heading{
+      font-size:19px;
+      margin:0 0 12px;
+    }
+
+    label{
+      font-size:14px;
+      font-weight:500;
+      display:block;
+      margin-bottom:5px;
+    }
+    .field-group{
+      margin-bottom:14px;
+    }
+    select{
+      width:100%;
+      padding:9px 11px;
+      border-radius:6px;
+      border:1px solid #cccccc;
+      font-size:14px;
+      background:#ffffff;
+    }
+
+    .hint{
+      font-size:12px;
+      color:#777777;
+      margin-top:4px;
+    }
+
+    .small-note{
+      font-size:12px;
+      color:#777777;
+      margin-top:8px;
+      max-width:720px;
+    }
+
+    /* TOOL LIST */
+    .tool-list{
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+      margin-top:6px;
+    }
+
+    .tool-item{
+      border-bottom:1px solid #eeeeee;
+      padding-bottom:10px;
+    }
+    .tool-item:last-child{
+      border-bottom:none;
+      padding-bottom:0;
+    }
+
+    .tool-header{
+      display:flex;
+      justify-content:space-between;
+      align-items:baseline;
+      gap:8px;
+      margin-bottom:4px;
+      flex-wrap:wrap;
+    }
+    .tool-name{
+      font-size:15px;
+      font-weight:600;
+    }
+    .tool-category{
+      font-size:12px;
+      color:#777777;
+    }
+
+    .tool-desc{
+      font-size:14px;
+      color:#444444;
+      margin:0 0 4px;
+      max-width:none;
+    }
+
+    .tool-tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap:6px;
+      margin:4px 0 6px;
+    }
+    .badge{
+      font-size:11px;
+      padding:2px 7px;
+      border-radius:999px;
+      border:1px solid #dddddd;
+      background:#fafafa;
+      color:#555555;
+    }
+
+    .price-line{
+      font-size:13px;
+      color:#555555;
+      margin-bottom:4px;
+    }
+
+    .tool-footer{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:6px;
+      font-size:12px;
+      color:#777777;
+    }
+
+    .visit-link{
+      font-size:13px;
+      font-weight:500;
+      text-decoration:none;
+    }
+    .visit-link:hover{
+      text-decoration:underline;
+    }
+
+    /* Affiliate note */
+    .affiliate-note{
+      font-size:13px;
+      color:var(--text-muted);
+      margin:28px 0 12px;
+    }
+
+    /* ADS (hidden) */
+    .ads{display:none;}
+
+    /* FOOTER */
+    footer{
+      border-top:1px solid #eeeeee;
+      background:#ffffff;
+      font-size:13px;
+      color:#555555;
+      padding:12px 32px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+    footer p{
+      margin:0;
+    }
+    footer nav{
+      margin-left:auto;
+    }
+    footer nav a{
+      margin-left:12px;
+      color:#555555;
+      text-decoration:none;
+    }
+    footer nav a:hover{
+      text-decoration:underline;
+    }
+
+    /* MOBILE */
+    @media(max-width:960px){
+      .layout{
+        grid-template-columns:1fr;
+        min-height:auto;
+      }
+      .sidebar{
+        position:static;
+        height:auto;
+        border-right:none;
+        border-bottom:1px solid var(--border-soft);
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        flex-wrap:wrap;
+      }
+      .sidebar-logo{
+        margin-bottom:8px;
+      }
+      .sidebar-nav{
+        flex-direction:row;
+        flex-wrap:wrap;
+        gap:4px;
+      }
+      .sidebar-nav a{
+        font-size:13px;
+        padding:6px 8px;
+      }
+      .content{
+        padding:20px 16px 28px;
+      }
+      .tool-layout{
+        grid-template-columns:1fr;
+      }
+    }
+/* ===== 공통: 클릭 막힌 비활성 링크 스타일 ===== */
+.disabled-link {
+  pointer-events: none;   /* 클릭 안 됨 */
+  cursor: default;        /* 손가락 커서 안 나오게 */
+  color: #999999;         /* 회색 처리 */
+  text-decoration: none;
+}
+
+/* 사이드바 / 상단 네비에서 hover 해도 그대로 보이게 */
+.sidebar-nav a.disabled-link:hover,
+.header-nav a.disabled-link:hover {
+  background: transparent;
+  color: #999999;
+  text-decoration: none;
+}
+  </style>
+</head>
+
+<body>
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/index.html">
+      <img src="/assets/logo.png" alt="CalcuFinder logo" class="logo-img" />
+    </a>
+    <nav class="header-nav">
+      <a href="/index.html">Home</a>
+      <a href="/finance/">Finance</a>
+      <a href="/insurance/">Insurance</a>
+      <a href="/business-software/" class="active">Business & Software</a>
+<a href="/blog/index.html">Blog</a>
+      <a href="/about.html">About</a>
+    </nav>
+  </div>
+</header>
+
+<div class="layout">
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">CalcuFinder</div>
+    <nav class="sidebar-nav">
+      <a href="/index.html">Home</a>
+      <a href="/finance/">Finance</a>
+      <a href="/insurance/">Insurance</a>
+      <a href="/business-software/" class="active">Business & software</a>
+<a href="/blog/index.html">Blog</a>
+      <a href="/about.html">About</a>
+    </nav>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="content">
+    <div class="content-inner">
+      <h1>SaaS Comparator</h1>
+      <p>
+        A high-level look at well-known SaaS tools used for collaboration, project management,
+        documentation, and general business operations. Use this list to sense typical pricing bands,
+        then confirm exact plans on the official websites.
+      </p>
+
+      <div class="meta-row">
+        <span class="pill">Category: Business & software</span>
+        <span class="pill">Audience: Solo founders & Company</span>
+      </div>
+
+      <div class="tool-layout">
+        <!-- FILTER / HOW TO THINK -->
+        <section class="card">
+          <h2 class="section-heading">How to think about SaaS costs</h2>
+
+          <div class="field-group">
+            <label for="teamSize">Team size (rough)</label>
+            <select id="teamSize">
+              <option value="">Just exploring (no filter)</option>
+              <option value="solo">Solo or 1–2 people</option>
+              <option value="small">Small team (3–10)</option>
+              <option value="growing">Growing team (10+)</option>
+            </select>
+            <p class="hint">
+              Many tools price “per user”, so your total cost will often scale with team size.
+            </p>
+          </div>
+
+          <div class="field-group">
+            <label for="billing">Billing style</label>
+            <select id="billing">
+              <option value="">Any</option>
+              <option value="monthly">Prefer monthly (more flexible)</option>
+              <option value="annual">Prefer annual (better discounts)</option>
+            </select>
+            <p class="hint">
+              Annual billing can offer meaningful discounts, but it locks you in for longer.
+            </p>
+          </div>
+
+          <div class="field-group">
+            <label for="stack">Role in your stack</label>
+            <select id="stack">
+              <option value="">Not sure yet</option>
+              <option value="core">Core tool (email, docs, communication)</option>
+              <option value="collab">Collaboration & project tracking</option>
+              <option value="special">More specialised (design, automation, etc.)</option>
+            </select>
+          </div>
+
+          <p class="small-note">
+            Most of the rough prices below are shown in USD because many SaaS vendors list USD-based
+            plans on their websites. To understand costs in your own currency, you can use the
+            <a href="/finance/currency-converter.html">Currency Converter calculator</a> on CalcuFinder.
+          </p>
+        </section>
+
+        <!-- TOOL LIST -->
+        <section class="card">
+          <h2 class="section-heading">SaaS tools overview</h2>
+          <div class="tool-list">
+
+            <!-- Notion -->
+            <div class="tool-item">
+              <div class="tool-header">
+                <div class="tool-name">Notion</div>
+                <div class="tool-category">Docs, wikis, and lightweight project management</div>
+              </div>
+              <p class="tool-desc">
+                Flexible workspace for notes, wikis, simple databases, and lightweight project boards.
+                Popular with individuals and small teams who want an all-in-one hub.
+              </p>
+              <div class="tool-tags">
+                <span class="badge">Docs & wiki</span>
+                <span class="badge">Solo & small teams</span>
+                <span class="badge">Customisable pages</span>
+              </div>
+              <p class="price-line">
+                <strong>Typical range:</strong> free tier for personal use, then roughly from around tens of USD/month
+                for team plans, depending on features and number of members.
+              </p>
+              <div class="tool-footer">
+                <span>Check Notion directly for current pricing and limits.</span>
+                <a class="visit-link" href="https://www.notion.so" target="_blank" rel="noopener noreferrer">
+                  Visit website →
+                </a>
+              </div>
+            </div>
+
+            <!-- Google Workspace -->
+            <div class="tool-item">
+              <div class="tool-header">
+                <div class="tool-name">Google Workspace</div>
+                <div class="tool-category">Email, calendar, and collaboration</div>
+              </div>
+              <p class="tool-desc">
+                Business email with your own domain, shared drives, Docs, Sheets, Meet, and more.
+                Often used as the core productivity stack for small businesses.
+              </p>
+              <div class="tool-tags">
+                <span class="badge">Core stack</span>
+                <span class="badge">Custom domains</span>
+                <span class="badge">Docs & spreadsheets</span>
+              </div>
+              <p class="price-line">
+                <strong>Typical range:</strong> entry plans often in the low tens of USD per user/month,
+                with higher tiers for more storage and security features.
+              </p>
+              <div class="tool-footer">
+                <span>Check Google Workspace directly for current pricing and limits.</span>
+                <a class="visit-link" href="https://workspace.google.com" target="_blank" rel="noopener noreferrer">
+                  Visit website →
+                </a>
+              </div>
+            </div>
+
+            <!-- Microsoft 365 -->
+            <div class="tool-item">
+              <div class="tool-header">
+                <div class="tool-name">Microsoft 365</div>
+                <div class="tool-category">Office suite, email, and Teams</div>
+              </div>
+              <p class="tool-desc">
+                Includes Outlook, Word, Excel, PowerPoint, Teams, and cloud storage options.
+                Common in organisations that rely on the Microsoft ecosystem.
+              </p>
+              <div class="tool-tags">
+                <span class="badge">Core stack</span>
+                <span class="badge">Desktop & cloud apps</span>
+                <span class="badge">Teams & collaboration</span>
+              </div>
+              <p class="price-line">
+                <strong>Typical range:</strong> plans usually in the low to mid tens of USD per user/month,
+                depending on included apps and security features.
+              </p>
+              <div class="tool-footer">
+                <span>Check Microsoft 365 directly for current pricing and limits.</span>
+                <a class="visit-link" href="https://www.microsoft.com/microsoft-365" target="_blank" rel="noopener noreferrer">
+                  Visit website →
+                </a>
+              </div>
+            </div>
+
+            <!-- Slack -->
+            <div class="tool-item">
+              <div class="tool-header">
+                <div class="tool-name">Slack</div>
+                <div class="tool-category">Team chat and channel-based collaboration</div>
+              </div>
+              <p class="tool-desc">
+                Real-time messaging and channels for teams, plus integrations with many other tools.
+                Often used as the central place for daily communication.
+              </p>
+              <div class="tool-tags">
+                <span class="badge">Team communication</span>
+                <span class="badge">Integrations</span>
+                <span class="badge">Remote teams</span>
+              </div>
+              <p class="price-line">
+                <strong>Typical range:</strong> free tier with message history limits, then paid tiers in the
+                tens of USD per user/month depending on region and features.
+              </p>
+              <div class="tool-footer">
+                <span>Check Slack directly for current pricing and limits.</span>
+                <a class="visit-link" href="https://slack.com" target="_blank" rel="noopener noreferrer">
+                  Visit website →
+                </a>
+              </div>
+            </div>
+
+            <!-- Asana -->
+            <div class="tool-item">
+              <div class="tool-header">
+                <div class="tool-name">Asana</div>
+                <div class="tool-category">Project & task management</div>
+              </div>
+              <p class="tool-desc">
+                Task and project tracking for teams who need boards, timelines, and workload views
+                to manage ongoing work.
+              </p>
+              <div class="tool-tags">
+                <span class="badge">Project management</span>
+                <span class="badge">Teams & departments</span>
+                <span class="badge">Timelines & boards</span>
+              </div>
+              <p class="price-line">
+                <strong>Typical range:</strong> limited free tier, then paid plans in the tens of USD per user/month
+                depending on features and team size.
+              </p>
+              <div class="tool-footer">
+                <span>Check Asana directly for current pricing and limits.</span>
+                <a class="visit-link" href="https://asana.com" target="_blank" rel="noopener noreferrer">
+                  Visit website →
+                </a>
+              </div>
+            </div>
+
+            <!-- ClickUp -->
+            <div class="tool-item">
+              <div class="tool-header">
+                <div class="tool-name">ClickUp</div>
+                <div class="tool-category">All-in-one work management</div>
+              </div>
+              <p class="tool-desc">
+                Combines tasks, docs, goals, and dashboards into one workspace.
+                Often used by teams that want to consolidate multiple tools.
+              </p>
+              <div class="tool-tags">
+                <span class="badge">All-in-one</span>
+                <span class="badge">Project & docs</span>
+                <span class="badge">Remote teams</span>
+              </div>
+              <p class="price-line">
+                <strong>Typical range:</strong> affordable paid tiers starting in the lower tens of USD per user/month,
+                with higher plans for advanced features.
+              </p>
+              <div class="tool-footer">
+                <span>Check ClickUp directly for current pricing and limits.</span>
+                <a class="visit-link" href="https://clickup.com" target="_blank" rel="noopener noreferrer">
+                  Visit website →
+                </a>
+              </div>
+            </div>
+
+            <!-- Trello -->
+            <div class="tool-item">
+              <div class="tool-header">
+                <div class="tool-name">Trello</div>
+                <div class="tool-category">Kanban-style task boards</div>
+              </div>
+              <p class="tool-desc">
+                Visual boards for tasks and simple project tracking. Easy to start with,
+                and commonly used by small teams and individuals.
+              </p>
+              <div class="tool-tags">
+                <span class="badge">Simple boards</span>
+                <span class="badge">Solo & teams</span>
+                <span class="badge">Kanban style</span>
+              </div>
+              <p class="price-line">
+                <strong>Typical range:</strong> free tier for basic boards, then paid tiers in the lower tens of USD
+                per user/month for more automation and security.
+              </p>
+              <div class="tool-footer">
+                <span>Check Trello directly for current pricing and limits.</span>
+                <a class="visit-link" href="https://trello.com" target="_blank" rel="noopener noreferrer">
+                  Visit website →
+                </a>
+              </div>
+            </div>
+
+            <!-- Monday.com -->
+            <div class="tool-item">
+              <div class="tool-header">
+                <div class="tool-name">monday.com</div>
+                <div class="tool-category">Work OS & project tracking</div>
+              </div>
+              <p class="tool-desc">
+                Customisable boards, automations, and dashboards for teams managing projects, sales,
+                or operations in one place.
+              </p>
+              <div class="tool-tags">
+                <span class="badge">Work management</span>
+                <span class="badge">Visual boards</span>
+                <span class="badge">Growing teams</span>
+              </div>
+              <p class="price-line">
+                <strong>Typical range:</strong> tiered plans often sold in seat bundles, reaching tens of USD
+                per user/month depending on bundle and features.
+              </p>
+              <div class="tool-footer">
+                <span>Check monday.com directly for current pricing and limits.</span>
+                <a class="visit-link" href="https://monday.com" target="_blank" rel="noopener noreferrer">
+                  Visit website →
+                </a>
+              </div>
+            </div>
+
+            <!-- Zoom Pro -->
+            <div class="tool-item">
+              <div class="tool-header">
+                <div class="tool-name">Zoom Pro</div>
+                <div class="tool-category">Video calls & online meetings</div>
+              </div>
+              <p class="tool-desc">
+                Widely used for video meetings, webinars, and online calls, especially for distributed teams
+                and client calls.
+              </p>
+              <div class="tool-tags">
+                <span class="badge">Video meetings</span>
+                <span class="badge">Remote work</span>
+                <span class="badge">Client calls</span>
+              </div>
+              <p class="price-line">
+                <strong>Typical range:</strong> Pro plans often priced in the tens of USD per host/month,
+                with higher tiers for webinars and larger events.
+              </p>
+              <div class="tool-footer">
+                <span>Check Zoom directly for current pricing and limits.</span>
+                <a class="visit-link" href="https://zoom.us" target="_blank" rel="noopener noreferrer">
+                  Visit website →
+                </a>
+              </div>
+            </div>
+
+            <!-- Dropbox / Cloud storage -->
+            <div class="tool-item">
+              <div class="tool-header">
+                <div class="tool-name">Dropbox (Business)</div>
+                <div class="tool-category">Cloud storage & file sharing</div>
+              </div>
+              <p class="tool-desc">
+                Cloud storage and file sync for teams needing shared folders, permissions, and backups
+                across devices.
+              </p>
+              <div class="tool-tags">
+                <span class="badge">Cloud storage</span>
+                <span class="badge">File sharing</span>
+                <span class="badge">Teams & freelancers</span>
+              </div>
+              <p class="price-line">
+                <strong>Typical range:</strong> business plans often in the tens of USD per user/month,
+                with storage and security varying by tier.
+              </p>
+              <div class="tool-footer">
+                <span>Check Dropbox directly for current pricing and limits.</span>
+                <a class="visit-link" href="https://www.dropbox.com/business" target="_blank" rel="noopener noreferrer">
+                  Visit website →
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </section>
+      </div>
+
+      <!-- Affiliate note -->
+      <p class="affiliate-note">
+        Some pages on CalcuFinder may include affiliate links. If you click and make a purchase,
+            we may earn a small commission at no extra cost to you. This helps support the project
+            and keeps the tools free to use.
+      </p>
+    </div>
+  </main>
+
+  <!-- ADS (reserved, hidden) -->
+  <aside class="ads"></aside>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>© CalcuFinder. Tools for smarter decisions, worldwide.</p>
+  <nav>
+    <a href="/about.html">About</a>
+    <a href="/contact.html">Contact</a>
+    <a href="/privacy.html">Privacy</a>
+    <a href="/disclosure.html">Disclosure</a>
+  </nav>
+</footer>
+
+</body>
+</html>

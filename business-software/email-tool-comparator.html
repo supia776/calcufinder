@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- email-tool-comparator.html -->
+<title>Email Tool Comparator | Compare email marketing platforms</title>
+<meta name="description" content="Compare email marketing tools by price, features, and subscriber limits to choose the best platform for your business.">
+
+<link rel="canonical" href="https://calcufinder.com/business-software/email-tool-comparator.html">
+
+<meta property="og:title" content="Email Tool Comparator | Compare email marketing platforms">
+<meta property="og:description" content="Use the Email Tool Comparator to analyse costs and features across different email marketing platforms.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://calcufinder.com/business-software/email-tool-comparator.html">
+<meta property="og:image" content="https://calcufinder.com/assets/og-image.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Email Tool Comparator | Compare email marketing platforms">
+<meta name="twitter:description" content="Quickly compare email marketing tools by monthly cost, contacts, and automation features.">
+<meta name="twitter:image" content="https://calcufinder.com/assets/og-image.png">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9077859826573424"
+     crossorigin="anonymous"></script>
+     <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y7NKFF4N71"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Y7NKFF4N71');
+</script>
+
+
+  <style>
+    :root {
+      --bg-main: #f5f5f5;
+      --bg-card: #ffffff;
+      --bg-sidebar: #ffffff;
+      --bg-ads: #fafafa;
+      --border-soft: #e0e0e0;
+      --text-main: #111111;
+      --text-muted: #666666;
+      --accent: #111111;
+      --link: #1a0dab;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.5;
+      color: var(--text-main);
+      background: var(--bg-main);
+      font-size: 15px;
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* HEADER */
+    .site-header {
+      background:#ffffff;
+      border-bottom:1px solid #e5e5e5;
+      padding:12px 24px;
+      width:100%;
+    }
+    .header-inner {
+      max-width:1200px;
+      margin:0 auto;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+    .logo-img {
+      height:65px;
+      width:auto;
+      display:block;
+    }
+    @media(max-width:768px){
+      .logo-img{height:40px;}
+    }
+
+    .header-nav{
+      display:flex;
+      gap:28px;
+    }
+    .header-nav a{
+      font-size:15px;
+      text-decoration:none;
+      color:#222222;
+      font-weight:500;
+    }
+    .header-nav a:hover{
+      color:#0077cc;
+    }
+
+    /* LAYOUT */
+    .layout{
+      display:grid;
+      grid-template-columns:220px minmax(0,1fr) 280px;
+      min-height:calc(100vh - 70px);
+    }
+
+    /* SIDEBAR */
+    .sidebar{
+      background:var(--bg-sidebar);
+      border-right:1px solid var(--border-soft);
+      padding:24px 20px;
+      position:sticky;
+      top:0;
+      align-self:start;
+      height:100vh;
+      overflow-y:auto;
+    }
+    .sidebar-logo{
+      font-weight:700;
+      letter-spacing:0.05em;
+      font-size:18px;
+      margin-bottom:24px;
+    }
+    .sidebar-nav{
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+    }
+    .sidebar-nav a{
+      padding:8px 10px;
+      border-radius:6px;
+      color:var(--text-main);
+      font-size:14px;
+      font-weight:500;
+    }
+    .sidebar-nav a.active{
+      background:#111111;
+      color:#ffffff;
+    }
+    .sidebar-nav a:hover{
+      background:#eeeeee;
+      text-decoration:none;
+    }
+
+    /* CONTENT */
+    .content{
+      padding:32px 32px 40px;
+    }
+    .content-inner{
+      max-width:1100px;
+      margin:0 auto;
+    }
+
+    h1,h2,h3{
+      margin-top:0;
+      letter-spacing:-0.01em;
+    }
+    h1{
+      font-size:28px;
+      margin-bottom:10px;
+    }
+    p{
+      max-width:720px;
+    }
+
+    .meta-row{
+      margin-top:6px;
+      font-size:13px;
+      color:#666666;
+      display:flex;
+      flex-wrap:wrap;
+      gap:6px;
+    }
+    .pill{
+      font-size:12px;
+      padding:3px 9px;
+      background:#ffffff;
+      border-radius:999px;
+      border:1px solid var(--border-soft);
+    }
+
+    /* EMAIL PAGE LAYOUT */
+    .tool-layout{
+      margin-top:24px;
+      display:grid;
+      grid-template-columns:minmax(0,0.9fr) minmax(0,1.1fr);
+      gap:24px;
+    }
+
+    .card{
+      background:#ffffff;
+      border-radius:10px;
+      border:1px solid var(--border-soft);
+      padding:20px 20px 18px;
+      box-shadow:0 1px 2px rgba(0,0,0,0.03);
+    }
+
+    h2.section-heading{
+      font-size:19px;
+      margin:0 0 12px;
+    }
+
+    label{
+      font-size:14px;
+      font-weight:500;
+      display:block;
+      margin-bottom:5px;
+    }
+    .field-group{
+      margin-bottom:14px;
+    }
+    select{
+      width:100%;
+      padding:9px 11px;
+      border-radius:6px;
+      border:1px solid #cccccc;
+      font-size:14px;
+      background:#ffffff;
+    }
+
+    .hint{
+      font-size:12px;
+      color:#777777;
+      margin-top:4px;
+    }
+
+    .small-note{
+      font-size:12px;
+      color:#777777;
+      margin-top:8px;
+      max-width:720px;
+    }
+
+    /* TOOL LIST */
+    .tool-list{
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+      margin-top:6px;
+    }
+
+    .tool-item{
+      border-bottom:1px solid #eeeeee;
+      padding-bottom:10px;
+    }
+    .tool-item:last-child{
+      border-bottom:none;
+      padding-bottom:0;
+    }
+
+    .tool-header{
+      display:flex;
+      justify-content:space-between;
+      align-items:baseline;
+      gap:8px;
+      margin-bottom:4px;
+      flex-wrap:wrap;
+    }
+    .tool-name{
+      font-size:15px;
+      font-weight:600;
+    }
+    .tool-category{
+      font-size:12px;
+      color:#777777;
+    }
+
+    .tool-desc{
+      font-size:14px;
+      color:#444444;
+      margin:0 0 4px;
+      max-width:none;
+    }
+
+    .tool-tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap:6px;
+      margin:4px 0 6px;
+    }
+    .badge{
+      font-size:11px;
+      padding:2px 7px;
+      border-radius:999px;
+      border:1px solid #dddddd;
+      background:#fafafa;
+      color:#555555;
+    }
+
+    .price-line{
+      font-size:13px;
+      color:#555555;
+      margin-bottom:4px;
+    }
+
+    .tool-footer{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:6px;
+      font-size:12px;
+      color:#777777;
+    }
+
+    .visit-link{
+      font-size:13px;
+      font-weight:500;
+      text-decoration:none;
+    }
+    .visit-link:hover{
+      text-decoration:underline;
+    }
+
+    /* Affiliate note */
+    .affiliate-note{
+      font-size:13px;
+      color:var(--text-muted);
+      margin:28px 0 12px;
+    }
+
+    /* ADS (hidden) */
+    .ads{display:none;}
+
+    /* FOOTER */
+    footer{
+      border-top:1px solid #eeeeee;
+      background:#ffffff;
+      font-size:13px;
+      color:#555555;
+      padding:12px 32px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+    footer p{
+      margin:0;
+    }
+    footer nav{
+      margin-left:auto;
+    }
+    footer nav a{
+      margin-left:12px;
+      color:#555555;
+      text-decoration:none;
+    }
+    footer nav a:hover{
+      text-decoration:underline;
+    }
+
+    /* MOBILE */
+    @media(max-width:960px){
+      .layout{
+        grid-template-columns:1fr;
+        min-height:auto;
+      }
+      .sidebar{
+        position:static;
+        height:auto;
+        border-right:none;
+        border-bottom:1px solid var(--border-soft);
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        flex-wrap:wrap;
+      }
+      .sidebar-logo{
+        margin-bottom:8px;
+      }
+      .sidebar-nav{
+        flex-direction:row;
+        flex-wrap:wrap;
+        gap:4px;
+      }
+      .sidebar-nav a{
+        font-size:13px;
+        padding:6px 8px;
+      }
+      .content{
+        padding:20px 16px 28px;
+      }
+      .tool-layout{
+        grid-template-columns:1fr;
+      }
+    }
+/* ===== 공통: 클릭 막힌 비활성 링크 스타일 ===== */
+.disabled-link {
+  pointer-events: none;   /* 클릭 안 됨 */
+  cursor: default;        /* 손가락 커서 안 나오게 */
+  color: #999999;         /* 회색 처리 */
+  text-decoration: none;
+}
+
+/* 사이드바 / 상단 네비에서 hover 해도 그대로 보이게 */
+.sidebar-nav a.disabled-link:hover,
+.header-nav a.disabled-link:hover {
+  background: transparent;
+  color: #999999;
+  text-decoration: none;
+}    
+  </style>
+</head>
+
+<body>
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/index.html">
+      <img src="/assets/logo.png" alt="CalcuFinder logo" class="logo-img" />
+    </a>
+    <nav class="header-nav">
+      <a href="/index.html">Home</a>
+      <a href="/finance/">Finance</a>
+      <a href="/insurance/">Insurance</a>
+      <a href="/business-software/" class="active">Business & Software</a>
+<a href="/blog/index.html">Blog</a>
+      <a href="/about.html">About</a>
+    </nav>
+  </div>
+</header>
+
+<div class="layout">
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">CalcuFinder</div>
+    <nav class="sidebar-nav">
+      <a href="/index.html">Home</a>
+      <a href="/finance/">Finance</a>
+      <a href="/insurance/">Insurance</a>
+      <a href="/business-software/" class="active">Business & software</a>
+<a href="/blog/index.html">Blog</a>
+      <a href="/about.html">About</a>
+    </nav>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="content">
+    <div class="content-inner">
+      <h1>Email Platform Comparator</h1>
+      <p>
+        A simple overview of popular email platforms for newsletters, automations, and basic campaigns.
+        Use this page to shortlist tools and then confirm features, limits, and pricing on the official websites.
+      </p>
+
+      <div class="meta-row">
+        <span class="pill">Category: Business & software</span>
+        <span class="pill">Audience: Creators, solo founders, Company</span>
+      </div>
+
+      <div class="tool-layout">
+        <!-- FILTER / HOW TO THINK -->
+        <section class="card">
+          <h2 class="section-heading">How to think about email tools</h2>
+
+          <div class="field-group">
+            <label for="useCase">Main use case (for you)</label>
+            <select id="useCase">
+              <option value="">Just exploring (no filter)</option>
+              <option value="newsletter">Newsletters & content</option>
+              <option value="ecommerce">Online store & e-commerce</option>
+              <option value="automation">Automations & funnels</option>
+              <option value="simple">Simple updates to small lists</option>
+            </select>
+            <p class="hint">
+              You can mentally match each platform to your use case as you read the list on the right.
+            </p>
+          </div>
+
+          <div class="field-group">
+            <label for="listSize">Typical list size (target)</label>
+            <select id="listSize">
+              <option value="">Not sure yet</option>
+              <option value="small">Up to ~1,000 subscribers</option>
+              <option value="medium">1,000 – 10,000 subscribers</option>
+              <option value="large">10,000+ subscribers</option>
+            </select>
+            <p class="hint">
+              Many platforms have price jumps when you cross certain subscriber tiers.
+            </p>
+          </div>
+
+          <div class="field-group">
+            <label for="complexity">Preferred complexity</label>
+            <select id="complexity">
+              <option value="">Any</option>
+              <option value="beginner">Beginner-friendly, simple UI</option>
+              <option value="intermediate">More options, moderate learning curve</option>
+              <option value="advanced">Advanced: deep automation & segmentation</option>
+            </select>
+          </div>
+
+          <p class="small-note">
+            Most example price ranges below are described in broad bands and often in USD, because it is a common
+            reference currency online. To think in your own currency, you can use the
+            <a href="/finance/currency-converter.html">Currency Converter calculator</a> on CalcuFinder.
+          </p>
+        </section>
+
+        <!-- TOOL LIST -->
+        <section class="card">
+          <h2 class="section-heading">Platforms overview</h2>
+          <div class="tool-list">
+
+            <!-- Mailchimp -->
+            <div class="tool-item">
+              <div class="tool-header">
+                <div class="tool-name">Mailchimp</div>
+                <div class="tool-category">All-round email & basic automations</div>
+              </div>
+              <p class="tool-desc">
+                Well-known email platform with templates, basic automations, and simple analytics.
+                Familiar choice for small businesses and newsletters.
+              </p>
+              <div class="tool-tags">
+                <span class="badge">Beginner–intermediate</span>
+                <span class="badge">Newsletters & small businesses</span>
+                <span class="badge">Templates & drag-and-drop</span>
+              </div>
+              <p class="price-line">
+                <strong>Typical range:</strong> free tier for very small lists, then roughly tens of USD/month for growing lists,
+                depending on contacts and features.
+              </p>
+              <div class="tool-footer">
+                <span>Check Mailchimp directly for current pricing and limits.</span>
+                <a class="visit-link" href="https://mailchimp.com" target="_blank" rel="noopener noreferrer">
+                  Visit website →
+                </a>
+              </div>
+            </div>
+
+            <!-- ConvertKit -->
+            <div class="tool-item">
+              <div class="tool-header">
+                <div class="tool-name">ConvertKit</div>
+                <div class="tool-category">Creators, courses, and digital products</div>
+              </div>
+              <p class="tool-desc">
+                Built with creators in mind: simple automations, tagging, and landing pages for people selling courses,
+                memberships, and digital products.
+              </p>
+              <div class="tool-tags">
+                <span class="badge">Intermediate</span>
+                <span class="badge">Creators & solo founders</span>
+                <span class="badge">Automations & tagging</span>
+              </div>
+              <p class="price-line">
+                <strong>Typical range:</strong> free or low-cost tiers for small lists, then stepping into tens of USD/month
+                as your audience grows.
+              </p>
+              <div class="tool-footer">
+                <span>Check ConvertKit directly for current pricing and limits.</span>
+                <a class="visit-link" href="https://convertkit.com" target="_blank" rel="noopener noreferrer">
+                  Visit website →
+                </a>
+              </div>
+            </div>
+
+            <!-- Brevo / Sendinblue -->
+            <div class="tool-item">
+              <div class="tool-header">
+                <div class="tool-name">Brevo (formerly Sendinblue)</div>
+                <div class="tool-category">Email + SMS + simple CRM</div>
+              </div>
+              <p class="tool-desc">
+                All-in-one communication platform for email, SMS, and basic CRM. Aimed at small to mid-sized businesses
+                that want multi-channel outreach.
+              </p>
+              <div class="tool-tags">
+                <span class="badge">Intermediate</span>
+                <span class="badge">Multi-channel campaigns</span>
+                <span class="badge">Small & mid-sized teams</span>
+              </div>
+              <p class="price-line">
+                <strong>Typical range:</strong> entry-level plans often around tens of USD/month based on email volume
+                and contact count.
+              </p>
+              <div class="tool-footer">
+                <span>Check Brevo directly for current pricing and limits.</span>
+                <a class="visit-link" href="https://www.brevo.com" target="_blank" rel="noopener noreferrer">
+                  Visit website →
+                </a>
+              </div>
+            </div>
+
+            <!-- Klaviyo -->
+            <div class="tool-item">
+              <div class="tool-header">
+                <div class="tool-name">Klaviyo</div>
+                <div class="tool-category">E-commerce & online stores</div>
+              </div>
+              <p class="tool-desc">
+                Popular with online shops for deep integrations, segmentation, and revenue-focused automations
+                (abandoned carts, product recommendations, and more).
+              </p>
+              <div class="tool-tags">
+                <span class="badge">Intermediate–advanced</span>
+                <span class="badge">E-commerce</span>
+                <span class="badge">Data-driven automations</span>
+              </div>
+              <p class="price-line">
+                <strong>Typical range:</strong> free or low-tier options for very small lists, then higher monthly fees
+                as your contacts and order volume grow.
+              </p>
+              <div class="tool-footer">
+                <span>Check Klaviyo directly for current pricing and limits.</span>
+                <a class="visit-link" href="https://www.klaviyo.com" target="_blank" rel="noopener noreferrer">
+                  Visit website →
+                </a>
+              </div>
+            </div>
+
+            <!-- MailerLite -->
+            <div class="tool-item">
+              <div class="tool-header">
+                <div class="tool-name">MailerLite</div>
+                <div class="tool-category">Simple newsletters & automations</div>
+              </div>
+              <p class="tool-desc">
+                Clean interface for newsletters, basic automations, and landing pages. Often chosen by people who want
+                something simpler than the biggest platforms.
+              </p>
+              <div class="tool-tags">
+                <span class="badge">Beginner–intermediate</span>
+                <span class="badge">Simple newsletter stack</span>
+                <span class="badge">Landing pages & forms</span>
+              </div>
+              <p class="price-line">
+                <strong>Typical range:</strong> free tier for small lists, then tiered pricing in tens of USD/month
+                as subscribers increase.
+              </p>
+              <div class="tool-footer">
+                <span>Check MailerLite directly for current pricing and limits.</span>
+                <a class="visit-link" href="https://www.mailerlite.com" target="_blank" rel="noopener noreferrer">
+                  Visit website →
+                </a>
+              </div>
+            </div>
+
+            <!-- Substack -->
+            <div class="tool-item">
+              <div class="tool-header">
+                <div class="tool-name">Substack</div>
+                <div class="tool-category">Newsletter + paid subscriptions</div>
+              </div>
+              <p class="tool-desc">
+                Platform for writers and creators to publish newsletters and offer paid subscriptions without managing
+                complex tech stacks.
+              </p>
+              <div class="tool-tags">
+                <span class="badge">Beginner-friendly</span>
+                <span class="badge">Paid newsletter model</span>
+                <span class="badge">Hosted platform</span>
+              </div>
+              <p class="price-line">
+                <strong>Typical range:</strong> no traditional monthly fee for basic use; platform usually takes
+                a percentage of paid subscription revenue instead.
+              </p>
+              <div class="tool-footer">
+                <span>Check Substack directly for current revenue share and terms.</span>
+                <a class="visit-link" href="https://substack.com" target="_blank" rel="noopener noreferrer">
+                  Visit website →
+                </a>
+              </div>
+            </div>
+
+            <!-- Beehiiv -->
+            <div class="tool-item">
+              <div class="tool-header">
+                <div class="tool-name">Beehiiv</div>
+                <div class="tool-category">Growth-focused newsletter platform</div>
+              </div>
+              <p class="tool-desc">
+                Newsletter platform with a focus on growth tools, referrals, and monetisation options for
+                content-driven creators.
+              </p>
+              <div class="tool-tags">
+                <span class="badge">Intermediate</span>
+                <span class="badge">Growth & referrals</span>
+                <span class="badge">Newsletter-first</span>
+              </div>
+              <p class="price-line">
+                <strong>Typical range:</strong> free tier for small lists, then paid plans as your audience and features grow.
+              </p>
+              <div class="tool-footer">
+                <span>Check Beehiiv directly for current pricing and limits.</span>
+<a class="visit-link" href="https://www.beehiiv.com?via=Minjeong-Won" target="_blank" rel="noopener noreferrer">
+    Visit website →
+</a>
+              </div>
+            </div>
+
+            <!-- Flodesk -->
+            <div class="tool-item">
+              <div class="tool-header">
+                <div class="tool-name">Flodesk</div>
+                <div class="tool-category">Design-focused email</div>
+              </div>
+              <p class="tool-desc">
+                Emphasises clean, visual templates and simple automations, appealing to brands that care about
+                aesthetics and straightforward workflows.
+              </p>
+              <div class="tool-tags">
+                <span class="badge">Beginner-friendly</span>
+                <span class="badge">Design-led emails</span>
+                <span class="badge">Simple automations</span>
+              </div>
+              <p class="price-line">
+                <strong>Typical range:</strong> flat-style or bundle pricing rather than strict per-subscriber tiers;
+                details depend on current offers.
+              </p>
+              <div class="tool-footer">
+                <span>Check Flodesk directly for current pricing and limits.</span>
+<a class="visit-link" href="https://flodesk.com/c/Q2RQ5J9G" target="_blank" rel="nofollow noopener noreferrer">
+    Visit Flodesk →
+</a>
+              </div>
+            </div>
+
+            <!-- ActiveCampaign -->
+            <div class="tool-item">
+              <div class="tool-header">
+                <div class="tool-name">ActiveCampaign</div>
+                <div class="tool-category">Advanced automations & CRM</div>
+              </div>
+              <p class="tool-desc">
+                Combines email marketing with strong automation and light CRM features. Often used by teams that
+                want detailed flows and behavioural triggers.
+              </p>
+              <div class="tool-tags">
+                <span class="badge">Advanced</span>
+                <span class="badge">Automation-heavy setups</span>
+                <span class="badge">Small & mid-sized teams</span>
+              </div>
+              <p class="price-line">
+                <strong>Typical range:</strong> paid plans only, often starting in the tens of USD/month and scaling
+                with contacts and feature level.
+              </p>
+              <div class="tool-footer">
+                <span>Check ActiveCampaign directly for current pricing and limits.</span>
+                <a class="visit-link" href="https://www.activecampaign.com" target="_blank" rel="noopener noreferrer">
+                  Visit website →
+                </a>
+              </div>
+            </div>
+
+            <!-- HubSpot Email & CRM -->
+            <div class="tool-item">
+              <div class="tool-header">
+                <div class="tool-name">HubSpot (Email & CRM)</div>
+                <div class="tool-category">All-in-one CRM & marketing hub</div>
+              </div>
+              <p class="tool-desc">
+                Combines CRM, email marketing, forms, and automation into one platform. Can be powerful for B2B funnels,
+                but pricing can rise with contacts and hubs.
+              </p>
+              <div class="tool-tags">
+                <span class="badge">Intermediate–advanced</span>
+                <span class="badge">B2B & pipeline-driven teams</span>
+                <span class="badge">All-in-one stack</span>
+              </div>
+              <p class="price-line">
+                <strong>Typical range:</strong> free CRM and basic email tools for small teams, with paid hubs and
+                add-ons that can reach higher monthly budgets as you scale.
+              </p>
+              <div class="tool-footer">
+                <span>Check HubSpot directly for current pricing and limits.</span>
+                <a class="visit-link" href="https://www.hubspot.com" target="_blank" rel="noopener noreferrer">
+                  Visit website →
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </section>
+      </div>
+
+      <!-- Affiliate note -->
+      <p class="affiliate-note">
+        Some pages on CalcuFinder may include affiliate links. If you click and make a purchase,
+            we may earn a small commission at no extra cost to you. This helps support the project
+            and keeps the tools free to use.
+      </p>
+    </div>
+  </main>
+
+  <!-- ADS (reserved, hidden) -->
+  <aside class="ads"></aside>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>© CalcuFinder. Tools for smarter decisions, worldwide.</p>
+  <nav>
+    <a href="/about.html">About</a>
+    <a href="/contact.html">Contact</a>
+    <a href="/privacy.html">Privacy</a>
+    <a href="/disclosure.html">Disclosure</a>
+  </nav>
+</footer>
+
+</body>
+</html>
